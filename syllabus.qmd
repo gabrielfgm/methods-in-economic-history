@@ -12,6 +12,8 @@ csl: history_and_theory.csl
 
 The purpose of this module is to introduce history students to the study of economic historians by exposing them to the realities of historical data collection and interpretation. The module will cover key methods in economic history as well as key historiographical debates that revolve around central questions of collection, measurement, and analysis. The course builds on classic debates in economic history to allow students the opportunity to interrogate how historians have grappled with questions of the economy, welfare and growth in the long term.
 
+A link to the course github page is [here](https://github.com/gabrielfgm/methods-in-economic-history).
+
 ## 1. The history of economic history
 
 We open by contextualizing economic history and quantitative methods in historical inquiry within the broader development of the discipline. We discuss the ‘cliometric’ movement in the second half of the 20th century, its strengths and weaknesses.
@@ -30,14 +32,14 @@ We need to start by thinking about the relationship between measurement, statist
 
 Core reading:
 
-1.  @hacking1990, Chapter 1 and Chapter 23
-2.  @porter1994
+1.  @hacking1990, Chapter 1 and Chapter 23 ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Hacking_Taming_of_Chance_Ch1_Ch23.pdf))
+2.  @porter1994 ([link](https://doi.org/10.1017/S0269889700001757))
 
 ## 3. Basic tools: central tendencies and dispersion
 
 We develop basic tools here to think about how we summarize data and communicate about it. This means working through concepts that should be familiar (averages) and concepts that may seem less familiar (standard deviations).
 
-Core readings:
+Core readings (pick 1 or two textbook treatments and the additional reading):
 
 1.  @feinstein2002, Chapter 2 (harder)
 2.  @hudson2016, Chapter 4 (easier)

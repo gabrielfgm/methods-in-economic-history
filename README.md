@@ -12,6 +12,9 @@ course builds on classic debates in economic history to allow students
 the opportunity to interrogate how historians have grappled with
 questions of the economy, welfare and growth in the long term.
 
+A link to the course github page is
+[here](https://github.com/gabrielfgm/methods-in-economic-history).
+
 ## 1. The history of economic history
 
 We open by contextualizing economic history and quantitative methods in
@@ -49,8 +52,10 @@ Core reading:
 
 1.  Ian Hacking *The Taming of Chance* (Cambridge University Press,
     August 1990)., Chapter 1 and Chapter 23
+    ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Hacking_Taming_of_Chance_Ch1_Ch23.pdf))
 2.  Theodore M. Porter “Making Things Quantitative,” *Science in
     Context* (1994), 7: 3, 389–407.
+    ([link](https://doi.org/10.1017/S0269889700001757))
 
 ## 3. Basic tools: central tendencies and dispersion
 
@@ -59,7 +64,8 @@ communicate about it. This means working through concepts that should be
 familiar (averages) and concepts that may seem less familiar (standard
 deviations).
 
-Core readings:
+Core readings (pick 1 or two textbook treatments and the additional
+reading):
 
 1.  C. H. Feinstein and Mark Thomas *Making history count* (Cambridge:
     Cambridge University Press, 2002)., Chapter 2 (harder)
