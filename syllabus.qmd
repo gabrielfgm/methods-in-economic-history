@@ -1,0 +1,115 @@
+---
+title: "Syllabus: Methods in Economic History 6AAH1008"
+author: "Gabriel Mesevage"
+format:
+  pdf: 
+    output-file: "pdf-syllabus.pdf"
+bibliography: references.bib
+csl: history_and_theory.csl
+---
+
+## Description
+
+The purpose of this module is to introduce history students to the study of economic historians by exposing them to the realities of historical data collection and interpretation. The module will cover key methods in economic history as well as key historiographical debates that revolve around central questions of collection, measurement, and analysis. The course builds on classic debates in economic history to allow students the opportunity to interrogate how historians have grappled with questions of the economy, welfare and growth in the long term.
+
+## 1. The history of economic history
+
+We open by contextualizing economic history and quantitative methods in historical inquiry within the broader development of the discipline. We discuss the ‘cliometric’ movement in the second half of the 20th century, its strengths and weaknesses.
+
+Core readings:
+
+1.  @fogel1966 ([link](https://www.jstor.org/stable/pdf/2593168.pdf))
+
+2.  @lamoreaux2015 ([link](https://doi.org/10.1017/S0022050715001679))
+
+3.  @gutmann2018 ([link](https://doi.org/10.1017/S0022050718000177))
+
+## 2. The history of quantification
+
+We need to start by thinking about the relationship between measurement, statistics and chance. The study of chance is relatively new – certainly new within mathematics. It was only over the course of the last few centuries that ideas developed about how we might quantify and describe chance processes that are subject to chance. We will tackle some hard philosophical readings this week about the emergence of probability as an object of study, and think about how this relates to quantification in history and the social sciences.
+
+Core reading:
+
+1.  @hacking1990, Chapter 1 and Chapter 23
+2.  @porter1994
+
+## 3. Basic tools: central tendencies and dispersion
+
+We develop basic tools here to think about how we summarize data and communicate about it. This means working through concepts that should be familiar (averages) and concepts that may seem less familiar (standard deviations).
+
+Core readings:
+
+1.  @feinstein2002, Chapter 2 (harder)
+2.  @hudson2016, Chapter 4 (easier)
+3.  @aronow2019, Chapter 2 (hardest – most concise/complete)
+4.  @mccloskey1996
+
+## 4. Measurement in action: selection bias
+
+Textbook mathematics is all very straightforward but almost all actual research has to cope with the problem of selection bias. We will work through a case study in selection bias this week looking at the problem of inferring historical welfare from samples of population heights – a practice known as anthropometrics.
+
+Core readings:
+
+1.  @bodenhorn2017 (this is the first critique)
+2.  @komlos2019 (the reply)
+3.  @bodenhorn2019 (the reply to the reply)
+
+## 5. Samples and their interpretation: Measuring historical wages
+
+This session is devoted to the debate around early modern wage rates (Allen and Stephenson and Humphries). This debate is critical to theories of why the industrial revolution occurred in Britain as opposed to elsewhere, and hinges around difficult questions of measurement: what samples of wages do we have to make statements about ‘British wage rates’ in the early modern period? How many days did people actually work, and were the rates for individuals or firms?
+
+Core readings:
+
+1.  @allen2011
+2.  @humphries2013
+3.  @allen2015
+4.  @humphries2019
+5.  @allen2020
+
+## 6. Rival models: empire and historical bond yields
+
+Bond yields have the potential to summarize a large amount of information about interest rate risk, political risk, default risk, exchange rate risk, etc. and have been objects of intensive interest. We will tackle here debates around the measurement of default risk for sovereign vs colonial borrowers and the relative role of colonialism vs the gold standard as categories of explanation. The key methodological tension this week is the question of what model you bring to the same data.
+
+Core reading:
+
+1.  @bordo1996
+2.  @ferguson2006
+3.  @accominotti2011
+
+## 7. Measuring the price level
+
+Inter-temporal comparisons of prices only make sense if we can adjust those prices by how much things cost. This is not straightforward and gets harder in earlier periods where prices are more difficult to come by. We will tackle this week the ‘standard of living debate’ about whether the industrial revolution in Britain improved or worsened wages and by extension living standards for the average labourer. We will go over how the ‘optimistic’ early wage series of Lindert and Williamson proved optimistic precisely because of poor measures of changing prices, and how this series was revised by Feinstein in his article “Pessimism perpetuated”.
+
+Core reading:
+
+1.  @hobsbawm1963
+2.  @lindert1983
+3.  @feinstein1998
+
+## 8. Measuring GDP
+
+GDP is one of the most frequently referenced economic measures. It is also widely misunderstood, highly constructed, and in many instances unreliable. We focus this week on several problems with measuring GDP, ranging from institutional capacity to adjustments for variety and quality.
+
+Core reading:
+
+1.  @jerven2013, Intro and Chapter 1
+2.  @coyle2014, Chapter 4
+3.  @nordhaus1997
+
+## 9. Measuring historical population
+
+Many social scientists rely on historical measures of population in regression models or theoretical accounts of growth or political change. This week we will tackle a recent critique of this data from Guinnane (2023), which highlights the difficulty of relying on very approximate data (correct only to an order of magnitude at best), which is itself the product of a model.
+
+Core reading:
+
+1.  @guinnane2023
+2.  @nunn2011
+
+## 10. Measuring inequality
+
+Measuring inequality is intrinsically quite difficult because it requires measurements of the whole distribution of income or wealth and not simply its average. This makes inequality measures much more sensitive to problems of sample selection in which high or low values are more likely to be missed. In this week we tackle debates between Auten and Splinter on the one side, and Piketty, Saez and Zucman on the other, as to whether 20th century inequality has increased and by how much. As this debate reveals, even with very extensive modern income tax data, answering questions about inequality depend crucially on what we assume about individuals not in the data set – if they are mostly rich or mostly poor.
+
+Core reading:
+
+1.  @piketty2018
+2.  @auten2024
