@@ -71,8 +71,9 @@ We will set aside class-time near reading week to work on your essays, and I wil
 3.  The promise and peril of 'big' data
 4.  Exercise: nano-history/micro-history/quantification
 
-## History and Economic History 
+## History and Economic History
 
+::: smaller
 > "Economic history has never been and should never by anything like a closed field in which practitioners converse mostly with one another. **A busy intersection of history and the social sciences**, where economists, political scientists, sociologists, anthropologists, demographers and historians come and go."
 >
 > -- Joel Mokyr, 2023
@@ -80,6 +81,7 @@ We will set aside class-time near reading week to work on your essays, and I wil
 -   As a 'hybrid' field economic history is supposed to draw on the strengths of economics and history
 
 -   In practice, its relationship to the two parent fields has shifted over time and has not always been smooth.
+:::
 
 ## Quantification in history
 
@@ -101,16 +103,18 @@ We will set aside class-time near reading week to work on your essays, and I wil
 
 ## Quantification in history: reactions
 
+::: smaller
 -   Older quantifiers (1920s) became prominent in the profession
 
 -   The quantifiers of the 1960s met fierce resistance and mostly migrated to social science departments (economics/political science/sociology)
 
--   Reactions to quantification were fierce: "Bitch-Goddess QUANTIFICATION" or "almost all important questions are important precisely because they are not susceptible to quantitative answers" [@ruggles2021]
+-   Reactions to quantification were fierce: "almost all important questions are important precisely because they are not susceptible to quantitative answers" [@ruggles2021]
 
     -   Most critique from the right: abandonment of narrative and elite political history
 
     -   But also from left e.g.
         Judt: "History is about *politics*"
+:::
 
 ## Quantification in history: the rise of the cultural turn
 
@@ -118,6 +122,7 @@ We will set aside class-time near reading week to work on your essays, and I wil
 
 ## History in Economics
 
+::: smaller
 -   Early work published in economics journals (1920s) often looked more like history
 
 -   Growing quantification in economics pushed out descriptive historical work
@@ -127,6 +132,7 @@ We will set aside class-time near reading week to work on your essays, and I wil
     -   Much of the New Economic History was the adoption of economic **theory** as much as statistical measurement
 
 -   But growing concerns in the 1990s about the quality of statistical methods in economics culminate in a pivot to less theoretical work [@angrist2008]
+:::
 
 ## History in Economics
 
@@ -138,11 +144,13 @@ We will set aside class-time near reading week to work on your essays, and I wil
 
 ## The New Economic History and Counterfactuals
 
-> " Redlich argues that counterfactual propositions are fundamentally alian to economic history. He also believes they are untestable and hence calls essays involving such propositions 'quasi-history'. ...The difference between the old and the new economic history is not the frequency with which one encounters counterfactual propositions, but the extent to which such propositions are made explicit." [@fogel1966, p655]
+::: smaller
+> "Redlich argues that counterfactual propositions are fundamentally alian to economic history. He also believes they are untestable and hence calls essays involving such propositions 'quasi-history'. ...The difference between the old and the new economic history is not the frequency with which one encounters counterfactual propositions, but the extent to which such propositions are made explicit." [@fogel1966, p655]
 
 -   The idea is that 'causal claims imply counterfactuals' (this idea is common in statistics as well)
 
 -   New Economic History tended to use economic theory to structure their counterfactuals
+:::
 
 ## 'Big' Data
 
@@ -150,7 +158,7 @@ We will set aside class-time near reading week to work on your essays, and I wil
 
 -   Increased computing power has made previously impossible tasks more feasible
 
-    -    E.g. record linkage
+    -   E.g. record linkage
 
 -   This has opened up the possibility of using sources like image and text [@gutmann2018]
 
@@ -177,3 +185,5 @@ Read the handout and we will discuss the following questions:
 1.  What do we make of the concept of an 'outlier'
 2.  What would de Vries make of the idea that you can 'let the data speak for itself'
 3.  Is working with a collection of nano-histories (data) fundamentally different from conventional history?
+
+## Bibliography
