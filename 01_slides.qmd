@@ -1,0 +1,62 @@
+---
+title: "Introduction"
+author: "Gabriel Mesevage"
+format: revealjs
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+## About the course
+
+-   Introduce some of the methods economic historians use
+    -   This will be illustrated mostly through controversies and debates in economic history
+-   Think about how we tackle the historical study of large collections of things
+    -   This includes thinking through trade-offs between depth and breadth and how we summarize information
+
+## Introductions
+
+**About me**
+
+I'm a mostly quantitative economic historian.
+I work mostly on financial markets in the 19th century focused on London but have done some research on Paris/New York as well.
+I've also done some work on other bits of British economic history including welfare.
+I like quantitative methods, and think they should have a place in historical research.
+I've done a little methodological work on network econometrics, and am interested in Bayesian statistics.
+
+**Contacting me**: gabriel.mesevage\@kcl.ac.uk
+
+**Office hours**: Monday 3-4, and Tuesday 11-12 in S8.13.
+
+## Course logistics
+
+**The syllabus**
+
+Available on Keats page.
+
+Also available on github: [here](https://github.com/gabrielfgm/methods-in-economic-history)
+
+I link the readings from the syllabus (or will do this before you need to read things).
+Where needed I make pdfs available online.
+
+## Course logistics
+
+**Assessment**
+
+One 3,000 word essay worth 100% of the grade.
+
+The essays is **due 28 April 2026 before 14:00**.
+
+The website will mark you late if you post it **at** 14:00, it must be submitted **before**.
+
+I do not control deadlines.
+I cannot grant extensions.
+If you need on you must go through the MCF process with the history department (not recommended).
+
+## The essay
+
+I will ask you to tackle a debate in the historiography, and discuss the role of theory and measurement in the debate.
+
+I will a more complete assessment brief for you and post this to Keats/Github in the coming days.
+
+We will set aside class-time near reading week to work on your essays.
