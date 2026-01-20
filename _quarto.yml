@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+  # This script runs after rendering. It copies the markdown output 
+  # from the docs folder to the root README.md
+  post-render: 
+    - cp docs/syllabus.md README.md
+
+website:
+  title: "Methods in Economic History"
+  navbar:
+    left:
+      - text: "Syllabus"
+        href: syllabus.qmd
+      - text: "Slides"
+        href: slides/01_slides.qmd 
+
+# Global bibliography (so it works for both slides and syllabus)
+bibliography: references.bib
+
+format:
+  # Default settings for your HTML slides/site
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

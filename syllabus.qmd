@@ -2,8 +2,13 @@
 title: "Syllabus: Methods in Economic History 6AAH1008"
 author: "Gabriel Mesevage"
 format:
+  # 1. The PDF for students to download
   pdf: 
-    output-file: "pdf-syllabus.pdf"
+    output-file: "syllabus.pdf"
+  
+  # 2. The Markdown for the Website/README
+  gfm: 
+    output-file: "syllabus.md" # This is what the post-render script copies!
 bibliography: references.bib
 csl: history_and_theory.csl
 ---
