@@ -107,6 +107,9 @@ We will set aside class-time near reading week to work on your essays, and I wil
 -   Older quantifiers (1920s) became prominent in the profession
 
 -   The quantifiers of the 1960s met fierce resistance and mostly migrated to social science departments (economics/political science/sociology)
+:::
+
+## Quantification in history: reactions
 
 -   Reactions to quantification were fierce: "almost all important questions are important precisely because they are not susceptible to quantitative answers" [@ruggles2021]
 
@@ -114,7 +117,6 @@ We will set aside class-time near reading week to work on your essays, and I wil
 
     -   But also from left e.g.
         Judt: "History is about *politics*"
-:::
 
 ## Quantification in history: the rise of the cultural turn
 
@@ -146,11 +148,13 @@ We will set aside class-time near reading week to work on your essays, and I wil
 
 ::: smaller
 > "Redlich argues that counterfactual propositions are fundamentally alian to economic history. He also believes they are untestable and hence calls essays involving such propositions 'quasi-history'. ...The difference between the old and the new economic history is not the frequency with which one encounters counterfactual propositions, but the extent to which such propositions are made explicit." [@fogel1966, p655]
+:::
+
+## The New Economic History and Counterfactuals
 
 -   The idea is that 'causal claims imply counterfactuals' (this idea is common in statistics as well)
 
 -   New Economic History tended to use economic theory to structure their counterfactuals
-:::
 
 ## 'Big' Data
 
