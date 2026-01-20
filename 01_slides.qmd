@@ -5,6 +5,7 @@ format: revealjs
 editor: 
   markdown: 
     wrap: sentence
+bibliography: references.bib
 ---
 
 ## About the course
@@ -59,4 +60,120 @@ I will ask you to tackle a debate in the historiography, and discuss the role of
 
 I will a more complete assessment brief for you and post this to Keats/Github in the coming days.
 
-We will set aside class-time near reading week to work on your essays.
+We will set aside class-time near reading week to work on your essays, and I will give you feedback on a 500 word outline.
+
+## Quantification in history
+
+**Outline**
+
+1.  The changing relationship between history and quantification
+2.  The question of counter-factuals
+3.  The promise and peril of 'big' data
+4.  Exercise: nano-history/micro-history/quantification
+
+## History and Economic History 
+
+> "Economic history has never been and should never by anything like a closed field in which practitioners converse mostly with one another. **A busy intersection of history and the social sciences**, where economists, political scientists, sociologists, anthropologists, demographers and historians come and go."
+>
+> -- Joel Mokyr, 2023
+
+-   As a 'hybrid' field economic history is supposed to draw on the strengths of economics and history
+
+-   In practice, its relationship to the two parent fields has shifted over time and has not always been smooth.
+
+## Quantification in history
+
+-   The New History (early 20th century)
+
+    -   Allied to a project (sometimes Marxist) of focusing on "the common man" [@ruggles2021]
+
+-   The New Economic/Political/Social History (1960s)
+
+    -   @fogel1966 is an exemplar, but matched in political science and demography
+
+-   The 'New History of Capitalism':
+
+    -   ongoing, pushed in particular by e.g. @beckert2004 on which more below
+
+## Quantification in history: leading US journals
+
+![](images/clipboard-2883001995.png)
+
+## Quantification in history: reactions
+
+-   Older quantifiers (1920s) became prominent in the profession
+
+-   The quantifiers of the 1960s met fierce resistance and mostly migrated to social science departments (economics/political science/sociology)
+
+-   Reactions to quantification were fierce: "Bitch-Goddess QUANTIFICATION" or "almost all important questions are important precisely because they are not susceptible to quantitative answers" [@ruggles2021]
+
+    -   Most critique from the right: abandonment of narrative and elite political history
+
+    -   But also from left e.g.
+        Judt: "History is about *politics*"
+
+## Quantification in history: the rise of the cultural turn
+
+![](images/clipboard-861812166.png)
+
+## History in Economics
+
+-   Early work published in economics journals (1920s) often looked more like history
+
+-   Growing quantification in economics pushed out descriptive historical work
+
+-   At the time of the New Economic History economic work was not very historical!
+
+    -   Much of the New Economic History was the adoption of economic **theory** as much as statistical measurement
+
+-   But growing concerns in the 1990s about the quality of statistical methods in economics culminate in a pivot to less theoretical work [@angrist2008]
+
+## History in Economics
+
+![](images/clipboard-1479852146.png)
+
+-   historical articles growing in importance now in economics
+
+-   Historical work (of a certain kind!) continually rewarded e.g. @acemoglu2001 and @mokyr2005
+
+## The New Economic History and Counterfactuals
+
+> " Redlich argues that counterfactual propositions are fundamentally alian to economic history. He also believes they are untestable and hence calls essays involving such propositions 'quasi-history'. ...The difference between the old and the new economic history is not the frequency with which one encounters counterfactual propositions, but the extent to which such propositions are made explicit." [@fogel1966, p655]
+
+-   The idea is that 'causal claims imply counterfactuals' (this idea is common in statistics as well)
+
+-   New Economic History tended to use economic theory to structure their counterfactuals
+
+## 'Big' Data
+
+-   Computerization has grown the size of data sets substantially
+
+-   Increased computing power has made previously impossible tasks more feasible
+
+    -    E.g. record linkage
+
+-   This has opened up the possibility of using sources like image and text [@gutmann2018]
+
+## 'Big' Data reconsidered
+
+-   Data can be 'big' in several dimensions
+
+    -   We might record many things about each entry (columns in the spreadsheet)
+
+    -   We might record more entries (rows)
+
+    -   When there are more columns than rows inference is hard
+
+-   'Bigness' should not be confused with information: e.g. time series
+
+-   'Bigness' does not resolve problems of selection or causation
+
+## Exercise: micro-histories/nano-histories
+
+In a symposium on micro-history the historian Jan de Vries reflected on the nature of microhistory, its relationship to a data point, and the question of 'outliers'.
+
+Read the handout and we will discuss the following questions:
+
+1.  What do we make of the concept of an 'outlier'
+2.  What would de Vries make of the idea that you can 'let the data speak for itself'
+3.  Is working with a collection of nano-histories (data) fundamentally different from conventional history?

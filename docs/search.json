@@ -32,6 +32,90 @@
     "href": "01_slides.html#the-essay",
     "title": "Introduction",
     "section": "The essay",
-    "text": "The essay\nI will ask you to tackle a debate in the historiography, and discuss the role of theory and measurement in the debate.\nI will a more complete assessment brief for you and post this to Keats/Github in the coming days.\nWe will set aside class-time near reading week to work on your essays."
+    "text": "The essay\nI will ask you to tackle a debate in the historiography, and discuss the role of theory and measurement in the debate.\nI will a more complete assessment brief for you and post this to Keats/Github in the coming days.\nWe will set aside class-time near reading week to work on your essays, and I will give you feedback on a 500 word outline."
+  },
+  {
+    "objectID": "01_slides.html#quantification-in-history",
+    "href": "01_slides.html#quantification-in-history",
+    "title": "Introduction",
+    "section": "Quantification in history",
+    "text": "Quantification in history\nOutline\n\nThe changing relationship between history and quantification\nThe question of counter-factuals\nThe promise and peril of ‘big’ data\nExercise: nano-history/micro-history/quantification"
+  },
+  {
+    "objectID": "01_slides.html#history-and-economic-history",
+    "href": "01_slides.html#history-and-economic-history",
+    "title": "Introduction",
+    "section": "History and Economic History",
+    "text": "History and Economic History\n\n“Economic history has never been and should never by anything like a closed field in which practitioners converse mostly with one another. A busy intersection of history and the social sciences, where economists, political scientists, sociologists, anthropologists, demographers and historians come and go.”\n– Joel Mokyr, 2023\n\n\nAs a ‘hybrid’ field economic history is supposed to draw on the strengths of economics and history\nIn practice, its relationship to the two parent fields has shifted over time and has not always been smooth."
+  },
+  {
+    "objectID": "01_slides.html#quantification-in-history-1",
+    "href": "01_slides.html#quantification-in-history-1",
+    "title": "Introduction",
+    "section": "Quantification in history",
+    "text": "Quantification in history\n\nThe New History (early 20th century)\n\nAllied to a project (sometimes Marxist) of focusing on “the common man” (Ruggles 2021)\n\nThe New Economic/Political/Social History (1960s)\n\nFogel (1966) is an exemplar, but matched in political science and demography\n\nThe ‘New History of Capitalism’:\n\nongoing, pushed in particular by e.g. Beckert (2004) on which more below"
+  },
+  {
+    "objectID": "01_slides.html#quantification-in-history-leading-us-journals",
+    "href": "01_slides.html#quantification-in-history-leading-us-journals",
+    "title": "Introduction",
+    "section": "Quantification in history: leading US journals",
+    "text": "Quantification in history: leading US journals"
+  },
+  {
+    "objectID": "01_slides.html#quantification-in-history-reactions",
+    "href": "01_slides.html#quantification-in-history-reactions",
+    "title": "Introduction",
+    "section": "Quantification in history: reactions",
+    "text": "Quantification in history: reactions\n\nOlder quantifiers (1920s) became prominent in the profession\nThe quantifiers of the 1960s met fierce resistance and mostly migrated to social science departments (economics/political science/sociology)\nReactions to quantification were fierce: “Bitch-Goddess QUANTIFICATION” or “almost all important questions are important precisely because they are not susceptible to quantitative answers” (Ruggles 2021)\n\nMost critique from the right: abandonment of narrative and elite political history\nBut also from left e.g. Judt: “History is about politics”"
+  },
+  {
+    "objectID": "01_slides.html#quantification-in-history-the-rise-of-the-cultural-turn",
+    "href": "01_slides.html#quantification-in-history-the-rise-of-the-cultural-turn",
+    "title": "Introduction",
+    "section": "Quantification in history: the rise of the cultural turn",
+    "text": "Quantification in history: the rise of the cultural turn"
+  },
+  {
+    "objectID": "01_slides.html#history-in-economics",
+    "href": "01_slides.html#history-in-economics",
+    "title": "Introduction",
+    "section": "History in Economics",
+    "text": "History in Economics\n\nEarly work published in economics journals (1920s) often looked more like history\nGrowing quantification in economics pushed out descriptive historical work\nAt the time of the New Economic History economic work was not very historical!\n\nMuch of the New Economic History was the adoption of economic theory as much as statistical measurement\n\nBut growing concerns in the 1990s about the quality of statistical methods in economics culminate in a pivot to less theoretical work (Angrist and Pischke 2008)"
+  },
+  {
+    "objectID": "01_slides.html#history-in-economics-1",
+    "href": "01_slides.html#history-in-economics-1",
+    "title": "Introduction",
+    "section": "History in Economics",
+    "text": "History in Economics\n\n\nhistorical articles growing in importance now in economics\nHistorical work (of a certain kind!) continually rewarded e.g. Acemoglu, Johnson, and Robinson (2001) and Mokyr (2005)"
+  },
+  {
+    "objectID": "01_slides.html#the-new-economic-history-and-counterfactuals",
+    "href": "01_slides.html#the-new-economic-history-and-counterfactuals",
+    "title": "Introduction",
+    "section": "The New Economic History and Counterfactuals",
+    "text": "The New Economic History and Counterfactuals\n\n” Redlich argues that counterfactual propositions are fundamentally alian to economic history. He also believes they are untestable and hence calls essays involving such propositions ‘quasi-history’. …The difference between the old and the new economic history is not the frequency with which one encounters counterfactual propositions, but the extent to which such propositions are made explicit.” (Fogel 1966, p655)\n\n\nThe idea is that ‘causal claims imply counterfactuals’ (this idea is common in statistics as well)\nNew Economic History tended to use economic theory to structure their counterfactuals"
+  },
+  {
+    "objectID": "01_slides.html#big-data",
+    "href": "01_slides.html#big-data",
+    "title": "Introduction",
+    "section": "‘Big’ Data",
+    "text": "‘Big’ Data\n\nComputerization has grown the size of data sets substantially\nIncreased computing power has made previously impossible tasks more feasible\n\nE.g. record linkage\n\nThis has opened up the possibility of using sources like image and text (Gutmann, Klancher Merchant, and Roberts 2018)"
+  },
+  {
+    "objectID": "01_slides.html#big-data-reconsidered",
+    "href": "01_slides.html#big-data-reconsidered",
+    "title": "Introduction",
+    "section": "‘Big’ Data reconsidered",
+    "text": "‘Big’ Data reconsidered\n\nData can be ‘big’ in several dimensions\n\nWe might record many things about each entry (columns in the spreadsheet)\nWe might record more entries (rows)\nWhen there are more columns than rows inference is hard\n\n‘Bigness’ should not be confused with information: e.g. time series\n‘Bigness’ does not resolve problems of selection or causation"
+  },
+  {
+    "objectID": "01_slides.html#exercise-micro-historiesnano-histories",
+    "href": "01_slides.html#exercise-micro-historiesnano-histories",
+    "title": "Introduction",
+    "section": "Exercise: micro-histories/nano-histories",
+    "text": "Exercise: micro-histories/nano-histories\nIn a symposium on micro-history the historian Jan de Vries reflected on the nature of microhistory, its relationship to a data point, and the question of ‘outliers’.\nRead the handout and we will discuss the following questions:\n\nWhat do we make of the concept of an ‘outlier’\nWhat would de Vries make of the idea that you can ‘let the data speak for itself’\nIs working with a collection of nano-histories (data) fundamentally different from conventional history?\n\n\n\n\n\n\n\n\n\nAcemoglu, Daron, Simon Johnson, and James A Robinson. 2001. “The Colonial Origins of Comparative Development: An Empirical Investigation.” THE AMERICAN ECONOMIC REVIEW 91 (5): 289.\n\n\nAngrist, Joshua D., and Jörn-Steffen Pischke. 2008. Mostly Harmless Econometrics: An Empiricist’s Companion. Princeton University Press.\n\n\nBeckert, Sven. 2004. “Emancipation and Empire: Reconstructing the Worldwide Web of Cotton Production in the Age of the American Civil War.” The American Historical Review 109 (5): 1405–38. https://doi.org/10.1086/530931.\n\n\nFogel, Robert. 1966. “The New Economic History. I. Its Findings and Methods.” Economic History Review 19 (3): 642–56.\n\n\nGutmann, M., E. Klancher Merchant, and E. Roberts. 2018. ““Big Data” in Economic History.” Journal of Economic History 78 (1): 268299.\n\n\nMokyr, Joel. 2005. “The Intellectual Origins of Modern Economic Growth.” The Journal of Economic History 65 (2): 285351. http://www.jstor.org/stable/3875064.\n\n\nRuggles, Steven. 2021. “The Revival of Quantification: Reflections on Old New Histories.” Social Science History 45 (1): 1–25. https://doi.org/10.1017/ssh.2020.44."
   }
 ]
