@@ -1,0 +1,201 @@
+---
+title: "Reasoning about a quantitative world"
+author: "Gabriel Mesevage"
+format: revealjs
+editor: 
+  markdown: 
+    wrap: sentence
+bibliography: references.bib
+---
+
+## The plan
+
+1.  I will talk about @hacking1990 on Peirce and the nature of induction
+2.  Discuss: the project of @hacking1990 and what he does.
+3.  Discuss:
+    1.  The growth of quantification and its implications [@hacking1990; @porter1994]
+    2.  What quantification does
+4.  Toy exercise
+
+## Induction and statistics
+
+![](images/clipboard-477691077.png)
+
+## The problem of induction
+
+> "That the sun will *not* rise tomorrow is no less intelligible a proposition that that it will rise. We should in vain, therefore, attempt to demonstrate its falsehood." –Hume quoted in @diaconis2018
+
+-   Inductive inferences do not follow a logical deductions from their premises
+
+-   But surprisingly effective?
+
+## Pierce on inference
+
+-   Peirce is famous for contributing the idea of what he called 'abduction'
+
+    -   Renamed by philosophers 'inference to the best explanation'
+
+-   This is **not** a solution to the problem of induction
+
+## Pierce on induction
+
+> "...a process which would more often yield truth than the reverse" [@hacking1990, p. 209]
+
+-   This is at the core of his idea
+
+-   Inductive inference: 'the conclusion is **usually** true when the premises are true'
+
+## Pierce on induction
+
+> "When the premises are quantitative, we may be able to replace the 'usually' by a numerical probability. **That does not mean that conclusion has a probability of such and such.** Rather: the conclusion is reached by an argument that, with such and such a probability, gives true conclusions from true premises." [@hacking1990, p. 209 emphasis added].
+
+-   '...Peirce was providing the core of the rationale of the theory of confidence intervals' [@hacking1990, p. 210]
+
+## Intuition
+
+```{r}
+#| label: ci-simulation
+#| message: false
+#| warning: false
+#| fig-cap: "Simulation of Confidence Intervals (89% Level)"
+
+library(tidyverse)
+library(patchwork) # Optional but great for combining plots, though facets work here too
+
+# 1. Set Parameters
+set.seed(89)         # For reproducibility
+mu_true <- 0         # True population mean
+sigma <- 1           # True population standard deviation
+n_sample <- 30       # Sample size drawn per experiment
+conf_level <- 0.89   # 89% Confidence level
+sim_steps <- c(1, 10, 100, 10000) # The steps we want to visualize
+
+# 2. Generate the Master Data (1000 total simulations)
+# We generate the max needed (1000) and then filter for the plots
+max_sims <- max(sim_steps)
+
+master_data <- tibble(sim_id = 1:max_sims) %>%
+  rowwise() %>%
+  mutate(
+    # Generate random sample
+    data = list(rnorm(n_sample, mean = mu_true, sd = sigma)),
+    
+    # Calculate stats
+    x_bar = mean(unlist(data)),
+    s = sd(unlist(data)),
+    se = s / sqrt(n_sample),
+    
+    # Critical Value (t-distribution)
+    alpha = 1 - conf_level,
+    t_crit = qt(1 - alpha / 2, df = n_sample - 1),
+    
+    # Intervals
+    ci_lower = x_bar - t_crit * se,
+    ci_upper = x_bar + t_crit * se,
+    
+    # Check if we captured the mean
+    captured = ifelse(ci_lower <= mu_true & ci_upper >= mu_true, 
+                      "Captured", "Missed")
+  ) %>%
+  ungroup()
+
+# 3. Create a combined dataset for plotting
+# We duplicate rows to assign them to different "View" groups (1, 10, 100, 1000)
+plot_data <- map_dfr(sim_steps, function(k) {
+  
+  # Slice the first k simulations
+  subset_data <- master_data %>% slice(1:k)
+  
+  # Calculate empirical coverage for this specific subset
+  coverage_rate <- mean(subset_data$captured == "Captured")
+  
+  # Return data with a labeling column for the facet
+  subset_data %>%
+    mutate(
+      n_sims_label = factor(k, levels = sim_steps),
+      facet_title = paste0("Sims: ", k, " | Coverage: ", round(coverage_rate * 100, 1), "%")
+    )
+})
+
+# ensure factor order for plotting
+plot_data$facet_title <- factor(plot_data$facet_title, levels = unique(plot_data$facet_title))
+
+# 4. Plot
+ggplot(plot_data, aes(y = sim_id)) +
+  # Draw the CI lines
+  geom_segment(aes(x = ci_lower, xend = ci_upper, y = sim_id, yend = sim_id, color = captured), 
+               linewidth = 0.6) +
+  # Draw the sample means
+  geom_point(aes(x = x_bar, color = captured), size = 1) +
+  # Draw the True Mean line
+  geom_vline(xintercept = mu_true, linetype = "dashed", alpha = 0.5) +
+  
+  # Facet by the simulation count groups
+  facet_wrap(~facet_title, scales = "free_y", ncol = 2) +
+  
+  # Colors
+  scale_color_manual(values = c("Captured" = "gray50", "Missed" = "#D55E00")) +
+  
+  # Labels and Theme
+  labs(
+    title = paste0("Calibration of ", conf_level*100, "% Confidence Intervals"),
+    subtitle = "As N simulations increases, empirical coverage converges to theoretical 89%",
+    x = "Estimate Value",
+    y = "Experiment ID",
+    color = "Result"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    strip.text = element_text(face = "bold", size = 11),
+    panel.grid.minor.y = element_blank()
+  )
+```
+
+## Discussion: @hacking1990
+
+> "A noncommittal account of what I am attempting might
+> be: an epistemological study of the social and behavioural sciences,
+> with consequences for the concept of causality in the natural sciences. ...Philosophical analysis is the investigation of
+> concepts. Concepts are words in their sites. Their sites are sentences
+> and institutions. I regret that I have said too little about
+> institutions, and too much about sentences and how they are arranged." p. 7
+
+## Discussion
+
+> "The transformations that I shall describe are closely connected with an
+> event so all-embracing that we seldom pause to notice it: an avalanche
+> of printed numbers. The nation-states classified, counted and tabulated
+> their subjects anew." @hacking1990, p. 2
+
+-   What are the consequences for the study of society of the 'avalanche of numbers'?
+
+-   In what ways does this alter the practice of history?
+
+## Discussion
+
+> "Even the most elementary operation of statistics, counting, is senseless
+> unless the objects counted can be mobilized and defended as
+> homogeneous." @porter1994, p. 399
+
+-   What does Porter mean by this?
+
+-   How can quantification alter how we think about things?
+
+## Discussion
+
+> "In economic and social affairs, quantitative predictions and management
+> by numbers often create inducements for business people, medical
+> patients, taxpayers, and criminals (among others) to alter their
+> behavior in a way that undermines the numbers." @porter1994, p. 401
+
+-   How should we think about the social life of numbers?
+
+-   What are examples of quantification altering behavior?
+
+## Project
+
+How many students are studying history at KCL?
+Develop a procedure for estimating this number.
+
+## Bibliography

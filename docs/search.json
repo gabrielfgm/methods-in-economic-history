@@ -1,5 +1,96 @@
 [
   {
+    "objectID": "02_slides.html#the-plan",
+    "href": "02_slides.html#the-plan",
+    "title": "Reasoning about a quantitative world",
+    "section": "The plan",
+    "text": "The plan\n\nI will talk about Hacking (1990) on Peirce and the nature of induction\nDiscuss: the project of Hacking (1990) and what he does.\nDiscuss:\n\nThe growth of quantification and its implications (Hacking 1990; Porter 1994)\nWhat quantification does\n\nToy exercise"
+  },
+  {
+    "objectID": "02_slides.html#induction-and-statistics",
+    "href": "02_slides.html#induction-and-statistics",
+    "title": "Reasoning about a quantitative world",
+    "section": "Induction and statistics",
+    "text": "Induction and statistics"
+  },
+  {
+    "objectID": "02_slides.html#the-problem-of-induction",
+    "href": "02_slides.html#the-problem-of-induction",
+    "title": "Reasoning about a quantitative world",
+    "section": "The problem of induction",
+    "text": "The problem of induction\n\n“That the sun will not rise tomorrow is no less intelligible a proposition that that it will rise. We should in vain, therefore, attempt to demonstrate its falsehood.” –Hume quoted in DIACONIS and SKYRMS (2018)\n\n\nInductive inferences do not follow a logical deductions from their premises\nBut surprisingly effective?"
+  },
+  {
+    "objectID": "02_slides.html#pierce-on-inference",
+    "href": "02_slides.html#pierce-on-inference",
+    "title": "Reasoning about a quantitative world",
+    "section": "Pierce on inference",
+    "text": "Pierce on inference\n\nPeirce is famous for contributing the idea of what he called ‘abduction’\n\nRenamed by philosophers ‘inference to the best explanation’\n\nThis is not a solution to the problem of induction"
+  },
+  {
+    "objectID": "02_slides.html#pierce-on-induction",
+    "href": "02_slides.html#pierce-on-induction",
+    "title": "Reasoning about a quantitative world",
+    "section": "Pierce on induction",
+    "text": "Pierce on induction\n\n“…a process which would more often yield truth than the reverse” (Hacking 1990, 209)\n\n\nThis is at the core of his idea\nInductive inference: ‘the conclusion is usually true when the premises are true’"
+  },
+  {
+    "objectID": "02_slides.html#pierce-on-induction-1",
+    "href": "02_slides.html#pierce-on-induction-1",
+    "title": "Reasoning about a quantitative world",
+    "section": "Pierce on induction",
+    "text": "Pierce on induction\n\n“When the premises are quantitative, we may be able to replace the ‘usually’ by a numerical probability. That does not mean that conclusion has a probability of such and such. Rather: the conclusion is reached by an argument that, with such and such a probability, gives true conclusions from true premises.” (Hacking 1990, 209 emphasis added).\n\n\n‘…Peirce was providing the core of the rationale of the theory of confidence intervals’ (Hacking 1990, 210)"
+  },
+  {
+    "objectID": "02_slides.html#intuition",
+    "href": "02_slides.html#intuition",
+    "title": "Reasoning about a quantitative world",
+    "section": "Intuition",
+    "text": "Intuition\n\nSimulation of Confidence Intervals (89% Level)"
+  },
+  {
+    "objectID": "02_slides.html#discussion-hacking1990",
+    "href": "02_slides.html#discussion-hacking1990",
+    "title": "Reasoning about a quantitative world",
+    "section": "Discussion: Hacking (1990)",
+    "text": "Discussion: Hacking (1990)\n\n“A noncommittal account of what I am attempting might be: an epistemological study of the social and behavioural sciences, with consequences for the concept of causality in the natural sciences. …Philosophical analysis is the investigation of concepts. Concepts are words in their sites. Their sites are sentences and institutions. I regret that I have said too little about institutions, and too much about sentences and how they are arranged.” p. 7"
+  },
+  {
+    "objectID": "02_slides.html#discussion",
+    "href": "02_slides.html#discussion",
+    "title": "Reasoning about a quantitative world",
+    "section": "Discussion",
+    "text": "Discussion\n\n“The transformations that I shall describe are closely connected with an event so all-embracing that we seldom pause to notice it: an avalanche of printed numbers. The nation-states classified, counted and tabulated their subjects anew.” Hacking (1990), p. 2\n\n\nWhat are the consequences for the study of society of the ‘avalanche of numbers’?\nIn what ways does this alter the practice of history?"
+  },
+  {
+    "objectID": "02_slides.html#discussion-1",
+    "href": "02_slides.html#discussion-1",
+    "title": "Reasoning about a quantitative world",
+    "section": "Discussion",
+    "text": "Discussion\n\n“Even the most elementary operation of statistics, counting, is senseless unless the objects counted can be mobilized and defended as homogeneous.” Porter (1994), p. 399\n\n\nWhat does Porter mean by this?\nHow can quantification alter how we think about things?"
+  },
+  {
+    "objectID": "02_slides.html#discussion-2",
+    "href": "02_slides.html#discussion-2",
+    "title": "Reasoning about a quantitative world",
+    "section": "Discussion",
+    "text": "Discussion\n\n“In economic and social affairs, quantitative predictions and management by numbers often create inducements for business people, medical patients, taxpayers, and criminals (among others) to alter their behavior in a way that undermines the numbers.” Porter (1994), p. 401\n\n\nHow should we think about the social life of numbers?\nWhat are examples of quantification altering behavior?"
+  },
+  {
+    "objectID": "02_slides.html#project",
+    "href": "02_slides.html#project",
+    "title": "Reasoning about a quantitative world",
+    "section": "Project",
+    "text": "Project\nHow many students are studying history at KCL? Develop a procedure for estimating this number."
+  },
+  {
+    "objectID": "02_slides.html#bibliography",
+    "href": "02_slides.html#bibliography",
+    "title": "Reasoning about a quantitative world",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\n\nDIACONIS, PERSI, and BRIAN SKYRMS. 2018. Ten Great Ideas about Chance. Princeton University Press. https://doi.org/10.2307/j.ctvc77m33.\n\n\nHacking, Ian. 1990. The Taming of Chance. Cambridge University Press.\n\n\nPorter, Theodore M. 1994. “Making Things Quantitative.” Science in Context 7 (3): 389–407. https://doi.org/10.1017/S0269889700001757."
+  },
+  {
     "objectID": "01_slides.html#about-the-course",
     "href": "01_slides.html#about-the-course",
     "title": "Introduction",
