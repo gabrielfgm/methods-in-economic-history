@@ -72,7 +72,7 @@ reading):
     ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Feinstein_Thomas_Ch2.pdf))
 2.  Pat Hudson and Mina Ishizu *History by Numbers* (Bloomsbury
     Publishing, November 2016)., Chapter 4 (easier)
-    ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Huson_Ishizu_Ch4.pdf))
+    ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Hudson_Ishizu_Ch4.pdf))
 3.  Peter M. Aronow and Benjamin T. Miller *Foundations of Agnostic
     Statistics* (Cambridge University Press, January 2019)., Chapter 2
     (hardest – most concise/complete)
@@ -95,12 +95,15 @@ Core readings:
     “Sample-Selection Biases and the Industrialization Puzzle,” *The
     Journal of Economic History* (March 2017), 77: 1, 171–207. (this is
     the first critique)
+    ([link](https://doi.org/10.1017/S0022050717000031))
 2.  John Komlos and Brian A’Hearn “Clarifications of a puzzle,” *The
     Journal of Economic History* (2019), 79: 4, 1129–1153. (the reply)
+    ([link](https://doi.org/10.1017/S0022050719000573))
 3.  Howard Bodenhorn, Timothy W. Guinnane, and Thomas A. Mroz
     “Diagnosing Sample-Selection Bias in Historical Heights,” *The
     Journal of Economic History* (December 2019), 79: 4, 1154–1175. (the
     reply to the reply)
+    ([link](https://doi.org/10.1017/S002205071900055X))
 
 ## 5. Samples and their interpretation: Measuring historical wages
 

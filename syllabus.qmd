@@ -47,7 +47,7 @@ We develop basic tools here to think about how we summarize data and communicate
 Core readings (pick 1 or two textbook treatments and the additional reading):
 
 1.  @feinstein2002, Chapter 2 (harder) ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Feinstein_Thomas_Ch2.pdf))
-2.  @hudson2016, Chapter 4 (easier) ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Huson_Ishizu_Ch4.pdf))
+2.  @hudson2016, Chapter 4 (easier) ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Hudson_Ishizu_Ch4.pdf))
 3.  @aronow2019, Chapter 2 (hardest – most concise/complete) ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Aronow_Miller_Ch2.pdf))
 4.  @mccloskey1996 ([link](https://www.jstor.org/stable/2729411))
 
@@ -57,9 +57,9 @@ Textbook mathematics is all very straightforward but almost all actual research 
 
 Core readings:
 
-1.  @bodenhorn2017 (this is the first critique)
-2.  @komlos2019 (the reply)
-3.  @bodenhorn2019 (the reply to the reply)
+1.  @bodenhorn2017 (this is the first critique) ([link](https://doi.org/10.1017/S0022050717000031))
+2.  @komlos2019 (the reply) ([link](https://doi.org/10.1017/S0022050719000573))
+3.  @bodenhorn2019 (the reply to the reply) ([link](https://doi.org/10.1017/S002205071900055X))
 
 ## 5. Samples and their interpretation: Measuring historical wages
 
