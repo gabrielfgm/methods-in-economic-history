@@ -46,10 +46,10 @@ We develop basic tools here to think about how we summarize data and communicate
 
 Core readings (pick 1 or two textbook treatments and the additional reading):
 
-1.  @feinstein2002, Chapter 2 (harder)
-2.  @hudson2016, Chapter 4 (easier)
-3.  @aronow2019, Chapter 2 (hardest – most concise/complete)
-4.  @mccloskey1996
+1.  @feinstein2002, Chapter 2 (harder) ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Feinstein_Thomas_Ch2.pdf))
+2.  @hudson2016, Chapter 4 (easier) ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Huson_Ishizu_Ch4.pdf))
+3.  @aronow2019, Chapter 2 (hardest – most concise/complete) ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Aronow_Miller_Ch2.pdf))
+4.  @mccloskey1996 ([link](https://www.jstor.org/stable/2729411))
 
 ## 4. Measurement in action: selection bias
 

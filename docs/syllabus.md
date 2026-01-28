@@ -69,14 +69,17 @@ reading):
 
 1.  C. H. Feinstein and Mark Thomas *Making history count* (Cambridge:
     Cambridge University Press, 2002)., Chapter 2 (harder)
+    ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Feinstein_Thomas_Ch2.pdf))
 2.  Pat Hudson and Mina Ishizu *History by Numbers* (Bloomsbury
     Publishing, November 2016)., Chapter 4 (easier)
+    ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Huson_Ishizu_Ch4.pdf))
 3.  Peter M. Aronow and Benjamin T. Miller *Foundations of Agnostic
     Statistics* (Cambridge University Press, January 2019)., Chapter 2
     (hardest – most concise/complete)
+    ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Aronow_Miller_Ch2.pdf))
 4.  Deirdre N. McCloskey and Stephen T. Ziliak “The standard error of
     regressions,” *Journal of Economic Literature* (1996), 34: 1,
-    97–114.
+    97–114. ([link](https://www.jstor.org/stable/2729411))
 
 ## 4. Measurement in action: selection bias
 
