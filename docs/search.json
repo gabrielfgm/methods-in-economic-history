@@ -1,233 +1,296 @@
 [
   {
-    "objectID": "02_slides.html#the-plan",
-    "href": "02_slides.html#the-plan",
-    "title": "Reasoning about a quantitative world",
+    "objectID": "03_slides.html#the-plan",
+    "href": "03_slides.html#the-plan",
+    "title": "Basic tools: central tendencies and dispersion",
     "section": "The plan",
-    "text": "The plan\n\nI will talk about Hacking (1990) on Peirce and the nature of induction\nDiscuss: the project of Hacking (1990) and what he does.\nDiscuss:\n\nThe growth of quantification and its implications (Hacking 1990; Porter 1994)\nWhat quantification does\n\nToy exercise"
+    "text": "The plan\n\nLocation, or central tendency\nScale, or spread\nFrom populations to samples\nSampling distributions and standard errors"
   },
   {
-    "objectID": "02_slides.html#induction-and-statistics",
-    "href": "02_slides.html#induction-and-statistics",
-    "title": "Reasoning about a quantitative world",
-    "section": "Induction and statistics",
-    "text": "Induction and statistics"
+    "objectID": "03_slides.html#how-do-we-summarize-a-group",
+    "href": "03_slides.html#how-do-we-summarize-a-group",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "How do we summarize a group?",
+    "text": "How do we summarize a group?\n\n“Ladders were made to match the height of the enemy’s wall, which they measured by the layers of bricks, the side turned towards them not being thoroughly whitewashed. These were counted by many persons at once; and though some might miss the right calculation, most would hit upon it, particularly as they counted over and over again, and were no great way from the wall, but could see it easily enough for their purpose. The length required for the ladders was thus obtained, being calculated from the breadth of the brick.”\n– Thucydides, in Stigler (2016), p. 30-31"
   },
   {
-    "objectID": "02_slides.html#the-problem-of-induction",
-    "href": "02_slides.html#the-problem-of-induction",
-    "title": "Reasoning about a quantitative world",
-    "section": "The problem of induction",
-    "text": "The problem of induction\n\n“That the sun will not rise tomorrow is no less intelligible a proposition that that it will rise. We should in vain, therefore, attempt to demonstrate its falsehood.” –Hume quoted in DIACONIS and SKYRMS (2018)\n\n\nInductive inferences do not follow a logical deductions from their premises\nBut surprisingly effective?"
+    "objectID": "03_slides.html#averaging-not-a-universally-known-solution",
+    "href": "03_slides.html#averaging-not-a-universally-known-solution",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Averaging not a universally known solution",
+    "text": "Averaging not a universally known solution\nPer Stigler (2016):\n\nClear evidence of the use of mean in summarizing scientific measurements in late 1660s\nHipparchus (~150 BCE) or Ptolemy (150 CE) don’t seem to know\nal-Biruni (~1000 CE) reports midpoint between min and max"
   },
   {
-    "objectID": "02_slides.html#pierce-on-inference",
-    "href": "02_slides.html#pierce-on-inference",
-    "title": "Reasoning about a quantitative world",
-    "section": "Pierce on inference",
-    "text": "Pierce on inference\n\nPeirce is famous for contributing the idea of what he called ‘abduction’\n\nRenamed by philosophers ‘inference to the best explanation’\n\nThis is not a solution to the problem of induction"
+    "objectID": "03_slides.html#an-early-example",
+    "href": "03_slides.html#an-early-example",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "An early example",
+    "text": "An early example\n\nKöbel’s depiction of the determination of the lawful rod (Köbel 1522) cited in Stigler (2016), p. 32"
   },
   {
-    "objectID": "02_slides.html#pierce-on-induction",
-    "href": "02_slides.html#pierce-on-induction",
-    "title": "Reasoning about a quantitative world",
-    "section": "Pierce on induction",
-    "text": "Pierce on induction\n\n“…a process which would more often yield truth than the reverse” (Hacking 1990, 209)\n\n\nThis is at the core of his idea\nInductive inference: ‘the conclusion is usually true when the premises are true’"
+    "objectID": "03_slides.html#finding-the-center",
+    "href": "03_slides.html#finding-the-center",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Finding the “center”",
+    "text": "Finding the “center”\nThe problem: we want a single number that best represents a whole collection of data.\nThree common answers:\n\nMode – the most frequent value\nMedian – the middle value\nMean – the arithmetic average\n\nThese can give very different answers!"
   },
   {
-    "objectID": "02_slides.html#pierce-on-induction-1",
-    "href": "02_slides.html#pierce-on-induction-1",
-    "title": "Reasoning about a quantitative world",
-    "section": "Pierce on induction",
-    "text": "Pierce on induction\n\n“When the premises are quantitative, we may be able to replace the ‘usually’ by a numerical probability. That does not mean that conclusion has a probability of such and such. Rather: the conclusion is reached by an argument that, with such and such a probability, gives true conclusions from true premises.” (Hacking 1990, 209 emphasis added).\n\n\n‘…Peirce was providing the core of the rationale of the theory of confidence intervals’ (Hacking 1990, 210)"
+    "objectID": "03_slides.html#the-mode",
+    "href": "03_slides.html#the-mode",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The mode",
+    "text": "The mode\nDefinition: The value that appears most frequently in the dataset.\n\nIn Thucydides bricks example, it is the most commonly counted number of bricks\nCan be useful if your object is to be exactly right\nCons: Unstable. Some datasets have no mode or multiple modes\n\nImagine I measure everyone’s height to the nearest micron (millionth of a metre)."
   },
   {
-    "objectID": "02_slides.html#intuition",
-    "href": "02_slides.html#intuition",
-    "title": "Reasoning about a quantitative world",
-    "section": "Intuition",
-    "text": "Intuition\n\nSimulation of Confidence Intervals (89% Level)"
+    "objectID": "03_slides.html#the-median",
+    "href": "03_slides.html#the-median",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The median",
+    "text": "The median\nDefinition: The value that splits the dataset exactly in half. 50% of the data is above it, 50% is below it.\n\nVisual: Line everyone up by height; the person in the exact middle is the median.\n\nIf there are an even number of people we typically average the ‘two in the middle’\n\nPros: “Robust” – it ignores extreme outliers. If the richest person in the world walks into a room, the median income at most moves by one person.\nCons: Harder to use in mathematical formulas. Sometimes we want to put more weight on extreme values."
   },
   {
-    "objectID": "02_slides.html#discussion-hacking1990",
-    "href": "02_slides.html#discussion-hacking1990",
-    "title": "Reasoning about a quantitative world",
-    "section": "Discussion: Hacking (1990)",
-    "text": "Discussion: Hacking (1990)\n\n“A noncommittal account of what I am attempting might be: an epistemological study of the social and behavioural sciences, with consequences for the concept of causality in the natural sciences. …Philosophical analysis is the investigation of concepts. Concepts are words in their sites. Their sites are sentences and institutions. I regret that I have said too little about institutions, and too much about sentences and how they are arranged.” p. 7"
+    "objectID": "03_slides.html#the-mean-building-notation",
+    "href": "03_slides.html#the-mean-building-notation",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The mean: building notation",
+    "text": "The mean: building notation\nDefinition: The arithmetic average.\n\nImagine a list of numbers: wages, ages, prices. Call this list \\(x\\), and we refer to the \\(i\\)th item of this list as \\(x_i\\)\nThe first number is \\(x_1\\), the second is \\(x_2\\), and so on.\nWe need to add them all up. Instead of writing “Sum,” we use the Greek letter Sigma: \\(\\Sigma\\)\nIf we have \\(n\\) items, the mean (written \\(\\bar{x}\\), pronounced “x-bar”) is:\n\n\\[\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i\\]\nTranslation: “Add everything up and divide by the count.”"
   },
   {
-    "objectID": "02_slides.html#discussion",
-    "href": "02_slides.html#discussion",
-    "title": "Reasoning about a quantitative world",
-    "section": "Discussion",
-    "text": "Discussion\n\n“The transformations that I shall describe are closely connected with an event so all-embracing that we seldom pause to notice it: an avalanche of printed numbers. The nation-states classified, counted and tabulated their subjects anew.” Hacking (1990), p. 2\n\n\nWhat are the consequences for the study of society of the ‘avalanche of numbers’?\nIn what ways does this alter the practice of history?"
+    "objectID": "03_slides.html#why-the-mean-1.-the-mean-as-a-balance-point",
+    "href": "03_slides.html#why-the-mean-1.-the-mean-as-a-balance-point",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Why the mean? 1. The mean as a balance point",
+    "text": "Why the mean? 1. The mean as a balance point\n\nPhysical analogy: If you placed weights on a seesaw at the location of each data point, the mean is the exact spot where the fulcrum must be placed for the seesaw to balance perfectly.\nUnlike median and mode, the mean is sensitive to extreme values (outliers)\nEvery observation “pulls” on the mean"
   },
   {
-    "objectID": "02_slides.html#discussion-1",
-    "href": "02_slides.html#discussion-1",
-    "title": "Reasoning about a quantitative world",
-    "section": "Discussion",
-    "text": "Discussion\n\n“Even the most elementary operation of statistics, counting, is senseless unless the objects counted can be mobilized and defended as homogeneous.” Porter (1994), p. 399\n\n\nWhat does Porter mean by this?\nHow can quantification alter how we think about things?"
+    "objectID": "03_slides.html#why-the-mean-2.-sometimes-you-want-the-outliers",
+    "href": "03_slides.html#why-the-mean-2.-sometimes-you-want-the-outliers",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Why the mean? 2. Sometimes you want the outliers",
+    "text": "Why the mean? 2. Sometimes you want the outliers\nImagine a game where I roll a fair die and if it is any number other than 6 I pay you £5. If I roll a six you pay me £100.\n\nModal earnings from this game: £5\nMedian earnings from this game: £5\nAverage earnings from this game: -£12.50!\nThe rare outcome matters a lot!"
   },
   {
-    "objectID": "02_slides.html#discussion-2",
-    "href": "02_slides.html#discussion-2",
-    "title": "Reasoning about a quantitative world",
-    "section": "Discussion",
-    "text": "Discussion\n\n“In economic and social affairs, quantitative predictions and management by numbers often create inducements for business people, medical patients, taxpayers, and criminals (among others) to alter their behavior in a way that undermines the numbers.” Porter (1994), p. 401\n\n\nHow should we think about the social life of numbers?\nWhat are examples of quantification altering behavior?"
+    "objectID": "03_slides.html#when-do-these-differ",
+    "href": "03_slides.html#when-do-these-differ",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "When do these differ?",
+    "text": "When do these differ?\n\nMean, median, and mode can differ substantially in skewed distributions"
   },
   {
-    "objectID": "02_slides.html#project",
-    "href": "02_slides.html#project",
-    "title": "Reasoning about a quantitative world",
-    "section": "Project",
-    "text": "Project\nHow many students are studying history at KCL? Develop a procedure for estimating this number."
+    "objectID": "03_slides.html#when-are-they-the-same",
+    "href": "03_slides.html#when-are-they-the-same",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "When are they the same?",
+    "text": "When are they the same?\n\nWhen the distribution is symmetric and unimodal\n\n\nTwo symmetric and unimodal distributions: Normal and t-distribution"
   },
   {
-    "objectID": "02_slides.html#bibliography",
-    "href": "02_slides.html#bibliography",
-    "title": "Reasoning about a quantitative world",
+    "objectID": "03_slides.html#comparing-the-measures",
+    "href": "03_slides.html#comparing-the-measures",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Comparing the measures",
+    "text": "Comparing the measures\n\n\n\n\n\n\n\n\n\nFeature\nMode\nMedian\nMean\n\n\n\n\nIntuition\nMost typical\nThe middle\nBalance point\n\n\nOutliers\nIgnores them\nIgnores them (Robust)\nHeavily affected\n\n\nMath use\nDifficult\nHarder to manipulate\nEasiest in formulas"
+  },
+  {
+    "objectID": "03_slides.html#why-is-the-mean-so-dominant",
+    "href": "03_slides.html#why-is-the-mean-so-dominant",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Why is the mean so dominant?",
+    "text": "Why is the mean so dominant?\n\nLots of contexts (e.g. finance) where the mean is good because it penalizes big errors.\nEase of calculation: Before computers, calculating the median required sorting all the data (very slow for big lists). Calculating the mean just required keeping a running total.\n\nAlso the function minimizing the squared errors is much easier to work with than the function minimizing the absolute errors."
+  },
+  {
+    "objectID": "03_slides.html#the-location-and-its-errors",
+    "href": "03_slides.html#the-location-and-its-errors",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The location and its “errors”",
+    "text": "The location and its “errors”\nImagine you must pick one number to predict the next value in a dataset. You will be fined based on how wrong you are.\nWe call your miss the ‘error’ \\(e_i = x_i - g\\) where \\(x_i\\) is the actual value and \\(g\\) is your guess.\nThree different penalty rules lead to three different “best” answers:\n\nAll-or-nothing penalty \\(\\rightarrow\\) Mode\nLinear penalty \\(\\rightarrow\\) Median\nSquared penalty \\(\\rightarrow\\) Mean"
+  },
+  {
+    "objectID": "03_slides.html#the-all-or-nothing-game",
+    "href": "03_slides.html#the-all-or-nothing-game",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The all-or-nothing game",
+    "text": "The all-or-nothing game\nThe rule: If you are exactly right, you pay nothing. If you are wrong by any amount, you pay £100.\nBest strategy: Pick the Mode. (small caveat: the mode needs to exist)\n\nIt gives you the highest probability of hitting the number exactly.\n\nLoss function: \\(L(e) = 100 \\times \\mathbb{I}(e \\neq 0)\\)"
+  },
+  {
+    "objectID": "03_slides.html#the-linear-penalty-game",
+    "href": "03_slides.html#the-linear-penalty-game",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The linear penalty game",
+    "text": "The linear penalty game\nThe rule: You pay £1 for every unit you are away from the truth. Being off by 10 costs £10; being off by 100 costs £100.\nBest strategy: Pick the Median.\n\nIt minimizes the sum of absolute deviations\nBalances the distance on the left and right sides\nLoss function: \\(L(e) = 100 \\times |e|\\)"
+  },
+  {
+    "objectID": "03_slides.html#the-squared-penalty-game",
+    "href": "03_slides.html#the-squared-penalty-game",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The squared penalty game",
+    "text": "The squared penalty game\n\nThe rule: You pay based on the square of your error.\n\nOff by 1? Pay £1.\nOff by 10? Pay £100.\nOff by 50? Pay £2,500.\n\nThe logic: Small mistakes are fine, but big mistakes are disastrous.\nBest strategy: Pick the Mean.\n\nIt minimizes the sum of squared errors (Least Squares)\n\nLoss function: \\(L(e) = 100 \\times e^2\\)"
+  },
+  {
+    "objectID": "03_slides.html#from-location-to-spread",
+    "href": "03_slides.html#from-location-to-spread",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "From location to spread",
+    "text": "From location to spread\n\nThe problem: Knowing the average isn’t enough."
+  },
+  {
+    "objectID": "03_slides.html#the-average-squared-error",
+    "href": "03_slides.html#the-average-squared-error",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The average squared error",
+    "text": "The average squared error\n\nRecall: The mean is the number that minimizes the sum of squared errors.\nThe question: If the mean is our “best guess,” how good is that guess on average?\n\nCalculate the squared distance of every point from the mean\nAdd them up and divide by the count\nThis gives us a measure of the average dispersion of the data"
+  },
+  {
+    "objectID": "03_slides.html#variance-definition",
+    "href": "03_slides.html#variance-definition",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Variance: definition",
+    "text": "Variance: definition\n\nDefinition: The Variance (\\(s^2\\)) is the average squared distance from the center.\n\\[s^2 = \\frac{1}{n}\\sum_{i=1}^{n}(x_i - \\bar{x})^2\\]\nTranslation: “How far, on average, are the data points from the mean (squared)?”\nRemember we defined: \\(e_i = x_i - \\bar{x}\\).\nSo we can rewrite the variance as:\n\\[s^2 = \\frac{1}{n}\\sum_{i=1}^{n} e_i^2\\]"
+  },
+  {
+    "objectID": "03_slides.html#the-units-problem",
+    "href": "03_slides.html#the-units-problem",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The units problem",
+    "text": "The units problem\n\n\nIf we measure the age at death of Roman Emperors in years, the variance is measured in years squared\nWhat is a “square year”? It doesn’t make intuitive sense historically.\nThis is awkward for interpretating variance on the scale of the data"
+  },
+  {
+    "objectID": "03_slides.html#standard-deviation-returning-to-regular-units",
+    "href": "03_slides.html#standard-deviation-returning-to-regular-units",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Standard deviation: returning to regular units",
+    "text": "Standard deviation: returning to regular units\n\nThe fix: Take the square root of the variance to put the spread in units that are the same as the data.\nDefinition: The Standard Deviation (\\(s\\))\n\\[s = \\sqrt{s^2} = \\sqrt{\\frac{1}{n}\\sum_{i=1}^{n} e_i^2}\\]\nwhich equals:\n\\[s = \\sqrt{\\frac{1}{n}\\sum_{i=1}^{n} x_i^2 - \\bar{x}^2}\\]\nInterpretation: Roughly the “average” distance of a data point from the mean."
+  },
+  {
+    "objectID": "03_slides.html#what-does-the-standard-deviation-tell-us",
+    "href": "03_slides.html#what-does-the-standard-deviation-tell-us",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "What does the standard deviation tell us?",
+    "text": "What does the standard deviation tell us?\n\n\nLow SD: Data is close to the mean\n\nA more homogeneous population\n\nHigh SD: Data is far from the mean\n\nA more heterogeneous population\n\nTwo datasets with the same mean but different SDs describe very different worlds"
+  },
+  {
+    "objectID": "03_slides.html#visualizing-dispersion",
+    "href": "03_slides.html#visualizing-dispersion",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Visualizing dispersion",
+    "text": "Visualizing dispersion\n\n\n\n\n\n\nTwo distributions with the same mean but different standard deviations"
+  },
+  {
+    "objectID": "03_slides.html#other-measures-of-dispersion",
+    "href": "03_slides.html#other-measures-of-dispersion",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Other measures of dispersion",
+    "text": "Other measures of dispersion\n\nSometimes (not often) you will see other measures of dispersion e.g.\n\nThe range: the difference between the maximum and minimum value\nThe interquartile range: the difference between the 75th and 25th percentile\nThe mean absolute deviation: the average absolute distance from the mean\nThe median absolute deviation: the median of the absolute distances from the median"
+  },
+  {
+    "objectID": "03_slides.html#means-and-sample-averages",
+    "href": "03_slides.html#means-and-sample-averages",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Means and sample averages",
+    "text": "Means and sample averages\n\n\nImagine a well defined population like “the heights (in cm) of all students currently registered in the history department at KCL”\n\nImagine this is 1000 students\n\nThis population has a mean which we will call \\(\\mu\\) (it is convention to use the greek letter mu for the population mean)\nThis population has a standard deviation which we will call \\(\\sigma\\) (it is convention to use the greek letter sigma for the population standard deviation)\nI take the heights of the ~20 history students in this class and calculate the average height \\(\\bar{x}\\)\n\nWhat is the relationship between \\(\\bar{x}\\) and \\(\\mu\\)?"
+  },
+  {
+    "objectID": "03_slides.html#means-and-sample-averages-visualized",
+    "href": "03_slides.html#means-and-sample-averages-visualized",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Means and sample averages: visualized",
+    "text": "Means and sample averages: visualized\n\n\n\n\n\n\nSample vs population"
+  },
+  {
+    "objectID": "03_slides.html#sample-vs-population",
+    "href": "03_slides.html#sample-vs-population",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Sample vs population",
+    "text": "Sample vs population\n\n\nIn practice we rarely observe the full population\nWe observe a sample and want to learn about the population\nSample statistics are estimates of population parameters\n\n\n\n\nPopulation parameter\nSample statistic\n\n\n\n\n\\(\\mu\\) (mean)\n\\(\\bar{x}\\)\n\n\n\\(\\sigma^2\\) (variance)\n\\(s^2\\)\n\n\n\\(\\sigma\\) (std dev)\n\\(s\\)"
+  },
+  {
+    "objectID": "03_slides.html#the-sampling-distribution",
+    "href": "03_slides.html#the-sampling-distribution",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The sampling distribution",
+    "text": "The sampling distribution\n\n\nA sample mean is itself subject to sampling error\nIf we drew many samples from the same population, each would give a different \\(\\bar{x}\\)\nThe distribution of these sample means is called the sampling distribution\nThis distribution has its own spread, which we can quantify"
+  },
+  {
+    "objectID": "03_slides.html#the-standard-error-of-the-mean",
+    "href": "03_slides.html#the-standard-error-of-the-mean",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The standard error of the mean",
+    "text": "The standard error of the mean\n\nThe standard error of the mean (SEM) describes how much sample means vary:\n\\[SE(\\bar{x}) = \\frac{\\sigma}{\\sqrt{n}}\\]\n\nKey insight: the standard error decreases as sample size increases\nLarger samples give more precise estimates"
+  },
+  {
+    "objectID": "03_slides.html#standard-deviation-vs-standard-error",
+    "href": "03_slides.html#standard-deviation-vs-standard-error",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Standard deviation vs standard error",
+    "text": "Standard deviation vs standard error\n\n\n\n\n\n\n\n\n\n\nStandard Deviation (SD)\nStandard Error (SE)\n\n\n\n\nMeasures\nSpread of individual observations\nSpread of sample means\n\n\nQuestion\nHow variable is the data?\nHow uncertain is our estimate of the mean?\n\n\nFormula\n\\(s = \\sqrt{\\frac{1}{n}\\sum(x_i - \\bar{x})^2}\\)\n\\(SE = \\frac{s}{\\sqrt{n}}\\)\n\n\nAs n increases\nStays roughly the same\nGets smaller\n\n\nDescribes\nThe population/sample itself\nOur knowledge about the population"
+  },
+  {
+    "objectID": "03_slides.html#intuition-for-the-standard-error",
+    "href": "03_slides.html#intuition-for-the-standard-error",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Intuition for the standard error",
+    "text": "Intuition for the standard error\n\n\n\n\n\n\nSampling distribution of the mean narrows as sample size increases"
+  },
+  {
+    "objectID": "03_slides.html#why-the-standard-error-matters",
+    "href": "03_slides.html#why-the-standard-error-matters",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Why the standard error matters",
+    "text": "Why the standard error matters\n\n\nThe standard error lets us quantify uncertainty about our estimate\nLarger samples give more precise estimates (smaller SE)\nThis is the foundation for:\n\nConfidence intervals\nHypothesis testing\nAssessing statistical significance"
+  },
+  {
+    "objectID": "03_slides.html#the-standard-error-in-historical-practice",
+    "href": "03_slides.html#the-standard-error-in-historical-practice",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The standard error in historical practice",
+    "text": "The standard error in historical practice\n\nConsider a historian estimating average wages in 18th century London:\n\nSample of 500 wage records: \\(\\bar{x}\\) = 12 shillings, \\(s\\) = 4 shillings\n\\(SE = \\frac{4}{\\sqrt{500}} \\approx 0.18\\) shillings\nWe can be confident the true mean is close to 12 shillings\nBut what if we only had 25 records?\n\n\\(SE = \\frac{4}{\\sqrt{25}} = 0.8\\) shillings – much more uncertainty!"
+  },
+  {
+    "objectID": "03_slides.html#statistical-vs-substantive-significance",
+    "href": "03_slides.html#statistical-vs-substantive-significance",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Statistical vs substantive significance",
+    "text": "Statistical vs substantive significance\n\n\nThe standard error is what is used to determine if something is ‘statistically significantly different’ from another thing (usually zero)\nThat is because confidence intervals are constructed using the standard error (we discussed CIs last week)\nThe bigger your sample the smaller the CI\nMcCloskey and Ziliak (1996) insists we should not confuse statistical significance with substantive significance\n\nStatistical significance is about how precisely we measure something, not how big something is."
+  },
+  {
+    "objectID": "03_slides.html#discussion-questions",
+    "href": "03_slides.html#discussion-questions",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Discussion questions",
+    "text": "Discussion questions\n\n\nWhen might the median be preferable to the mean in historical research?\nFeinstein and Thomas (2002) and Hudson and Ishizu (2016) present these concepts for historians. Why might historians need different pedagogical approaches than economists?\nHow should we think about the standard error when our data is not a random sample? (Most historical data isn’t!)"
+  },
+  {
+    "objectID": "03_slides.html#exercise-british-wages",
+    "href": "03_slides.html#exercise-british-wages",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Exercise: British wages",
+    "text": "Exercise: British wages\n\nI will give you data on wages in different historical periods.\n\nCalculate the mean, median, and standard deviation\nCalculate the standard error of the mean\nWhat does the standard error tell you about how confident you should be in your estimate?\nWhat doesn’t the standard error tell you about the quality of your data?"
+  },
+  {
+    "objectID": "03_slides.html#key-takeaways",
+    "href": "03_slides.html#key-takeaways",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\n\nLocation (mean, median, mode) tells us where the center is – each minimizes a different type of error\nScale (variance, standard deviation) tells us how spread out the data is\nThe standard error tells us how uncertain we are about our estimate of the mean (it is the standard deviation of our parameter of interest)"
+  },
+  {
+    "objectID": "03_slides.html#bibliography",
+    "href": "03_slides.html#bibliography",
+    "title": "Basic tools: central tendencies and dispersion",
     "section": "Bibliography",
-    "text": "Bibliography\n\n\n\n\n\n\n\n\nDIACONIS, PERSI, and BRIAN SKYRMS. 2018. Ten Great Ideas about Chance. Princeton University Press. https://doi.org/10.2307/j.ctvc77m33.\n\n\nHacking, Ian. 1990. The Taming of Chance. Cambridge University Press.\n\n\nPorter, Theodore M. 1994. “Making Things Quantitative.” Science in Context 7 (3): 389–407. https://doi.org/10.1017/S0269889700001757."
+    "text": "Bibliography\n\n\n\n\n\n\n\n\nMcCloskey, Deirdre N., and Stephen T. Ziliak. 1996. “The Standard Error of Regressions.” Journal of Economic Literature 34 (1): 97–114. http://www.jstor.org/stable/2729411.\n\n\nStigler, Stephen M. 2016. The seven pillars of statistical wisdom. Cambridge, Massachusetts London, England: Harvard University Press."
   },
   {
-    "objectID": "01_slides.html#about-the-course",
-    "href": "01_slides.html#about-the-course",
-    "title": "Introduction",
-    "section": "About the course",
-    "text": "About the course\n\nIntroduce some of the methods economic historians use\n\nThis will be illustrated mostly through controversies and debates in economic history\n\nThink about how we tackle the historical study of large collections of things\n\nThis includes thinking through trade-offs between depth and breadth and how we summarize information"
+    "objectID": "03_slides.html#means-and-sample-averages-1",
+    "href": "03_slides.html#means-and-sample-averages-1",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "Means and sample averages",
+    "text": "Means and sample averages\n\n\n\n\n\n\nSample vs population"
   },
   {
-    "objectID": "01_slides.html#introductions",
-    "href": "01_slides.html#introductions",
-    "title": "Introduction",
-    "section": "Introductions",
-    "text": "Introductions\nAbout me\nI’m a mostly quantitative economic historian. I work mostly on financial markets in the 19th century focused on London but have done some research on Paris/New York as well. I’ve also done some work on other bits of British economic history including welfare. I like quantitative methods, and think they should have a place in historical research. I’ve done a little methodological work on network econometrics, and am interested in Bayesian statistics.\nContacting me: gabriel.mesevage@kcl.ac.uk\nOffice hours: Monday 3-4, and Tuesday 11-12 in S8.13."
-  },
-  {
-    "objectID": "01_slides.html#course-logistics",
-    "href": "01_slides.html#course-logistics",
-    "title": "Introduction",
-    "section": "Course logistics",
-    "text": "Course logistics\nThe syllabus\nAvailable on Keats page.\nAlso available on github: here\nI link the readings from the syllabus (or will do this before you need to read things). Where needed I make pdfs available online."
-  },
-  {
-    "objectID": "01_slides.html#course-logistics-1",
-    "href": "01_slides.html#course-logistics-1",
-    "title": "Introduction",
-    "section": "Course logistics",
-    "text": "Course logistics\nAssessment\nOne 3,000 word essay worth 100% of the grade.\nThe essays is due 28 April 2026 before 14:00.\nThe website will mark you late if you post it at 14:00, it must be submitted before.\nI do not control deadlines. I cannot grant extensions. If you need on you must go through the MCF process with the history department (not recommended)."
-  },
-  {
-    "objectID": "01_slides.html#the-essay",
-    "href": "01_slides.html#the-essay",
-    "title": "Introduction",
-    "section": "The essay",
-    "text": "The essay\nI will ask you to tackle a debate in the historiography, and discuss the role of theory and measurement in the debate.\nI will a more complete assessment brief for you and post this to Keats/Github in the coming days.\nWe will set aside class-time near reading week to work on your essays, and I will give you feedback on a 500 word outline."
-  },
-  {
-    "objectID": "01_slides.html#quantification-in-history",
-    "href": "01_slides.html#quantification-in-history",
-    "title": "Introduction",
-    "section": "Quantification in history",
-    "text": "Quantification in history\nOutline\n\nThe changing relationship between history and quantification\nThe question of counter-factuals\nThe promise and peril of ‘big’ data\nExercise: nano-history/micro-history/quantification"
-  },
-  {
-    "objectID": "01_slides.html#history-and-economic-history",
-    "href": "01_slides.html#history-and-economic-history",
-    "title": "Introduction",
-    "section": "History and Economic History",
-    "text": "History and Economic History\n\n\n“Economic history has never been and should never by anything like a closed field in which practitioners converse mostly with one another. A busy intersection of history and the social sciences, where economists, political scientists, sociologists, anthropologists, demographers and historians come and go.”\n– Joel Mokyr, 2023\n\n\nAs a ‘hybrid’ field economic history is supposed to draw on the strengths of economics and history\nIn practice, its relationship to the two parent fields has shifted over time and has not always been smooth."
-  },
-  {
-    "objectID": "01_slides.html#quantification-in-history-1",
-    "href": "01_slides.html#quantification-in-history-1",
-    "title": "Introduction",
-    "section": "Quantification in history",
-    "text": "Quantification in history\n\nThe New History (early 20th century)\n\nAllied to a project (sometimes Marxist) of focusing on “the common man” (Ruggles 2021)\n\nThe New Economic/Political/Social History (1960s)\n\nFogel (1966) is an exemplar, but matched in political science and demography\n\nThe ‘New History of Capitalism’:\n\nongoing, pushed in particular by e.g. Beckert (2004) on which more below"
-  },
-  {
-    "objectID": "01_slides.html#quantification-in-history-leading-us-journals",
-    "href": "01_slides.html#quantification-in-history-leading-us-journals",
-    "title": "Introduction",
-    "section": "Quantification in history: leading US journals",
-    "text": "Quantification in history: leading US journals"
-  },
-  {
-    "objectID": "01_slides.html#quantification-in-history-reactions",
-    "href": "01_slides.html#quantification-in-history-reactions",
-    "title": "Introduction",
-    "section": "Quantification in history: reactions",
-    "text": "Quantification in history: reactions\n\n\nOlder quantifiers (1920s) became prominent in the profession\nThe quantifiers of the 1960s met fierce resistance and mostly migrated to social science departments (economics/political science/sociology)"
-  },
-  {
-    "objectID": "01_slides.html#quantification-in-history-reactions-1",
-    "href": "01_slides.html#quantification-in-history-reactions-1",
-    "title": "Introduction",
-    "section": "Quantification in history: reactions",
-    "text": "Quantification in history: reactions\n\nReactions to quantification were fierce: “almost all important questions are important precisely because they are not susceptible to quantitative answers” (Ruggles 2021)\n\nMost critique from the right: abandonment of narrative and elite political history\nBut also from left e.g. Judt: “History is about politics”"
-  },
-  {
-    "objectID": "01_slides.html#quantification-in-history-the-rise-of-the-cultural-turn",
-    "href": "01_slides.html#quantification-in-history-the-rise-of-the-cultural-turn",
-    "title": "Introduction",
-    "section": "Quantification in history: the rise of the cultural turn",
-    "text": "Quantification in history: the rise of the cultural turn"
-  },
-  {
-    "objectID": "01_slides.html#history-in-economics",
-    "href": "01_slides.html#history-in-economics",
-    "title": "Introduction",
-    "section": "History in Economics",
-    "text": "History in Economics\n\n\nEarly work published in economics journals (1920s) often looked more like history\nGrowing quantification in economics pushed out descriptive historical work\nAt the time of the New Economic History economic work was not very historical!\n\nMuch of the New Economic History was the adoption of economic theory as much as statistical measurement\n\nBut growing concerns in the 1990s about the quality of statistical methods in economics culminate in a pivot to less theoretical work (Angrist and Pischke 2008)"
-  },
-  {
-    "objectID": "01_slides.html#history-in-economics-1",
-    "href": "01_slides.html#history-in-economics-1",
-    "title": "Introduction",
-    "section": "History in Economics",
-    "text": "History in Economics\n\n\nhistorical articles growing in importance now in economics\nHistorical work (of a certain kind!) continually rewarded e.g. Acemoglu, Johnson, and Robinson (2001) and Mokyr (2005)"
-  },
-  {
-    "objectID": "01_slides.html#the-new-economic-history-and-counterfactuals",
-    "href": "01_slides.html#the-new-economic-history-and-counterfactuals",
-    "title": "Introduction",
-    "section": "The New Economic History and Counterfactuals",
-    "text": "The New Economic History and Counterfactuals\n\n\n“Redlich argues that counterfactual propositions are fundamentally alian to economic history. He also believes they are untestable and hence calls essays involving such propositions ‘quasi-history’. …The difference between the old and the new economic history is not the frequency with which one encounters counterfactual propositions, but the extent to which such propositions are made explicit.” (Fogel 1966, p655)"
-  },
-  {
-    "objectID": "01_slides.html#the-new-economic-history-and-counterfactuals-1",
-    "href": "01_slides.html#the-new-economic-history-and-counterfactuals-1",
-    "title": "Introduction",
-    "section": "The New Economic History and Counterfactuals",
-    "text": "The New Economic History and Counterfactuals\n\nThe idea is that ‘causal claims imply counterfactuals’ (this idea is common in statistics as well)\nNew Economic History tended to use economic theory to structure their counterfactuals"
-  },
-  {
-    "objectID": "01_slides.html#big-data",
-    "href": "01_slides.html#big-data",
-    "title": "Introduction",
-    "section": "‘Big’ Data",
-    "text": "‘Big’ Data\n\nComputerization has grown the size of data sets substantially\nIncreased computing power has made previously impossible tasks more feasible\n\nE.g. record linkage\n\nThis has opened up the possibility of using sources like image and text (Gutmann, Klancher Merchant, and Roberts 2018)"
-  },
-  {
-    "objectID": "01_slides.html#big-data-reconsidered",
-    "href": "01_slides.html#big-data-reconsidered",
-    "title": "Introduction",
-    "section": "‘Big’ Data reconsidered",
-    "text": "‘Big’ Data reconsidered\n\nData can be ‘big’ in several dimensions\n\nWe might record many things about each entry (columns in the spreadsheet)\nWe might record more entries (rows)\nWhen there are more columns than rows inference is hard\n\n‘Bigness’ should not be confused with information: e.g. time series\n‘Bigness’ does not resolve problems of selection or causation"
-  },
-  {
-    "objectID": "01_slides.html#exercise-micro-historiesnano-histories",
-    "href": "01_slides.html#exercise-micro-historiesnano-histories",
-    "title": "Introduction",
-    "section": "Exercise: micro-histories/nano-histories",
-    "text": "Exercise: micro-histories/nano-histories\nIn a symposium on micro-history the historian Jan de Vries reflected on the nature of microhistory, its relationship to a data point, and the question of ‘outliers’.\nRead the handout and we will discuss the following questions:\n\nWhat do we make of the concept of an ‘outlier’\nWhat would de Vries make of the idea that you can ‘let the data speak for itself’\nIs working with a collection of nano-histories (data) fundamentally different from conventional history?"
-  },
-  {
-    "objectID": "01_slides.html#bibliography",
-    "href": "01_slides.html#bibliography",
-    "title": "Introduction",
-    "section": "Bibliography",
-    "text": "Bibliography\n\n\n\n\n\n\n\n\nAcemoglu, Daron, Simon Johnson, and James A Robinson. 2001. “The Colonial Origins of Comparative Development: An Empirical Investigation.” THE AMERICAN ECONOMIC REVIEW 91 (5): 289.\n\n\nAngrist, Joshua D., and Jörn-Steffen Pischke. 2008. Mostly Harmless Econometrics: An Empiricist’s Companion. Princeton University Press.\n\n\nBeckert, Sven. 2004. “Emancipation and Empire: Reconstructing the Worldwide Web of Cotton Production in the Age of the American Civil War.” The American Historical Review 109 (5): 1405–38. https://doi.org/10.1086/530931.\n\n\nFogel, Robert. 1966. “The New Economic History. I. Its Findings and Methods.” Economic History Review 19 (3): 642–56.\n\n\nGutmann, M., E. Klancher Merchant, and E. Roberts. 2018. ““Big Data” in Economic History.” Journal of Economic History 78 (1): 268299.\n\n\nMokyr, Joel. 2005. “The Intellectual Origins of Modern Economic Growth.” The Journal of Economic History 65 (2): 285351. http://www.jstor.org/stable/3875064.\n\n\nRuggles, Steven. 2021. “The Revival of Quantification: Reflections on Old New Histories.” Social Science History 45 (1): 1–25. https://doi.org/10.1017/ssh.2020.44."
+    "objectID": "03_slides.html#the-standard-error-and-sample-size",
+    "href": "03_slides.html#the-standard-error-and-sample-size",
+    "title": "Basic tools: central tendencies and dispersion",
+    "section": "The standard error and sample size",
+    "text": "The standard error and sample size\n\n\n\n\n\n\nSample mean and ±2 SD for different sample sizes"
   }
 ]

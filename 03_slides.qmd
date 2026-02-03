@@ -1,0 +1,692 @@
+---
+title: "Basic tools: central tendencies and dispersion"
+author: "Gabriel Mesevage"
+format: 
+  revealjs:
+    chalkboard: 
+      buttons: true 
+editor:
+  markdown:
+    wrap: sentence
+bibliography: references.bib
+---
+
+## The plan {.smaller}
+
+1.  Location, or central tendency
+2.  Scale, or spread
+3.  From populations to samples
+4.  Sampling distributions and standard errors
+
+## How do we summarize a group? {.smaller}
+
+
+> "Ladders were made to match the height of the enemy’s wall, which they measured by the layers of bricks, the side turned towards them not being thoroughly whitewashed. These were counted by many persons at once; and **though some might miss the right calculation, most would hit upon it**, particularly as they counted over and over again, and were no great way from the wall, but could see it easily enough for their purpose. The length required for the ladders was thus obtained, being calculated from the breadth of the brick."
+>
+> -- Thucydides, in @stigler2016, p. 30-31
+
+
+## Averaging not a universally known solution {.smaller}
+
+Per @stigler2016:
+
+-   Clear evidence of the use of mean in summarizing scientific measurements in late 1660s
+
+-   Hipparchus (\~150 BCE) or Ptolemy (150 CE) don't seem to know
+
+-   al-Biruni (\~1000 CE) reports midpoint between min and max
+
+
+## An early example {.smaller}
+
+![](images/clipboard-3536408795.png){height="400px"}
+
+Köbel's depiction of the determination of the lawful rod (Köbel 1522) cited in @stigler2016, p. 32
+
+## Finding the "center" {.smaller}
+
+**The problem**: we want a single number that best represents a whole collection of data.
+
+Three common answers:
+
+1.  **Mode** -- the most frequent value
+2.  **Median** -- the middle value
+3.  **Mean** -- the arithmetic average
+
+These can give very different answers!
+
+## The mode {.smaller}
+
+**Definition**: The value that appears most frequently in the dataset.
+
+-   In Thucydides bricks example, it is the most commonly counted number of bricks
+
+-   **Can be useful if your object is to be exactly right**
+
+-   **Cons**: Unstable.
+    Some datasets have no mode or multiple modes
+
+    -   Imagine I measure everyone's height to the nearest micron (millionth of a metre).
+
+## The median {.smaller}
+
+**Definition**: The value that splits the dataset exactly in half.
+50% of the data is above it, 50% is below it.
+
+-   **Visual**: Line everyone up by height; the person in the exact middle is the median.
+
+    -   If there are an even number of people we typically average the 'two in the middle'
+
+-   **Pros**: "Robust" -- it ignores extreme outliers.
+    If the richest person in the world walks into a room, the median income at most moves by one person.
+
+-   **Cons**: Harder to use in mathematical formulas.
+    Sometimes we want to put more weight on extreme values.
+
+## The mean: building notation {.smaller}
+
+**Definition**: The arithmetic average.
+
+-   Imagine a list of numbers: wages, ages, prices.
+    Call this list $x$, and we refer to the $i$th item of this list as $x_i$
+
+-   The first number is $x_1$, the second is $x_2$, and so on.
+
+-   We need to add them all up.
+    Instead of writing "Sum," we use the Greek letter Sigma: $\Sigma$
+
+-   If we have $n$ items, the mean (written $\bar{x}$, pronounced "x-bar") is:
+
+$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$$
+
+**Translation**: "Add everything up and divide by the count."
+
+## Why the mean? 1. The mean as a balance point {.smaller}
+
+-   **Physical analogy**: If you placed weights on a seesaw at the location of each data point, the mean is the exact spot where the fulcrum must be placed for the seesaw to balance perfectly.
+
+-   Unlike median and mode, the mean is **sensitive to extreme values** (outliers)
+
+-   Every observation "pulls" on the mean
+
+## Why the mean? 2. Sometimes you want the outliers{.smaller}
+
+Imagine a game where I roll a fair die and if it is any number other than 6 I pay you £5.
+If I roll a six you pay me £100.
+
+-   Modal earnings from this game: £5
+
+-   Median earnings from this game: £5
+
+-   Average earnings from this game: -£12.50!
+
+-   The rare outcome matters a lot!
+
+## When do these differ? {.smaller}
+
+```{r}
+#| label: location-comparison
+#| message: false
+#| warning: false
+#| fig-cap: "Mean, median, and mode can differ substantially in skewed distributions"
+
+library(tidyverse)
+
+set.seed(42)
+
+# Create a right-skewed distribution (like income or wealth)
+income <- c(rlnorm(200, meanlog = 3, sdlog = 0.5),
+            rlnorm(20, meanlog = 5, sdlog = 0.3))  # Add some high earners
+
+income_df <- tibble(income = income)
+
+# Calculate statistics
+mean_val <- mean(income)
+median_val <- median(income)
+# Mode approximation (using density peak)
+dens <- density(income)
+mode_val <- dens$x[which.max(dens$y)]
+
+ggplot(income_df, aes(x = income)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 40,
+                 fill = "gray70", color = "white") +
+  geom_density(linewidth = 1) +
+  geom_vline(aes(xintercept = mean_val, color = "Mean"),
+             linewidth = 1, linetype = "dashed") +
+  geom_vline(aes(xintercept = median_val, color = "Median"),
+             linewidth = 1, linetype = "dashed") +
+  geom_vline(aes(xintercept = mode_val, color = "Mode"),
+             linewidth = 1, linetype = "dashed") +
+  scale_color_manual(name = "Statistic",
+                     values = c("Mean" = "#D55E00",
+                               "Median" = "#0072B2",
+                               "Mode" = "#009E73")) +
+  labs(title = "A right-skewed distribution (e.g., income)",
+       x = "Value",
+       y = "Density") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## When are they the same? {.smaller}
+
+-   When the distribution is symmetric and unimodal
+
+```{r}
+#| label: symmetric-dists
+#| message: false
+#| warning: false
+#| fig-cap: "Two symmetric and unimodal distributions: Normal and t-distribution"
+
+library(tidyverse)
+
+# Generate normal distribution data
+set.seed(123)
+norm_data <- tibble(
+  value = rnorm(1000, mean = 0, sd = 1),
+  dist = "Normal"
+)
+
+# Generate t-distribution data (symmetric, heavier tails)
+t_data <- tibble(
+  value = rt(1000, df = 3),
+  dist = "t (df = 3)"
+)
+
+# Combine for plotting
+combo_data <- bind_rows(norm_data, t_data)
+
+# Plot side by side
+ggplot(combo_data, aes(x = value, fill = dist)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 40, color = "white", alpha = 0.7) +
+  geom_density(linewidth = 1, alpha = 0.7) +
+  facet_wrap(~dist, scales = "free", ncol = 2) +
+  scale_fill_manual(values = c("Normal" = "#0072B2", "t (df = 3)" = "#D55E00")) +
+  labs(title = "Symmetric, Unimodal Distributions",
+       x = "Value",
+       y = "Density") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+## Comparing the measures {.smaller}
+
+| Feature       | Mode         | Median                | Mean                |
+|---------------|--------------|-----------------------|---------------------|
+| **Intuition** | Most typical | The middle            | Balance point       |
+| **Outliers**  | Ignores them | Ignores them (Robust) | Heavily affected    |
+| **Math use**  | Difficult    | Harder to manipulate  | Easiest in formulas |
+
+## Why is the mean so dominant? {.smaller}
+
+-   Lots of contexts (e.g. finance) where the mean is good *because* it penalizes big errors.
+
+-   **Ease of calculation**: Before computers, calculating the median required sorting all the data (very slow for big lists).
+    Calculating the mean just required keeping a running total.
+    - Also the function minimizing the squared errors is much easier to work with than the function minimizing the absolute errors.
+
+## The location and its "errors" {.smaller}
+
+Imagine you must pick **one number** to predict the next value in a dataset.
+You will be fined based on how wrong you are.
+
+We call your miss the 'error' $e_i = x_i - g$ where $x_i$ is the actual value and $g$ is your guess.
+
+Three different penalty rules lead to three different "best" answers:
+
+1.  All-or-nothing penalty $\rightarrow$ Mode
+2.  Linear penalty $\rightarrow$ Median
+3.  Squared penalty $\rightarrow$ Mean
+
+## The all-or-nothing game {.smaller}
+
+**The rule**: If you are exactly right, you pay nothing.
+If you are wrong by *any* amount, you pay £100.
+
+**Best strategy**: Pick the **Mode**.
+(small caveat: the mode needs to exist)
+
+-   It gives you the highest probability of hitting the number exactly.
+
+**Loss function**: $L(e) = 100 \times \mathbb{I}(e \neq 0)$
+
+## The linear penalty game {.smaller}
+
+**The rule**: You pay £1 for every unit you are away from the truth.
+Being off by 10 costs £10; being off by 100 costs £100.
+
+**Best strategy**: Pick the **Median**.
+
+-   It minimizes the *sum of absolute deviations*
+
+-   Balances the distance on the left and right sides
+
+-   **Loss function**: $L(e) = 100 \times |e|$
+
+## The squared penalty game {.smaller}
+
+::: smaller
+**The rule**: You pay based on the *square* of your error.
+
+-   Off by 1? Pay £1.
+-   Off by 10? Pay £100.
+-   Off by 50? Pay £2,500.
+
+**The logic**: Small mistakes are fine, but **big mistakes are disastrous**.
+
+**Best strategy**: Pick the **Mean**.
+
+-   It minimizes the *sum of squared errors* (Least Squares)
+
+**Loss function**: $L(e) = 100 \times e^2$
+:::
+
+## From location to spread {.smaller}
+
+::: smaller
+**The problem**: Knowing the average isn't enough.
+
+```{r}
+library(tidyverse)
+
+set.seed(123)
+
+df <- tibble(
+  group = rep(c("Low variance", "High variance"), each = 10000),
+  value = c(
+    rnorm(10000, mean = 10, sd = 1),
+    rnorm(10000, mean = 10, sd = 5)
+  )
+)
+
+ggplot(df, aes(x = value, fill = group)) +
+  geom_density(alpha = 0.5) +
+  geom_vline(
+    data = df %>% group_by(group) %>% summarize(mean_value = mean(value)),
+    aes(xintercept = mean_value, color = group),
+    linewidth = 0.7,
+    show.legend = FALSE
+  ) +
+  labs(
+    title = "Same mean, very different variance",
+    x = "Value",
+    y = "Density"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+:::
+
+## The average squared error {.smaller}
+
+::: smaller
+Recall: The **mean** is the number that minimizes the sum of squared errors.
+
+**The question**: If the mean is our "best guess," how good is that guess on average?
+
+-   Calculate the squared distance of every point from the mean
+
+-   Add them up and divide by the count
+
+-   This gives us a measure of the average dispersion of the data
+:::
+
+## Variance: definition {.smaller}
+
+::: smaller
+**Definition**: The Variance ($s^2$) is the average squared distance from the center.
+
+$$s^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2$$
+
+**Translation**: "How far, on average, are the data points from the mean (squared)?"
+
+Remember we defined: $e_i = x_i - \bar{x}$.
+
+So we can rewrite the variance as:
+
+$$s^2 = \frac{1}{n}\sum_{i=1}^{n} e_i^2$$
+:::
+
+## The units problem {.smaller}
+
+::: smaller
+-   If we measure the age at death of Roman Emperors in **years**, the variance is measured in **years squared**
+
+-   What is a "square year"?
+    It doesn't make intuitive sense historically.
+
+-   This is awkward for interpretating variance on the scale of the data
+:::
+
+## Standard deviation: returning to regular units {.smaller}
+
+::: smaller
+**The fix**: Take the square root of the variance to put the spread in units that are the same as the data.
+
+**Definition**: The Standard Deviation ($s$)
+
+$$s = \sqrt{s^2} = \sqrt{\frac{1}{n}\sum_{i=1}^{n} e_i^2}$$
+
+which equals:
+
+$$s = \sqrt{\frac{1}{n}\sum_{i=1}^{n} x_i^2 - \bar{x}^2}$$
+
+**Interpretation**: Roughly the "average" distance of a data point from the mean.
+:::
+
+## What does the standard deviation tell us? {.smaller}
+
+::: smaller
+-   **Low SD**: Data is close to the mean
+
+    -   A more homogeneous population
+
+-   **High SD**: Data is far from the mean
+
+    -   A more heterogeneous population
+
+-   Two datasets with the same mean but different SDs describe very different worlds
+:::
+
+## Visualizing dispersion {.smaller}
+
+::: smaller
+```{r}
+#| label: dispersion-comparison
+#| message: false
+#| warning: false
+#| fig-cap: "Two distributions with the same mean but different standard deviations"
+
+library(tidyverse)
+
+set.seed(123)
+
+# Two distributions with same mean, different spread
+narrow <- tibble(value = rnorm(500, mean = 100, sd = 5),
+                 type = "Low SD: Homogeneous")
+wide <- tibble(value = rnorm(500, mean = 100, sd = 20),
+               type = "High SD: Heterogeneous")
+
+combined <- bind_rows(narrow, wide)
+
+ggplot(combined, aes(x = value, fill = type)) +
+  geom_histogram(aes(y = after_stat(density)),
+                 bins = 40, alpha = 0.6, position = "identity") +
+  geom_vline(xintercept = 100, linetype = "dashed", linewidth = 1) +
+  scale_fill_manual(values = c("Low SD: Homogeneous" = "#0072B2",
+                               "High SD: Heterogeneous" = "#D55E00")) +
+  labs(title = "Same mean (100), different spreads",
+       subtitle = "The dashed line marks the mean",
+       x = "Value",
+       y = "Density",
+       fill = "Distribution") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+:::
+
+## Other measures of dispersion {.smaller}
+
+::: smaller
+Sometimes (not often) you will see other measures of dispersion e.g.
+
+-   The range: the difference between the maximum and minimum value
+-   The interquartile range: the difference between the 75th and 25th percentile
+-   The mean absolute deviation: the average absolute distance from the mean
+-   The median absolute deviation: the median of the absolute distances from the median
+:::
+
+## Means and sample averages {.smaller}
+
+::: smaller
+-   Imagine a well defined population like "the heights (in cm) of all students currently registered in the history department at KCL"
+
+    -   Imagine this is 1000 students
+
+-   This population has a mean which we will call $\mu$ (it is convention to use the greek letter mu for the population mean)
+
+-   This population has a standard deviation which we will call $\sigma$ (it is convention to use the greek letter sigma for the population standard deviation)
+
+-   I take the heights of the \~20 history students in this class and calculate the average height $\bar{x}$
+
+**What is the relationship between** $\bar{x}$ and $\mu$?
+:::
+
+## Means and sample averages {.smaller}
+
+::: smaller
+```{r}
+#| label: sample-vs-population
+#| message: false
+#| warning: false
+#| fig-cap: "Sample vs population"
+
+library(tidyverse)
+
+set.seed(123)
+
+# Population
+pop <- tibble(height = rnorm(1000, mean = 170, sd = 10))
+
+# Draw 10 samples of size 20
+samples <- map_dfr(1:10, \(i) {
+  samp <- slice_sample(pop, n = 20)
+  tibble(iteration = i, sample_mean = mean(samp$height))
+})
+
+# Plot population distribution and sample means over iterations
+ggplot() +
+  geom_density(data = pop, aes(x = height),
+               fill = "gray85", color = "gray40", linewidth = 0.7) +
+  geom_vline(xintercept = 170, color = "#0072B2", linewidth = 0.8) +
+  geom_vline(data = samples, aes(xintercept = sample_mean),
+             color = "#D55E00", linewidth = 0.7, alpha = 0.8) +
+  facet_wrap(~iteration, ncol = 5) +
+  labs(
+    title = "Ten samples of n = 20 from the same population",
+    subtitle = "Blue line = true mean (170). Orange lines = sample means.",
+    x = "Height (cm)",
+    y = "Density"
+  ) +
+  theme_minimal() +
+  theme(strip.text = element_text(face = "bold"))
+```
+:::
+
+## Sample vs population {.smaller}
+
+::: smaller
+-   In practice we rarely observe the full **population**
+
+-   We observe a **sample** and want to learn about the population
+
+-   Sample statistics are **estimates** of population parameters
+
+| Population parameter  | Sample statistic |
+|-----------------------|------------------|
+| $\mu$ (mean)          | $\bar{x}$        |
+| $\sigma^2$ (variance) | $s^2$            |
+| $\sigma$ (std dev)    | $s$              |
+:::
+
+## The sampling distribution {.smaller}
+
+::: smaller
+-   A sample mean is itself subject to sampling error
+
+-   If we drew many samples from the same population, each would give a different $\bar{x}$
+
+-   The distribution of these sample means is called the **sampling distribution**
+
+-   This distribution has its own spread, which we can quantify
+:::
+
+## The standard error of the mean {.smaller}
+
+::: smaller
+The **standard error of the mean** (SEM) describes how much sample means vary:
+
+$$SE(\bar{x}) = \frac{\sigma}{\sqrt{n}}$$
+
+-   Key insight: the standard error **decreases** as sample size increases
+
+-   Larger samples give more precise estimates
+:::
+
+## The standard error and sample size {.smaller}
+
+::: smaller
+```{r}
+#| label: se-by-sample-size
+#| message: false
+#| warning: false
+#| fig-cap: "Sample mean and ±2 SD for different sample sizes"
+
+library(tidyverse)
+
+set.seed(321)
+
+sample_sizes <- c(5, 20, 100, 1000)
+
+samples <- map_dfr(sample_sizes, \(n) {
+  vals <- rnorm(n, mean = 170, sd = 10)
+  tibble(
+    sample_sd = sd(vals)/sqrt(n),
+    n = paste0("n = ", n),
+    height = vals,
+    sample_mean = mean(vals)
+  )
+})
+
+summaries <- samples %>%
+  group_by(n) %>%
+  summarize(
+    sample_mean = first(sample_mean),
+    sample_se = first(sample_sd),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    lower = sample_mean - 2 * sample_se,
+    upper = sample_mean + 2 * sample_se
+  )
+
+ggplot(samples, aes(x = height)) +
+  geom_histogram(aes(y = after_stat(density)),
+                 bins = 30, fill = "gray80", color = "white") +
+  geom_vline(data = summaries, aes(xintercept = sample_mean),
+             color = "#0072B2", linewidth = 0.9) +
+  geom_vline(data = summaries, aes(xintercept = lower),
+             color = "#D55E00", linewidth = 0.8, linetype = "dashed") +
+  geom_vline(data = summaries, aes(xintercept = upper),
+             color = "#D55E00", linewidth = 0.8, linetype = "dashed") +
+  facet_wrap(~n, scales = "free_y", ncol = 2) +
+  labs(
+    title = "Sample mean and ±2 SE by sample size",
+    subtitle = "Population: mean = 170, SD = 10",
+    x = "Height (cm)",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+:::
+
+## Standard deviation vs standard error {.smaller}
+
+::: smaller
+|   | Standard Deviation (SD) | Standard Error (SE) |
+|-----------------|------------------------------|-------------------------|
+| **Measures** | Spread of *individual observations* | Spread of *sample means* |
+| **Question** | How variable is the data? | How uncertain is our estimate of the mean? |
+| **Formula** | $s = \sqrt{\frac{1}{n}\sum(x_i - \bar{x})^2}$ | $SE = \frac{s}{\sqrt{n}}$ |
+| **As n increases** | Stays roughly the same | Gets smaller |
+| **Describes** | The population/sample itself | Our knowledge about the population |
+:::
+
+## Intuition for the standard error {.smaller}
+
+::: smaller
+```{r}
+#| label: sem-simulation
+#| message: false
+#| warning: false
+#| fig-cap: "Sampling distribution of the mean narrows as sample size increases"
+
+library(tidyverse)
+
+set.seed(456)
+
+# True population
+pop_mean <- 50
+pop_sd <- 10
+
+# Function to draw samples and compute means
+simulate_means <- function(n_sample, n_simulations = 1000) {
+  means <- replicate(n_simulations, mean(rnorm(n_sample, pop_mean, pop_sd)))
+  tibble(sample_mean = means,
+         n = paste0("n = ", n_sample),
+         theoretical_se = pop_sd / sqrt(n_sample))
+}
+
+# Simulate for different sample sizes
+sim_data <- bind_rows(
+  simulate_means(10),
+  simulate_means(50),
+  simulate_means(200)
+)
+
+sim_data$n <- factor(sim_data$n, levels = c("n = 10", "n = 50", "n = 200"))
+
+ggplot(sim_data, aes(x = sample_mean, fill = n)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 40, alpha = 0.7) +
+  geom_vline(xintercept = pop_mean, linetype = "dashed") +
+  facet_wrap(~n, ncol = 1, scales = "free_y") +
+  scale_fill_brewer(palette = "Set1") +
+  labs(title = "Sampling distributions of the mean",
+       subtitle = paste0("Population: mean = ", pop_mean, ", SD = ", pop_sd),
+       x = "Sample mean",
+       y = "Density") +
+  theme_minimal() +
+  theme(legend.position = "none",
+       strip.text = element_text(face = "bold"))
+```
+:::
+
+## Why the standard error matters {.smaller}
+
+::: smaller
+-   The standard error lets us quantify **uncertainty** about our estimate
+
+-   Larger samples give more precise estimates (smaller SE)
+
+-   This is the foundation for:
+
+    -   Confidence intervals
+    -   Hypothesis testing
+    -   Assessing statistical significance
+:::
+
+## Statistical vs substantive significance {.smaller}
+
+::: smaller
+-   The standard error is what is used to determine if something is 'statistically significantly different' from another thing (usually zero)
+
+-   That is because confidence intervals are constructed using the standard error (we discussed CIs last week)
+
+-   **The bigger your sample the smaller the CI**
+
+-   @mccloskey1996 insists we should not confuse **statistical significance** with **substantive significance**
+
+**Statistical significance** is about **how precisely we measure** something, not **how big something is**.
+:::
+
+## Key takeaways {.smaller}
+
+::: smaller
+-   **Location** (mean, median, mode) tells us where the center is -- each minimizes a different type of error
+
+-   **Scale** (variance, standard deviation) tells us how spread out the data is
+
+-   The **standard error** tells us how uncertain we are about our estimate of the mean (it is the standard deviation of our parameter of interest)
+:::
+
+## Bibliography
