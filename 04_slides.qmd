@@ -1,0 +1,326 @@
+---
+title: "Selection bias"
+author: "Gabriel Mesevage"
+format:
+  revealjs:
+    chalkboard:
+      buttons: true
+editor:
+  markdown:
+    wrap: sentence
+bibliography: references.bib
+---
+
+## The plan {.smaller}
+
+1.  What is sample selection bias?
+2.  Selection on observables
+3.  Selection on unobservables
+4.  How selection bias distorts relationships between variables
+
+## From statistical significance to bias {.smaller}
+
+-   Last week we covered means, standard errors, and statistical significance
+
+-   Those tools assume our sample is a **random draw** from the population
+
+-   But what happens when it isn't?
+
+-   If our sample is not random, our estimates may be **biased** -- systematically wrong in a particular direction
+
+-   No amount of data fixes a biased sample: a bigger biased sample is still biased
+
+## The bigger threat {.smaller}
+
+-   In observational studies the bigger danger is not sampling error but that your sample is **systematically unrepresentative** of the population
+
+-   Statistical significance tells us about **precision** (how much noise is in our estimate)
+
+-   But bias is about **accuracy** (whether we are pointing at the right answer)
+
+-   **You can have a very precisely measured estimates of the wrong thing**
+
+## What is sample selection bias? {.smaller}
+
+**Definition**: Sample selection bias occurs when your sample is not a random draw from the population you want to study.
+You are more likely to capture some kinds of people rather than others.
+
+-   The process that generates your data is **not independent** of the thing you are trying to measure
+
+-   This means your sample statistics (means, correlations, etc.) may not reflect the true population values
+
+## A simple example: height and the Royal Marines {.smaller}
+
+-   Suppose we want to estimate **average height in the population** using military records
+
+-   The Royal Marines require a minimum height of **145 cm**
+
+-   Everyone below the cutoff is excluded from our data
+
+-   Our sample mean will **overestimate** the true population mean
+
+-   This is **truncation bias**: we only observe part of the distribution
+
+## Truncation bias illustrated {.smaller}
+
+::: smaller
+```{r}
+#| label: truncation-bias
+#| message: false
+#| warning: false
+#| fig-cap: "Minimum height requirement biases the sample mean upward"
+
+library(tidyverse)
+
+set.seed(42)
+
+# Simulate a population of heights
+population <- tibble(
+  height = rnorm(5000, mean = 160, sd = 10)
+)
+
+# Apply Royal Marines minimum height cutoff
+cutoff <- 145
+selected <- population %>% filter(height >= cutoff)
+
+# Calculate means
+pop_mean <- mean(population$height)
+sample_mean <- mean(selected$height)
+pct_excluded <- round(pnorm(cutoff, 160, 10) * 100, 2)
+
+ggplot(population, aes(x = height)) +
+  geom_histogram(aes(y = after_stat(density)),
+                 bins = 50, fill = "#0072B2", alpha = 0.4, color = "white") +
+  geom_density(color = "#0072B2", linewidth = 0.8) +
+  geom_vline(xintercept = cutoff, color = "#D55E00",
+             linewidth = 1.2, linetype = "dashed") +
+  geom_vline(xintercept = pop_mean, color = "#0072B2", linewidth = 1) +
+  geom_vline(xintercept = sample_mean, color = "#D55E00", linewidth = 1) +
+  annotate("text", x = cutoff + 0.5, y = 0.055, hjust = 0,
+           label = "Royal Marines\ncutoff (145 cm)",
+           color = "#D55E00", size = 4, fontface = "bold") +
+  annotate("text", x = pop_mean + 0.5, y = 0.06, hjust = 0,
+           label = paste0("Mean: ", round(pop_mean, 1), " cm"),
+           color = "#0072B2", size = 4, fontface = "bold") +
+  annotate("text", x = sample_mean, y = 0.02, hjust = 0,
+           label = paste0("Sample mean: ", round(sample_mean, 1), " cm"),
+           color = "#D55E00", size = 4, fontface = "bold") +
+  annotate("label", x = 152, y = 0.02,
+           label = paste0("Excluded: ~", pct_excluded, "%\nTruncation bias: ~0 cm"),
+           fill = "white", color = "#D55E00", size = 3.5, label.size = 0.5) +
+  labs(title = "With a low cutoff, truncation barely shifts the mean",
+       subtitle = "Simulated population: mean = 160 cm, SD = 10 cm",
+       x = "Height (cm)",
+       y = "Density") +
+  coord_cartesian(xlim = c(140, 200)) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+:::
+
+## Worst-case bounds and missing data {.smaller}
+
+@manski2007 : A survey contacts **137 unhoused people** and follows up later to ask whether they found housing.
+
+-   At follow-up, only **78 respond**.
+    Of these, **24** had exited homelessness.
+
+-   **59 non-respondents**: did they find housing?
+    We don't know.
+
+-   **Lower bound**: Assume all 59 non-respondents did *not* exit $\rightarrow$ $24/137 = 17.5\%$
+
+-   **Upper bound**: Assume all 59 non-respondents *did* exit $\rightarrow$ $(24 + 59)/137 = 60.6\%$
+
+-   **Naive estimate** (respondents only): $24/78 = 30.8\%$
+
+-   The true answer lies somewhere in $[17.5\%, 60.6\%]$ -- a wide range, but an **honest** one
+
+## Worse-case bounds
+
+```{r}
+#| label: manski-bounds
+#| message: false
+#| warning: false
+#| fig-height: 3
+
+library(tidyverse)
+
+bounds <- tibble(
+  x = c(24/137, (24 + 59)/137),
+  y = c(1, 1)
+)
+
+ggplot() +
+  annotate("segment", x = 24/137, xend = (24 + 59)/137, y = 1, yend = 1,
+           linewidth = 3, color = "#0072B2", alpha = 0.4) +
+  annotate("point", x = c(24/137, (24 + 59)/137), y = c(1, 1),
+           size = 5, color = "#0072B2") +
+  annotate("point", x = 24/78, y = 1,
+           size = 5, color = "#D55E00", shape = 18) +
+  annotate("text", x = 24/137, y = 1.15,
+           label = paste0("Lower bound\n", round(24/137 * 100, 1), "%"),
+           color = "#0072B2", size = 4, fontface = "bold") +
+  annotate("text", x = (24 + 59)/137, y = 1.15,
+           label = paste0("Upper bound\n", round((24 + 59)/137 * 100, 1), "%"),
+           color = "#0072B2", size = 4, fontface = "bold") +
+  annotate("text", x = 24/78, y = 0.85,
+           label = paste0("Naive estimate\n(respondents only)\n",
+                          round(24/78 * 100, 1), "%"),
+           color = "#D55E00", size = 4, fontface = "bold") +
+  scale_x_continuous(labels = scales::percent, limits = c(0, 0.75)) +
+  coord_cartesian(ylim = c(0.5, 1.5)) +
+  labs(x = "Rate of exiting homelessness", y = "") +
+  theme_minimal() +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+## Selection on observables {.smaller}
+
+**Definition**: Selection bias that depends on variables you **can see** in your data.
+
+-   If you know *what* is causing the selection, you can potentially correct for it
+
+-   The key requirement: the variable driving selection must be **measured** in your dataset
+
+
+## A polling example {.smaller}
+
+-   Suppose you're polling voting intentions
+
+-   Your sample over-represents university-educated voters (60% of sample vs. 30% of population)
+
+-   University-educated voters favour Party A at 70%; non-university voters favour Party A at 40%
+
+-   **Naive estimate** (raw sample): $0.6 \times 70 + 0.4 \times 40 = 58\%$ for Party A
+
+-   **Reweighted estimate** (using population shares): $0.3 \times 70 + 0.7 \times 40 = 49\%$ for Party A
+
+-   Because we **observed** education level, we could fix the bias
+
+## Selection on unobservables {.smaller}
+
+**Definition**: Selection bias that depends on variables you **cannot see** in your data.
+
+-   You cannot reweight or control for something you haven't measured
+
+-   This is the hard problem: the bias is invisible in your dataset
+
+-   You need **assumptions** or **external information** to address it
+
+## Correcting for selection on unobservables {.smaller}
+
+-   The **Heckman correction** attempts to fix selection on unobservables
+
+-   **Key assumption**: the errors in the outcome equation and the selection equation are **jointly normally distributed**
+
+-   **High level overview**: you assume a specific formula describes the relationship between the unobservables driving selection and the outcome.
+
+
+## Selection bias and relationships between variables {.smaller}
+
+-   So far we've focused on how selection bias shifts **averages**
+
+-   But selection bias can also distort **relationships** between variables
+
+-   This is sometimes called **Berkson's paradox** or **collider bias**
+
+-   The key insight: conditioning on a variable that is caused by two other variables can create a **spurious correlation** between them
+
+## Berkson's paradox: the NBA example {.smaller}
+
+-   Among **NBA players**, taller players tend to have *worse* free-throw percentages
+
+-   But in the **general population**, height has no relationship to free-throw accuracy
+
+-   The NBA **selects** players who are either very tall *or* very accurate shooters (or both)
+
+-   Among the selected group, if you're not tall, you must be an amazing shooter (otherwise you wouldn't be in the NBA)
+
+-   This creates a **spurious negative correlation** in the selected sample that doesn't exist in the population
+
+## Berkson's paradox illustrated {.smaller}
+
+```{r}
+#| label: berksons-paradox
+#| message: false
+#| warning: false
+#| fig-cap: "Selection creates a spurious negative correlation (Berkson's paradox)"
+
+library(tidyverse)
+
+set.seed(42)
+n <- 5000
+
+# Population: height and free-throw % are UNCORRELATED
+pop <- tibble(
+  height_cm = rnorm(n, mean = 178, sd = 10),
+  ft_pct = rnorm(n, mean = 50, sd = 15)
+) %>%
+  mutate(
+    # Combined selection score
+    score = (height_cm - 178) / 10 + (ft_pct - 50) / 15,
+    selected = score > 1.5
+  )
+
+# Real NBA players for annotation
+nba_players <- tibble(
+  name = c("Yao Ming", "Steph Curry", "Shaq", "Muggsy Bogues", "Steve Nash"),
+  height_cm = c(229, 188, 216, 160, 191),
+  ft_pct = c(83, 91, 53, 82, 90),
+  nudge_y = c(-5, 5, -5, 5, -6),
+  nudge_x = c(-5, 3, -5, 3, 5)
+)
+
+# Threshold line: (h - 178)/10 + (f - 50)/15 = 1.5
+# Rearranged: f = 50 + 15 * (1.5 - (h - 178)/10) = 72.5 - 1.5*(h - 178)
+threshold_line <- tibble(
+  height_cm = seq(145, 235, length.out = 200),
+  ft_pct = 72.5 - 1.5 * (height_cm - 178)
+)
+
+ggplot(pop, aes(x = height_cm, y = ft_pct)) +
+  geom_point(aes(color = selected), alpha = 0.3, size = 1) +
+  geom_line(data = threshold_line,
+            aes(x = height_cm, y = ft_pct),
+            linetype = "dashed", linewidth = 0.8, color = "gray30") +
+  geom_smooth(data = pop %>% filter(selected),
+              aes(x = height_cm, y = ft_pct),
+              method = "lm", se = FALSE, color = "#D55E00", linewidth = 1.2) +
+  geom_point(data = nba_players,
+             aes(x = height_cm, y = ft_pct),
+             color = "#0072B2", size = 3) +
+  geom_text(data = nba_players,
+            aes(x = height_cm + nudge_x, y = ft_pct + nudge_y, label = name),
+            color = "#0072B2", size = 3.5, fontface = "bold") +
+  scale_color_manual(name = "",
+                     values = c("TRUE" = "#D55E00", "FALSE" = "gray75"),
+                     labels = c("TRUE" = "Above threshold (selected)",
+                                "FALSE" = "Below threshold")) +
+  annotate("text", x = 152, y = 95,
+           label = "Selection\nthreshold",
+           color = "gray30", size = 3.5, fontface = "italic") +
+  labs(title = "In the population: no correlation | Among selected: negative correlation",
+       x = "Height (cm)",
+       y = "Free-throw %") +
+  coord_cartesian(xlim = c(145, 235), ylim = c(0, 105)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Key takeaways {.smaller}
+
+-   Sample selection bias is often a bigger threat than sampling error in historical research
+
+-   **Selection on observables** can be corrected if you measure the relevant variables
+
+-   **Selection on unobservables** requires strong assumptions to correct (e.g., Heckman's joint normality)
+
+-   Selection can distort **relationships** between variables (Berkson's paradox), not just averages
+
+-   Always ask: *who is in the sample and why?*
+
+## Bibliography

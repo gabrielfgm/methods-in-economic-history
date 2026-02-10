@@ -292,5 +292,194 @@
     "title": "Basic tools: central tendencies and dispersion",
     "section": "The standard error and sample size",
     "text": "The standard error and sample size\n\n\n\n\n\n\nSample mean and ±2 SD for different sample sizes"
+  },
+  {
+    "objectID": "04_slides.html#the-plan",
+    "href": "04_slides.html#the-plan",
+    "title": "Selection bias",
+    "section": "The plan",
+    "text": "The plan\n\nWhat is sample selection bias?\nSelection on observables\nSelection on unobservables\nHow selection bias distorts relationships between variables"
+  },
+  {
+    "objectID": "04_slides.html#from-statistical-significance-to-bias",
+    "href": "04_slides.html#from-statistical-significance-to-bias",
+    "title": "Selection bias",
+    "section": "From statistical significance to bias",
+    "text": "From statistical significance to bias\n\nLast week we covered means, standard errors, and statistical significance\nThose tools assume our sample is a random draw from the population\nBut what happens when it isn’t?\nIf our sample is not random, our estimates may be biased – systematically wrong in a particular direction\nNo amount of data fixes a biased sample: a bigger biased sample is still biased"
+  },
+  {
+    "objectID": "04_slides.html#the-bigger-threat",
+    "href": "04_slides.html#the-bigger-threat",
+    "title": "Selection bias",
+    "section": "The bigger threat",
+    "text": "The bigger threat\n\nIn observational studies the bigger danger is not sampling error but that your sample is systematically unrepresentative of the population\nStatistical significance tells us about precision (how much noise is in our estimate)\nBut bias is about accuracy (whether we are pointing at the right answer)\nYou can have a very precisely measured estimates of the wrong thing"
+  },
+  {
+    "objectID": "04_slides.html#what-is-sample-selection-bias",
+    "href": "04_slides.html#what-is-sample-selection-bias",
+    "title": "Selection bias",
+    "section": "What is sample selection bias?",
+    "text": "What is sample selection bias?\nDefinition: Sample selection bias occurs when your sample is not a random draw from the population you want to study. You are more likely to capture some kinds of people rather than others.\n\nThe process that generates your data is not independent of the thing you are trying to measure\nThis means your sample statistics (means, correlations, etc.) may not reflect the true population values"
+  },
+  {
+    "objectID": "04_slides.html#where-does-historical-data-come-from",
+    "href": "04_slides.html#where-does-historical-data-come-from",
+    "title": "Selection bias",
+    "section": "Where does historical data come from?",
+    "text": "Where does historical data come from?\n\n\nTax records – only people above a wealth threshold\nMilitary records – only people who enlisted (and met requirements)\nParish registers – only people in that parish, and that religion\nCourt records – only people involved in disputes\nCensus records – depends on who the enumerator found at home\nNewspaper reports – depends on what editors found newsworthy\n\nNone of these are random samples of the population. Each source has its own selection process.\nAlways ask: who is in the sample and why?"
+  },
+  {
+    "objectID": "04_slides.html#a-simple-example-height-and-the-military",
+    "href": "04_slides.html#a-simple-example-height-and-the-military",
+    "title": "Selection bias",
+    "section": "A simple example: height and the military",
+    "text": "A simple example: height and the military\n\n\nSuppose we want to estimate average height in the population using military records\nBut the military has a minimum height requirement – say, 165 cm\nEveryone below the cutoff is excluded from our data\nOur sample mean will overestimate the true population mean\nThis is truncation bias: we only observe part of the distribution"
+  },
+  {
+    "objectID": "04_slides.html#truncation-bias-illustrated",
+    "href": "04_slides.html#truncation-bias-illustrated",
+    "title": "Selection bias",
+    "section": "Truncation bias illustrated",
+    "text": "Truncation bias illustrated\n\n\n\n\n\n\nMinimum height requirement biases the sample mean upward"
+  },
+  {
+    "objectID": "04_slides.html#aside-truncation-and-worst-case-bounds",
+    "href": "04_slides.html#aside-truncation-and-worst-case-bounds",
+    "title": "Selection bias",
+    "section": "Aside: truncation and worst-case bounds",
+    "text": "Aside: truncation and worst-case bounds\n\n\nWhen your sample is truncated (e.g., only observe heights above a threshold), you can place bounds on what the population mean might be\nThe worst case: all the people you don’t observe could be very short (lower bound) or very tall (upper bound)\nTruncation alone is tractable – we can model it if we know the cutoff\nBut the real problem in historical data is usually more subtle: selection depends on things we cannot fully observe"
+  },
+  {
+    "objectID": "04_slides.html#selection-on-observables",
+    "href": "04_slides.html#selection-on-observables",
+    "title": "Selection bias",
+    "section": "Selection on observables",
+    "text": "Selection on observables\nDefinition: Selection bias that depends on variables you can see in your data.\n\nIf you know what is causing the selection, you can potentially correct for it\nThe key requirement: the variable driving selection must be measured in your dataset"
+  },
+  {
+    "objectID": "04_slides.html#a-polling-example",
+    "href": "04_slides.html#a-polling-example",
+    "title": "Selection bias",
+    "section": "A polling example",
+    "text": "A polling example\n\nSuppose you’re polling voting intentions\nYour sample over-represents university-educated voters (60% of sample vs. 30% of population)\nUniversity-educated voters favour Party A at 70%; non-university voters favour Party A at 40%\nNaive estimate (raw sample): \\(0.6 \\times 70 + 0.4 \\times 40 = 58\\%\\) for Party A\nReweighted estimate (using population shares): \\(0.3 \\times 70 + 0.7 \\times 40 = 49\\%\\) for Party A\nBecause we observed education level, we could fix the bias"
+  },
+  {
+    "objectID": "04_slides.html#reweighting-in-action",
+    "href": "04_slides.html#reweighting-in-action",
+    "title": "Selection bias",
+    "section": "Reweighting in action",
+    "text": "Reweighting in action\n\n\n\n\n\n\nReweighting corrects for over-representation of university-educated voters"
+  },
+  {
+    "objectID": "04_slides.html#selection-on-unobservables",
+    "href": "04_slides.html#selection-on-unobservables",
+    "title": "Selection bias",
+    "section": "Selection on unobservables",
+    "text": "Selection on unobservables\nDefinition: Selection bias that depends on variables you cannot see in your data.\n\nYou cannot reweight or control for something you haven’t measured\nThis is the hard problem: the bias is invisible in your dataset\nYou need assumptions or external information to address it"
+  },
+  {
+    "objectID": "04_slides.html#the-anthropometrics-problem",
+    "href": "04_slides.html#the-anthropometrics-problem",
+    "title": "Selection bias",
+    "section": "The anthropometrics problem",
+    "text": "The anthropometrics problem\n\n\nHistorians use military height records to infer population health and nutrition\nMilitary recruiters selected soldiers partly based on characteristics we can observe (age, occupation)\nBut also on characteristics we cannot observe: health, motivation, economic desperation\nIf unhealthy or desperate people are more likely to enlist (because they lack other options), the height sample may be biased downward\nAnd you can’t fix this by reweighting – because you don’t observe the variable driving selection"
+  },
+  {
+    "objectID": "04_slides.html#the-industrialization-puzzle",
+    "href": "04_slides.html#the-industrialization-puzzle",
+    "title": "Selection bias",
+    "section": "The industrialization puzzle",
+    "text": "The industrialization puzzle\n\n\nBodenhorn, Guinnane, and Mroz (2017) argue that US military height samples are selected on unobservables\nThe observed decline in heights during industrialization may be an artefact of changing selection patterns, not a real decline in nutrition\nAs the economy industrialized, the type of person who enlisted changed\nIf selection into the military became less favourable over time (e.g., more desperate, less healthy recruits), measured heights would fall even if population health was stable\nKomlos and A’Hearn (2019) dispute this interpretation; Bodenhorn, Guinnane, and Mroz (2019) respond"
+  },
+  {
+    "objectID": "04_slides.html#the-heckman-correction-the-problem",
+    "href": "04_slides.html#the-heckman-correction-the-problem",
+    "title": "Selection bias",
+    "section": "The Heckman correction: the problem",
+    "text": "The Heckman correction: the problem\n\n\nWe want to estimate average height in the population\nBut we only observe heights of people who were selected into the military\nThe selection process is correlated with height itself (or with things correlated with height)\nSimply averaging observed heights gives a biased answer\nWe need some way to account for the selection process"
+  },
+  {
+    "objectID": "04_slides.html#the-heckman-correction-the-intuition",
+    "href": "04_slides.html#the-heckman-correction-the-intuition",
+    "title": "Selection bias",
+    "section": "The Heckman correction: the intuition",
+    "text": "The Heckman correction: the intuition\n\n\nHeckman’s insight: Model the selection process separately from the outcome\nUse information about who gets selected to adjust your estimates of the outcome\nAnalogy: Imagine you only see wages of people who are employed. To estimate what wages would look like for everyone, you first need to model who chooses to work and who doesn’t. The factors that predict employment (but not wages directly) help you correct for the bias.\nLimitation: Requires assumptions about the functional form of the selection process – if those assumptions are wrong, the correction can be wrong too\nBodenhorn, Guinnane, and Mroz (2017) use a Heckman-style correction; Komlos and A’Hearn (2019) dispute whether the assumptions are justified"
+  },
+  {
+    "objectID": "04_slides.html#selection-bias-and-relationships-between-variables",
+    "href": "04_slides.html#selection-bias-and-relationships-between-variables",
+    "title": "Selection bias",
+    "section": "Selection bias and relationships between variables",
+    "text": "Selection bias and relationships between variables\n\nSo far we’ve focused on how selection bias shifts averages\nBut selection bias can also distort relationships between variables\nThis is sometimes called Berkson’s paradox or collider bias\nThe key insight: conditioning on a variable that is caused by two other variables can create a spurious correlation between them"
+  },
+  {
+    "objectID": "04_slides.html#berksons-paradox-the-nba-example",
+    "href": "04_slides.html#berksons-paradox-the-nba-example",
+    "title": "Selection bias",
+    "section": "Berkson’s paradox: the NBA example",
+    "text": "Berkson’s paradox: the NBA example\n\nAmong NBA players, taller players tend to have worse free-throw percentages\nBut in the general population, height has no relationship to free-throw accuracy\nThe NBA selects players who are either very tall or very accurate shooters (or both)\nAmong the selected group, if you’re not tall, you must be an amazing shooter (otherwise you wouldn’t be in the NBA)\nThis creates a spurious negative correlation in the selected sample that doesn’t exist in the population"
+  },
+  {
+    "objectID": "04_slides.html#berksons-paradox-illustrated",
+    "href": "04_slides.html#berksons-paradox-illustrated",
+    "title": "Selection bias",
+    "section": "Berkson’s paradox illustrated",
+    "text": "Berkson’s paradox illustrated\n\nSelection creates a spurious negative correlation (Berkson’s paradox)"
+  },
+  {
+    "objectID": "04_slides.html#connection-to-the-anthropometrics-debate",
+    "href": "04_slides.html#connection-to-the-anthropometrics-debate",
+    "title": "Selection bias",
+    "section": "Connection to the anthropometrics debate",
+    "text": "Connection to the anthropometrics debate\n\n\nIn the height debates, if selection patterns changed over time (e.g., the military became less selective during wartime), the relationship between height and time is distorted\nIf during peacetime only the tallest and healthiest enlist, but during wartime the military takes almost everyone, the average height of recruits falls – but not because the population got shorter\nThis is the same logic as Berkson’s paradox: conditioning on selection distorts the relationship between the variables of interest\nThis is what makes selection on unobservables so dangerous for historical inference"
+  },
+  {
+    "objectID": "04_slides.html#key-takeaways",
+    "href": "04_slides.html#key-takeaways",
+    "title": "Selection bias",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nSample selection bias is often a bigger threat than sampling error in historical research\nSelection on observables can be corrected if you measure the relevant variables\nSelection on unobservables requires strong assumptions to correct (e.g., Heckman’s joint normality)\nSelection can distort relationships between variables (Berkson’s paradox), not just averages\nAlways ask: who is in the sample and why?"
+  },
+  {
+    "objectID": "04_slides.html#bibliography",
+    "href": "04_slides.html#bibliography",
+    "title": "Selection bias",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\n\nManski, Charles F. 2007. Identification for Predication and Decision. Harvard University Press."
+  },
+  {
+    "objectID": "04_slides.html#a-simple-example-height-and-the-royal-marines",
+    "href": "04_slides.html#a-simple-example-height-and-the-royal-marines",
+    "title": "Selection bias",
+    "section": "A simple example: height and the Royal Marines",
+    "text": "A simple example: height and the Royal Marines\n\nSuppose we want to estimate average height in the population using military records\nThe Royal Marines require a minimum height of 145 cm\nEveryone below the cutoff is excluded from our data\nOur sample mean will overestimate the true population mean\nThis is truncation bias: we only observe part of the distribution"
+  },
+  {
+    "objectID": "04_slides.html#worst-case-bounds-and-missing-data",
+    "href": "04_slides.html#worst-case-bounds-and-missing-data",
+    "title": "Selection bias",
+    "section": "Worst-case bounds and missing data",
+    "text": "Worst-case bounds and missing data\nManski (2007) : A survey contacts 137 unhoused people and follows up later to ask whether they found housing.\n\nAt follow-up, only 78 respond. Of these, 24 had exited homelessness.\n59 non-respondents: did they find housing? We don’t know.\nLower bound: Assume all 59 non-respondents did not exit \\(\\rightarrow\\) \\(24/137 = 17.5\\%\\)\nUpper bound: Assume all 59 non-respondents did exit \\(\\rightarrow\\) \\((24 + 59)/137 = 60.6\\%\\)\nNaive estimate (respondents only): \\(24/78 = 30.8\\%\\)\nThe true answer lies somewhere in \\([17.5\\%, 60.6\\%]\\) – a wide range, but an honest one"
+  },
+  {
+    "objectID": "04_slides.html#correcting-for-selection-on-unobservables",
+    "href": "04_slides.html#correcting-for-selection-on-unobservables",
+    "title": "Selection bias",
+    "section": "Correcting for selection on unobservables",
+    "text": "Correcting for selection on unobservables\n\nThe Heckman correction attempts to fix selection on unobservables\nKey assumption: the errors in the outcome equation and the selection equation are jointly normally distributed\nHigh level overview: you assume a specific formula describes the relationship between the unobservables driving selection and the outcome."
+  },
+  {
+    "objectID": "04_slides.html#the-heckman-correction-in-action",
+    "href": "04_slides.html#the-heckman-correction-in-action",
+    "title": "Selection bias",
+    "section": "The Heckman correction in action",
+    "text": "The Heckman correction in action\n\n\n\n\n\n\nUnder joint normality, the Heckman correction recovers the true mean"
+  },
+  {
+    "objectID": "04_slides.html#worse-case-bounds",
+    "href": "04_slides.html#worse-case-bounds",
+    "title": "Selection bias",
+    "section": "Worse-case bounds",
+    "text": "Worse-case bounds"
   }
 ]
