@@ -13,10 +13,42 @@ bibliography: references.bib
 
 ## The plan {.smaller}
 
+0. The essay
 1.  What is sample selection bias?
 2.  Selection on observables
 3.  Selection on unobservables
 4.  How selection bias distorts relationships between variables
+
+## Your essay {.smaller}
+
+3,000 words.
+
+**Due on 28 April 2026 before 14:00**
+
+## Essay question {.smaller}
+
+*Discuss the role of theory and measurement in a historiographical dispute in economic history.*
+
+Examples you can use:
+
+1.	The debate over heights, well-being, and the ‘industrialization’ puzzle.
+2.	The debate over the ‘high wage economy’ thesis and why Britain industrialized first.
+3.	The debate over the gold standard, empire, and sovereign bond yields in the 19th century.
+4.	The debate over the measurement of income inequality in the 20th century united states.
+
+## Essay question {.smaller}
+
+You can write your own but:
+
+1. It needs to be a scholarly dispute
+2. It needs to be quantitative
+3. I need to approve it
+
+## Essay practice {.smaller}
+
+I will have you write an outline first, and will grade it for you.
+
+We can pick the due date for that together.
 
 ## From statistical significance to bias {.smaller}
 
