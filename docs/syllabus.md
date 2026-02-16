@@ -37,6 +37,9 @@ Core readings:
     economic history,” *Journal of Economic History* (2018), 78:
     1, 268299. ([link](https://doi.org/10.1017/S0022050718000177))
 
+Slides for this week are available
+[here](https://gabrielfgm.github.io/methods-in-economic-history/01_slides.html)
+
 ## 2. The history of quantification
 
 We need to start by thinking about the relationship between measurement,
@@ -56,6 +59,9 @@ Core reading:
 2.  Theodore M. Porter “Making Things Quantitative,” *Science in
     Context* (1994), 7: 3, 389–407.
     ([link](https://doi.org/10.1017/S0269889700001757))
+
+Slides for this week are available
+[here](https://gabrielfgm.github.io/methods-in-economic-history/02_slides.html)
 
 ## 3. Basic tools: central tendencies and dispersion
 
@@ -81,6 +87,9 @@ reading):
     regressions,” *Journal of Economic Literature* (1996), 34: 1,
     97–114. ([link](https://www.jstor.org/stable/2729411))
 
+Slides for this week are available
+[here](https://gabrielfgm.github.io/methods-in-economic-history/03_slides.html)
+
 ## 4. Measurement in action: selection bias
 
 Textbook mathematics is all very straightforward but almost all actual
@@ -105,6 +114,9 @@ Core readings:
     reply to the reply)
     ([link](https://doi.org/10.1017/S002205071900055X))
 
+Slides for this week are available
+[here](https://gabrielfgm.github.io/methods-in-economic-history/04_slides.html)
+
 ## 5. Samples and their interpretation: Measuring historical wages
 
 This session is devoted to the debate around early modern wage rates
@@ -117,19 +129,25 @@ work, and were the rates for individuals or firms?
 
 Core readings:
 
+1.  Robert C. Allen “The high wage economy and the industrial
+    revolution,” *The Economic History Review* (February 2015), 68: 1,
+    1–22.
+    ([link](https://onlinelibrary.wiley.com/doi/10.1111/ehr.12079))
+2.  Jane Humphries and Benjamin Schneider “Spinning the industrial
+    revolution,” *The Economic History Review* (February 2019), 72: 1,
+    126–155.
+    ([link](https://onlinelibrary.wiley.com/doi/10.1111/ehr.12693))
+3.  Robert C Allen “Spinning their wheels,” *Economic History Review*
+    (2020), 73: 4.
+    ([link](https://onlinelibrary.wiley.com/doi/abs/10.1111/ehr.12850))
+
+Additional readings:
+
 1.  Robert C. Allen “Why the industrial revolution was british,” *The
     Economic History Review* (2011), 64: 2, 357–384.
 2.  Jane Humphries “The lure of aggregates and the pitfalls of the
     patriarchal perspective,” *The Economic History Review* (2013), 66:
     3, 693–714.
-3.  Robert C. Allen “The high wage economy and the industrial
-    revolution,” *The Economic History Review* (February 2015), 68: 1,
-    1–22.
-4.  Jane Humphries and Benjamin Schneider “Spinning the industrial
-    revolution,” *The Economic History Review* (February 2019), 72: 1,
-    126–155.
-5.  Robert C Allen “Spinning their wheels,” *Economic History Review*
-    (2020), 73: 4.
 
 ## 6. Rival models: empire and historical bond yields
 

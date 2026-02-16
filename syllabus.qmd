@@ -31,6 +31,8 @@ Core readings:
 
 3.  @gutmann2018 ([link](https://doi.org/10.1017/S0022050718000177))
 
+Slides for this week are available [here](https://gabrielfgm.github.io/methods-in-economic-history/01_slides.html)
+
 ## 2. The history of quantification
 
 We need to start by thinking about the relationship between measurement, statistics and chance. The study of chance is relatively new – certainly new within mathematics. It was only over the course of the last few centuries that ideas developed about how we might quantify and describe chance processes that are subject to chance. We will tackle some hard philosophical readings this week about the emergence of probability as an object of study, and think about how this relates to quantification in history and the social sciences.
@@ -39,6 +41,9 @@ Core reading:
 
 1.  @hacking1990, Chapter 1 and Chapter 23 ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Hacking_Taming_of_Chance_Ch1_Ch23.pdf))
 2.  @porter1994 ([link](https://doi.org/10.1017/S0269889700001757))
+
+Slides for this week are available [here](https://gabrielfgm.github.io/methods-in-economic-history/02_slides.html)
+
 
 ## 3. Basic tools: central tendencies and dispersion
 
@@ -51,6 +56,9 @@ Core readings (pick 1 or two textbook treatments and the additional reading):
 3.  @aronow2019, Chapter 2 (hardest – most concise/complete) ([link](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/readings-pdf/Aronow_Miller_Ch2.pdf))
 4.  @mccloskey1996 ([link](https://www.jstor.org/stable/2729411))
 
+Slides for this week are available [here](https://gabrielfgm.github.io/methods-in-economic-history/03_slides.html)
+
+
 ## 4. Measurement in action: selection bias
 
 Textbook mathematics is all very straightforward but almost all actual research has to cope with the problem of selection bias. We will work through a case study in selection bias this week looking at the problem of inferring historical welfare from samples of population heights – a practice known as anthropometrics.
@@ -61,17 +69,23 @@ Core readings:
 2.  @komlos2019 (the reply) ([link](https://doi.org/10.1017/S0022050719000573))
 3.  @bodenhorn2019 (the reply to the reply) ([link](https://doi.org/10.1017/S002205071900055X))
 
+Slides for this week are available [here](https://gabrielfgm.github.io/methods-in-economic-history/04_slides.html)
+
+
 ## 5. Samples and their interpretation: Measuring historical wages
 
 This session is devoted to the debate around early modern wage rates (Allen and Stephenson and Humphries). This debate is critical to theories of why the industrial revolution occurred in Britain as opposed to elsewhere, and hinges around difficult questions of measurement: what samples of wages do we have to make statements about ‘British wage rates’ in the early modern period? How many days did people actually work, and were the rates for individuals or firms?
 
 Core readings:
 
+1.  @allen2015 ([link](https://onlinelibrary.wiley.com/doi/10.1111/ehr.12079))
+2.  @humphries2019 ([link](https://onlinelibrary.wiley.com/doi/10.1111/ehr.12693))
+3.  @allen2020 ([link](https://onlinelibrary.wiley.com/doi/abs/10.1111/ehr.12850))
+
+Additional readings:
+
 1.  @allen2011
 2.  @humphries2013
-3.  @allen2015
-4.  @humphries2019
-5.  @allen2020
 
 ## 6. Rival models: empire and historical bond yields
 
