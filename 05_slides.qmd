@@ -177,7 +177,7 @@ df |>
   ggplot(aes(x = dob, y = height)) +
   geom_point(alpha = 0.5, size = 0.8, colour = "grey40") +
   labs(x = "Date of birth", y = "Height (cm)") +
-  scale_x_date(date_labels = "%Y-%m", date_breaks = "1 month") +
+  scale_x_date(date_labels = "%b", date_breaks = "1 month") +
   theme_minimal(base_size = 14)
 ```
 
@@ -218,7 +218,7 @@ ggplot(monthly, aes(x = year_month, y = mean_height)) +
   geom_line(colour = "grey60", linewidth = 0.4) +
   geom_point(aes(size = n_obs), colour = "steelblue", alpha = 0.7) +
   scale_size_continuous(range = c(1, 4), name = "Observations") +
-  scale_x_date(date_labels = "%m", date_breaks = "1 month") +
+  scale_x_date(date_labels = "%b", date_breaks = "1 month") +
   labs(x = "Year-month", y = "Mean height (cm)") +
   theme_minimal(base_size = 14)
 ```
@@ -445,7 +445,7 @@ $$
 
 modelsummary(
   list("Height (cm)" = model1),
-  stars = c("*" = 0.1, "**" = 0.05, "***" = 0.01),
+  stars = TRUE,
   gof_map = c("nobs", "r.squared"),
   coef_rename = c("dob_decimal" = "Date of birth (year)", "(Intercept)" = "Intercept"),
   output = "kableExtra"
@@ -458,11 +458,11 @@ modelsummary(
 
 -   **Standard errors in parentheses**: below each coefficient, indicating precision
 
--   **Stars**: `*` means $p < 0.1$, `**` means $p < 0.05$, `***` means $p < 0.01$
+-   **Stars**: conventionally `+` means $p < 0.1$, `*` means $p < 0.05$, `**` means $p < 0.01$ `***` means $p < 0.001$
 
 -   **Intercept**: predicted height when DOB = 0 (not meaningful here, but necessary)
 
--   **$R^2$**: how much variation in height is explained by DOB alone (close to 0 = very little)
+-   **$R^2$**: what percent of variation in height is explained by DOB alone (close to 0 = very little)
 
 -   **Num.Obs.** ($N$): the number of observations
 
@@ -600,8 +600,8 @@ plot_grid(panel_a, panel_b, panel_c, panel_d, nrow = 2)
 #| tbl-cap: "Regression results: simple and multiple regression."
 
 modelsummary(
-  list("(1)" = model1, "(2)" = model2),
-  stars = c("*" = 0.1, "**" = 0.05, "***" = 0.01),
+  list("Height (cm) (1)" = model1, "Height (cm) (2)" = model2),
+  stars = TRUE,
   gof_map = c("nobs", "r.squared", "adj.r.squared"),
   coef_rename = c(
     "dob_decimal" = "Date of birth (year)",

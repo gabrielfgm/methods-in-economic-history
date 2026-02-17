@@ -676,14 +676,14 @@
     "href": "05_slides.html#reading-a-regression-table",
     "title": "Linear Regression",
     "section": "Reading a regression table",
-    "text": "Reading a regression table\n\n\n\n\nTable 2: Simple regression of height on date of birth.\n\n\n\n\n\n\n\n\nHeight (cm)\n\n\n\n\nIntercept\n−49.120\n\n\n\n(118.754)\n\n\nDate of birth (year)\n0.119*\n\n\n\n(0.065)\n\n\nNum.Obs.\n1517\n\n\nR2\n0.002\n\n\n\n * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01"
+    "text": "Reading a regression table\n\n\n\n\nTable 2: Simple regression of height on date of birth.\n\n\n\n\n\n\n\n\nHeight (cm)\n\n\n\n\nIntercept\n−49.120\n\n\n\n(118.754)\n\n\nDate of birth (year)\n0.119+\n\n\n\n(0.065)\n\n\nNum.Obs.\n1517\n\n\nR2\n0.002\n\n\n\n + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001"
   },
   {
     "objectID": "05_slides.html#elements-of-a-regression-table",
     "href": "05_slides.html#elements-of-a-regression-table",
     "title": "Linear Regression",
     "section": "Elements of a regression table",
-    "text": "Elements of a regression table\n\nCoefficient estimates: each row is a variable; the number is the point estimate\nStandard errors in parentheses: below each coefficient, indicating precision\nStars: * means \\(p &lt; 0.1\\), ** means \\(p &lt; 0.05\\), *** means \\(p &lt; 0.01\\)\nIntercept: predicted height when DOB = 0 (not meaningful here, but necessary)\n\\(R^2\\): how much variation in height is explained by DOB alone (close to 0 = very little)\nNum.Obs. (\\(N\\)): the number of observations"
+    "text": "Elements of a regression table\n\nCoefficient estimates: each row is a variable; the number is the point estimate\nStandard errors in parentheses: below each coefficient, indicating precision\nStars: conventionally + means \\(p &lt; 0.1\\), * means \\(p &lt; 0.05\\), ** means \\(p &lt; 0.01\\) *** means \\(p &lt; 0.001\\)\nIntercept: predicted height when DOB = 0 (not meaningful here, but necessary)\n\\(R^2\\): what percent of variation in height is explained by DOB alone (close to 0 = very little)\nNum.Obs. (\\(N\\)): the number of observations"
   },
   {
     "objectID": "05_slides.html#adding-another-regressor",
@@ -718,7 +718,7 @@
     "href": "05_slides.html#multiple-regression-table",
     "title": "Linear Regression",
     "section": "Multiple regression table",
-    "text": "Multiple regression table\n\n\n\n\nTable 3: Regression results: simple and multiple regression.\n\n\n\n\n\n\n\n\n (1)\n  (2)\n\n\n\n\nIntercept\n−49.120\n−141.882\n\n\n\n(118.754)\n(100.340)\n\n\nDate of birth (year)\n0.119*\n0.171***\n\n\n\n(0.065)\n(0.055)\n\n\nFemale\n\n−10.739***\n\n\n\n\n(0.434)\n\n\nNum.Obs.\n1517\n1517\n\n\nR2\n0.002\n0.289\n\n\nR2 Adj.\n0.002\n0.288\n\n\n\n * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01"
+    "text": "Multiple regression table\n\n\n\n\nTable 3: Regression results: simple and multiple regression.\n\n\n\n\n\n\n\n\nHeight (cm) (1)\n Height (cm) (2)\n\n\n\n\nIntercept\n−49.120\n−141.882\n\n\n\n(118.754)\n(100.340)\n\n\nDate of birth (year)\n0.119+\n0.171**\n\n\n\n(0.065)\n(0.055)\n\n\nFemale\n\n−10.739***\n\n\n\n\n(0.434)\n\n\nNum.Obs.\n1517\n1517\n\n\nR2\n0.002\n0.289\n\n\nR2 Adj.\n0.002\n0.288\n\n\n\n + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001"
   },
   {
     "objectID": "05_slides.html#comparing-the-two-columns",

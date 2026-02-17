@@ -681,7 +681,7 @@ Table&nbsp;2: Simple regression of height on date of birth.
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Date of birth (year)</td>
-<td style="text-align: center;">0.119*</td>
+<td style="text-align: center;">0.119+</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; box-shadow: 0px 1.5px;"></td>
@@ -697,7 +697,7 @@ Table&nbsp;2: Simple regression of height on date of birth.
 </tr>
 </tbody><tfoot>
 <tr class="odd">
-<td style="text-align: left; padding: 0;"><sup></sup> * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01</td>
+<td style="text-align: left; padding: 0;"><sup></sup> + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
 <td style="text-align: center;"></td>
 </tr>
 </tfoot>
@@ -717,9 +717,9 @@ Table&nbsp;2: Simple regression of height on date of birth.
 <ul>
 <li><p><strong>Coefficient estimates</strong>: each row is a variable; the number is the point estimate</p></li>
 <li><p><strong>Standard errors in parentheses</strong>: below each coefficient, indicating precision</p></li>
-<li><p><strong>Stars</strong>: <code>*</code> means <span class="math inline">\(p &lt; 0.1\)</span>, <code>**</code> means <span class="math inline">\(p &lt; 0.05\)</span>, <code>***</code> means <span class="math inline">\(p &lt; 0.01\)</span></p></li>
+<li><p><strong>Stars</strong>: conventionally <code>+</code> means <span class="math inline">\(p &lt; 0.1\)</span>, <code>*</code> means <span class="math inline">\(p &lt; 0.05\)</span>, <code>**</code> means <span class="math inline">\(p &lt; 0.01\)</span> <code>***</code> means <span class="math inline">\(p &lt; 0.001\)</span></p></li>
 <li><p><strong>Intercept</strong>: predicted height when DOB = 0 (not meaningful here, but necessary)</p></li>
-<li><p><strong><span class="math inline">\(R^2\)</span></strong>: how much variation in height is explained by DOB alone (close to 0 = very little)</p></li>
+<li><p><strong><span class="math inline">\(R^2\)</span></strong>: what percent of variation in height is explained by DOB alone (close to 0 = very little)</p></li>
 <li><p><strong>Num.Obs.</strong> (<span class="math inline">\(N\)</span>): the number of observations</p></li>
 </ul>
 </section>
@@ -775,8 +775,8 @@ Table&nbsp;3: Regression results: simple and multiple regression.
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;(1)</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;&nbsp;(2)</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Height (cm) (1)</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Height (cm) (2)</th>
 </tr>
 </thead>
 <tbody>
@@ -792,8 +792,8 @@ Table&nbsp;3: Regression results: simple and multiple regression.
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Date of birth (year)</td>
-<td style="text-align: center;">0.119*</td>
-<td style="text-align: center;">0.171***</td>
+<td style="text-align: center;">0.119+</td>
+<td style="text-align: center;">0.171**</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"></td>
@@ -827,7 +827,7 @@ Table&nbsp;3: Regression results: simple and multiple regression.
 </tr>
 </tbody><tfoot>
 <tr class="even">
-<td style="text-align: left; padding: 0;"><sup></sup> * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01</td>
+<td style="text-align: left; padding: 0;"><sup></sup> + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
