@@ -509,5 +509,250 @@
     "title": "Selection bias",
     "section": "Essay practice",
     "text": "Essay practice\nI will have you write an outline first, and will grade it for you.\nWe can pick the due date for that together."
+  },
+  {
+    "objectID": "05_slides.html#the-plan",
+    "href": "05_slides.html#the-plan",
+    "title": "Linear Regression",
+    "section": "The plan",
+    "text": "The plan\n\nA motivating example\nComparing averages by gender\nAveraging by date of birth\nConditional averages and linear regression\nThe regression equation and OLS\nErrors vs residuals\nStatistical uncertainty\nReading regression tables\nMultiple regression"
+  },
+  {
+    "objectID": "05_slides.html#a-motivating-example",
+    "href": "05_slides.html#a-motivating-example",
+    "title": "Linear Regression",
+    "section": "A motivating example",
+    "text": "A motivating example\n\nImagine we are conducting an anthropometric study using a dataset of 1,517 heights recorded in 1850\n1,215 have recorded gender as male and 302 as female\nFor each record we also measure the person’s date of birth\nWe want to understand the relationship between height, gender, and date of birth\nWe can think of regression as a way of comparing averages (Gelman, Hill, and Vehtari 2020)"
+  },
+  {
+    "objectID": "05_slides.html#a-snippet-of-the-data",
+    "href": "05_slides.html#a-snippet-of-the-data",
+    "title": "Linear Regression",
+    "section": "A snippet of the data",
+    "text": "A snippet of the data\n\n\n\n\nTable 1: A snippet of the height data\n\n\n\n\n\n\n\nIndividual\nHeight (cm)\nGender\nDOB\n\n\n\n\n1\n177.44\nM\n1826-10-28\n\n\n2\n167.63\nM\n1829-05-14\n\n\n3\n176.31\nM\n1829-02-20\n\n\n1517\n162.86\nF\n1824-01-18"
+  },
+  {
+    "objectID": "05_slides.html#comparing-averages-by-gender",
+    "href": "05_slides.html#comparing-averages-by-gender",
+    "title": "Linear Regression",
+    "section": "Comparing averages by gender",
+    "text": "Comparing averages by gender\nWe can calculate averages separately by gender:\n\\[\n\\text{Avg}_M = \\sum_{i=1}^{1215} \\frac{h_i}{1215} \\qquad \\text{Avg}_F = \\sum_{i=1}^{302} \\frac{h_i}{302}\n\\]"
+  },
+  {
+    "objectID": "05_slides.html#precision-differs-by-group-size",
+    "href": "05_slides.html#precision-differs-by-group-size",
+    "title": "Linear Regression",
+    "section": "Precision differs by group size",
+    "text": "Precision differs by group size\n\nAssume the standard deviation of men’s and women’s heights is the same value \\(\\sigma\\)\nStandard error of male heights: \\(\\sigma_M = \\frac{\\sigma}{\\sqrt{1215}} \\approx \\frac{\\sigma}{35}\\)\nStandard error of female heights: \\(\\sigma_F = \\frac{\\sigma}{\\sqrt{302}} \\approx \\frac{\\sigma}{17}\\)\nOur measure of male heights is about 2 times as accurate as our measure of female heights\nThis occurs simply because we observe fewer women in the data"
+  },
+  {
+    "objectID": "05_slides.html#heights-by-gender",
+    "href": "05_slides.html#heights-by-gender",
+    "title": "Linear Regression",
+    "section": "Heights by gender",
+    "text": "Heights by gender\n\n\nFigure 1: Heights by gender. Red points and error bars show the mean \\(\\pm\\) 2 standard errors."
+  },
+  {
+    "objectID": "05_slides.html#averaging-by-date-of-birth",
+    "href": "05_slides.html#averaging-by-date-of-birth",
+    "title": "Linear Regression",
+    "section": "Averaging by date of birth",
+    "text": "Averaging by date of birth\nWhat if we want to calculate the average by date of birth?\n\n\nFigure 2: Individual heights plotted against date of birth in 1822."
+  },
+  {
+    "objectID": "05_slides.html#the-problem-with-fine-grained-averages",
+    "href": "05_slides.html#the-problem-with-fine-grained-averages",
+    "title": "Linear Regression",
+    "section": "The problem with fine-grained averages",
+    "text": "The problem with fine-grained averages\n\nIf we reduce DOB to the year of birth we can calculate an average, but it is less precise\nAt the year-and-month level it becomes almost impossible\nAt the actual day of birth most days have 1 or no observations\nWe need an approach that uses all of the observed data and generalizes to any date"
+  },
+  {
+    "objectID": "05_slides.html#thinking-about-prediction",
+    "href": "05_slides.html#thinking-about-prediction",
+    "title": "Linear Regression",
+    "section": "Thinking about prediction",
+    "text": "Thinking about prediction\n\nLet’s shift perspective: consider a date we have no observations for\nWhat is a good strategy for guessing the average height at this date?\n\n\n\nFigure 3: Average height by week. Point size indicates the number of observations."
+  },
+  {
+    "objectID": "05_slides.html#interpolation",
+    "href": "05_slides.html#interpolation",
+    "title": "Linear Regression",
+    "section": "Interpolation",
+    "text": "Interpolation\n\nSay we observe average heights for February 1822 and April 1822\nA reasonable guess for March 1822:\n\n\\[\n\\hat{h}_{1822\\text{-Mar}} = h_{1822\\text{-Feb}} + \\frac{h_{1822\\text{-Apr}} - h_{1822\\text{-Feb}}}{t_{1822\\text{-Apr}} - t_{1822\\text{-Feb}}}\n\\]\n\nThis is the rise over run: change in height divided by change in time"
+  },
+  {
+    "objectID": "05_slides.html#limitations-of-interpolation",
+    "href": "05_slides.html#limitations-of-interpolation",
+    "title": "Linear Regression",
+    "section": "Limitations of interpolation",
+    "text": "Limitations of interpolation\n\nThe individual monthly observations are based on few observations — they may not be very accurate\nWe observe many data points — how do we include all of them?\nWhat if we are missing two observations in a row?\nWe are working with time averages but really we see the day people are born\nWe need an approach that:\n\nUses all of the observed data\nGeneralizes to any date with missing values"
+  },
+  {
+    "objectID": "05_slides.html#conditional-averages",
+    "href": "05_slides.html#conditional-averages",
+    "title": "Linear Regression",
+    "section": "Conditional averages",
+    "text": "Conditional averages\n\nThe best case: so many observations per date that we could calculate the average for each day\nThis would be the conditional average: the average conditional on the day a person was born\nWe don’t have enough data for this, but at least we know our goal is a conditional average\nSolution: calculate an average that depends on the date and a very small number of unknown parameters"
+  },
+  {
+    "objectID": "05_slides.html#linear-regression",
+    "href": "05_slides.html#linear-regression",
+    "title": "Linear Regression",
+    "section": "Linear regression",
+    "text": "Linear regression\nLinear regression computes a linear approximation to the conditional average.\nThe word linear means:\n\nThe relationship is the same no matter what time period we look at: moving from 1822-02-10 to 1822-02-20 has the same effect as moving from 1823-02-10 to 1823-02-20\nThe relationship between the outcome and the predictor is governed by a single parameter"
+  },
+  {
+    "objectID": "05_slides.html#the-regression-equation",
+    "href": "05_slides.html#the-regression-equation",
+    "title": "Linear Regression",
+    "section": "The regression equation",
+    "text": "The regression equation\n\\[\nh_i = \\alpha + \\beta \\, d_i + \\varepsilon_i\n\\]\n\n\\(h_i\\): the height of individual \\(i\\) (one of 1,517 observations)\n\\(d_i\\): the date of birth, expressed in decimal years\n\\(\\alpha\\): the intercept — the predicted average height when \\(d_i = 0\\)\n\\(\\beta\\): the slope — the predicted change in average height for a one-year increase in DOB\n\\(\\varepsilon_i\\): the error term — the deviation of a person’s height from the average height of someone born on their birthday"
+  },
+  {
+    "objectID": "05_slides.html#ordinary-least-squares",
+    "href": "05_slides.html#ordinary-least-squares",
+    "title": "Linear Regression",
+    "section": "Ordinary Least Squares",
+    "text": "Ordinary Least Squares\nWe estimate \\(\\alpha\\) and \\(\\beta\\) by minimizing the sum of squared errors:\n\\[\n\\min_{\\alpha,\\,\\beta} \\sum_{i=1}^{1517} \\varepsilon_i^2\n\\]\nwhere\n\\[\n\\varepsilon_i^2 = (h_i - \\alpha - \\beta \\, d_i)^2\n\\]\n\nWe pick the values of \\(\\alpha\\) and \\(\\beta\\) that make the squared deviations as small as possible\nThere are closed form solutions to this model (you cold solve by hand) but your computer can do it trivially."
+  },
+  {
+    "objectID": "05_slides.html#our-first-regression",
+    "href": "05_slides.html#our-first-regression",
+    "title": "Linear Regression",
+    "section": "Our first regression",
+    "text": "Our first regression\n\n\nFigure 4: Height versus date of birth with OLS regression line and 95% confidence band."
+  },
+  {
+    "objectID": "05_slides.html#predicting-off-the-support",
+    "href": "05_slides.html#predicting-off-the-support",
+    "title": "Linear Regression",
+    "section": "Predicting off the support",
+    "text": "Predicting off the support\n\nThe slope \\(\\hat\\beta\\) is 0.119 cm per year of birth — slightly positive\nWhat if we predict height for someone born on 2026-01-01?\n\n\\[\n\\hat{h}_{2026\\text{-}01\\text{-}01} = \\hat\\alpha + \\hat\\beta \\, d_{2026\\text{-}01\\text{-}01}\n\\]\n\nOur prediction: 191.9 cm — much too tall for average height!\nThe linear relationship holds across the dates we observe, but the machine can predict at any date\nPredictions become less reliable the farther we move from observed dates\nThis is called predicting off the support of the distribution"
+  },
+  {
+    "objectID": "05_slides.html#errors-vs-residuals",
+    "href": "05_slides.html#errors-vs-residuals",
+    "title": "Linear Regression",
+    "section": "Errors vs residuals",
+    "text": "Errors vs residuals\nAn important distinction:\n\nErrors \\(\\varepsilon_i = h_i - \\alpha - \\beta \\, d_i\\): the difference between a person’s height and the true conditional average. We never observe these because we never know the true \\(\\alpha\\) and \\(\\beta\\).\nResiduals \\(\\hat\\varepsilon_i = h_i - \\hat\\alpha - \\hat\\beta \\, d_i\\): the difference between observed heights and the estimated regression line. We do observe these.\nThe residuals are our best available stand-in for the unknown errors\nOur measures of uncertainty are themselves estimates, built from residuals rather than true errors"
+  },
+  {
+    "objectID": "05_slides.html#statistical-uncertainty",
+    "href": "05_slides.html#statistical-uncertainty",
+    "title": "Linear Regression",
+    "section": "Statistical uncertainty",
+    "text": "Statistical uncertainty\n\nThe regression coefficients come from a sample and are therefore uncertain\nJust as with a mean, we need a standard error\nRecall: for the sample mean \\(\\bar{h}\\), the standard error is\n\n\\[\n\\text{SE}(\\bar{h}) = \\frac{\\hat\\sigma}{\\sqrt{n}}\n\\]\n\nMore noise \\(\\rightarrow\\) less certain; more data \\(\\rightarrow\\) more certain"
+  },
+  {
+    "objectID": "05_slides.html#standard-error-of-a-slope",
+    "href": "05_slides.html#standard-error-of-a-slope",
+    "title": "Linear Regression",
+    "section": "Standard error of a slope",
+    "text": "Standard error of a slope\nThe standard error for a regression slope follows the same logic:\n\\[\n\\text{SE}(\\hat\\beta) = \\sqrt{\\frac{\\hat\\sigma^2}{\\sum_{i=1}^{n}(d_i - \\bar{d})^2}}\n\\]\nwhere \\(\\hat\\sigma^2 = \\frac{1}{n-2}\\sum_{i=1}^{n}\\hat\\varepsilon_i^2\\)\n\nNumerator: how noisy the data are around the regression line\nDenominator: how spread out the predictor is along the x-axis"
+  },
+  {
+    "objectID": "05_slides.html#why-the-spread-of-the-predictor-matters",
+    "href": "05_slides.html#why-the-spread-of-the-predictor-matters",
+    "title": "Linear Regression",
+    "section": "Why the spread of the predictor matters",
+    "text": "Why the spread of the predictor matters\n\nA regression slope measures a rate of change (cm per year of DOB)\nTo pin down a rate of change, what matters is not just how many people we observe but how spread out they are along the x-axis\nTwo datasets, both with 1,000 observations:\n\nFirst: everyone born within a single month\nSecond: births spread over a decade\n\nThe second dataset is far more informative about the slope\n\\(\\sum(d_i - \\bar{d})^2\\) captures this: larger when dates are more spread out, making \\(\\text{SE}(\\hat\\beta)\\) smaller"
+  },
+  {
+    "objectID": "05_slides.html#confidence-intervals",
+    "href": "05_slides.html#confidence-intervals",
+    "title": "Linear Regression",
+    "section": "Confidence intervals",
+    "text": "Confidence intervals\n\\[\n\\hat\\beta \\pm 2 \\times \\text{SE}(\\hat\\beta)\n\\]\n\nIf we repeated our study many times, approximately 95% of these intervals would contain the true value of \\(\\beta\\)\nAny single interval either contains the truth or it doesn’t, but the procedure is right 95% of the time\nWhen zero falls inside the interval: data are consistent with no relationship\nWhen zero falls outside the interval: data suggest the true slope is different from zero"
+  },
+  {
+    "objectID": "05_slides.html#the-t-statistic",
+    "href": "05_slides.html#the-t-statistic",
+    "title": "Linear Regression",
+    "section": "The t-statistic",
+    "text": "The t-statistic\n\\[\nt = \\frac{\\hat\\beta}{\\text{SE}(\\hat\\beta)}\n\\]\n\nHow many standard errors our estimate is away from zero\nRule of thumb: \\(|t| &gt; 2\\) means “statistically significant” at conventional levels\nEquivalent to saying zero lies outside the 95% confidence interval\nA coefficient of 0.5 with SE of 0.1 (\\(t = 5\\)) is much more convincing than a coefficient of 0.5 with SE of 0.4 (\\(t = 1.25\\))"
+  },
+  {
+    "objectID": "05_slides.html#reading-a-regression-table",
+    "href": "05_slides.html#reading-a-regression-table",
+    "title": "Linear Regression",
+    "section": "Reading a regression table",
+    "text": "Reading a regression table\n\n\n\n\nTable 2: Simple regression of height on date of birth.\n\n\n\n\n\n\n\n\nHeight (cm)\n\n\n\n\nIntercept\n−49.120\n\n\n\n(118.754)\n\n\nDate of birth (year)\n0.119*\n\n\n\n(0.065)\n\n\nNum.Obs.\n1517\n\n\nR2\n0.002\n\n\n\n * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01"
+  },
+  {
+    "objectID": "05_slides.html#elements-of-a-regression-table",
+    "href": "05_slides.html#elements-of-a-regression-table",
+    "title": "Linear Regression",
+    "section": "Elements of a regression table",
+    "text": "Elements of a regression table\n\nCoefficient estimates: each row is a variable; the number is the point estimate\nStandard errors in parentheses: below each coefficient, indicating precision\nStars: * means \\(p &lt; 0.1\\), ** means \\(p &lt; 0.05\\), *** means \\(p &lt; 0.01\\)\nIntercept: predicted height when DOB = 0 (not meaningful here, but necessary)\n\\(R^2\\): how much variation in height is explained by DOB alone (close to 0 = very little)\nNum.Obs. (\\(N\\)): the number of observations"
+  },
+  {
+    "objectID": "05_slides.html#adding-another-regressor",
+    "href": "05_slides.html#adding-another-regressor",
+    "title": "Linear Regression",
+    "section": "Adding another regressor",
+    "text": "Adding another regressor\nWe can include both DOB and gender in a multiple regression:\n\\[\n\\text{height}_i = \\alpha + \\beta_1 \\cdot \\text{dob}_i + \\beta_2 \\cdot \\mathbf{1}[\\text{female}_i] + \\varepsilon_i\n\\]\n\n\\(\\mathbf{1}[\\text{female}_i]\\) is an indicator variable (equals 1 if female, 0 if male)\nFor a male: predicted height is \\(\\alpha + \\beta_1 d\\)\nFor a female: predicted height is \\(\\alpha + \\beta_1 d + \\beta_2\\)\n\\(\\beta_2\\) measures the average height difference for females relative to males"
+  },
+  {
+    "objectID": "05_slides.html#holding-constant",
+    "href": "05_slides.html#holding-constant",
+    "title": "Linear Regression",
+    "section": "“Holding constant”",
+    "text": "“Holding constant”\nMultiple regression estimates each coefficient holding the other variables constant:\n\n\\(\\beta_1\\): the effect of DOB on height holding gender constant — comparing people of the same gender born at different dates\n\\(\\beta_2\\): the average height difference for females relative to males holding DOB constant — comparing men and women born at the same time"
+  },
+  {
+    "objectID": "05_slides.html#visualizing-holding-constant",
+    "href": "05_slides.html#visualizing-holding-constant",
+    "title": "Linear Regression",
+    "section": "Visualizing “holding constant”",
+    "text": "Visualizing “holding constant”\n\n\nFigure 5: How multiple regression isolates the DOB effect after removing gender. Panel A: raw data coloured by gender, with group means marked. Panel B: after subtracting each group’s mean height, the two clouds overlap vertically; group mean DOB is marked. Panel C: after also subtracting each group’s mean DOB, the data are centred at the origin. Panel D: the regression slope through the doubly-residualized data equals \\(\\hat\\beta_1\\) from the multiple regression."
+  },
+  {
+    "objectID": "05_slides.html#what-the-panels-show",
+    "href": "05_slides.html#what-the-panels-show",
+    "title": "Linear Regression",
+    "section": "What the panels show",
+    "text": "What the panels show\n\nPanel A: Raw data coloured by gender, with group mean heights marked\nPanel B: After subtracting each group’s mean height, the two clouds overlap vertically\nPanel C: After also subtracting each group’s mean DOB, both variables are “cleaned” of gender\nPanel D: The regression slope through this doubly-residualized data equals \\(\\hat\\beta_1\\) from the multiple regression (Frisch-Waugh-Lovell theorem)\nMultiple regression is, at its core, about comparing like with like"
+  },
+  {
+    "objectID": "05_slides.html#multiple-regression-table",
+    "href": "05_slides.html#multiple-regression-table",
+    "title": "Linear Regression",
+    "section": "Multiple regression table",
+    "text": "Multiple regression table\n\n\n\n\nTable 3: Regression results: simple and multiple regression.\n\n\n\n\n\n\n\n\n (1)\n  (2)\n\n\n\n\nIntercept\n−49.120\n−141.882\n\n\n\n(118.754)\n(100.340)\n\n\nDate of birth (year)\n0.119*\n0.171***\n\n\n\n(0.065)\n(0.055)\n\n\nFemale\n\n−10.739***\n\n\n\n\n(0.434)\n\n\nNum.Obs.\n1517\n1517\n\n\nR2\n0.002\n0.289\n\n\nR2 Adj.\n0.002\n0.288\n\n\n\n * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01"
+  },
+  {
+    "objectID": "05_slides.html#comparing-the-two-columns",
+    "href": "05_slides.html#comparing-the-two-columns",
+    "title": "Linear Regression",
+    "section": "Comparing the two columns",
+    "text": "Comparing the two columns\n\nDOB coefficient increases from (1) to (2): the simple regression was attenuated by mixing men and women. The standard error falls because including gender shrinks the residuals.\nFemale coefficient is large and negative: the well-known average height difference between men and women. Statistically significant at the 1% level.\n\\(R^2\\) jumps substantially: DOB alone explains little, but adding gender explains the ~10 cm gap between men and women.\nAdjusted \\(R^2\\) penalizes for number of predictors. When it rises meaningfully, the added variable genuinely improves fit."
+  },
+  {
+    "objectID": "05_slides.html#key-takeaways",
+    "href": "05_slides.html#key-takeaways",
+    "title": "Linear Regression",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nRegression is a way of comparing averages — it computes a linear approximation to the conditional mean\nOLS picks the line that minimizes the sum of squared errors\nStandard errors tell us about the precision of our estimates\nMultiple regression estimates each coefficient holding other variables constant\nAlways check: is the relationship linear? Are you predicting off the support?"
+  },
+  {
+    "objectID": "05_slides.html#bibliography",
+    "href": "05_slides.html#bibliography",
+    "title": "Linear Regression",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\n\nGelman, Andrew, Jennifer Hill, and Aki Vehtari. 2020. Regression and Other Stories. Cambridge: Cambridge University Press. https://doi.org/10.1017/9781139161879."
+  },
+  {
+    "objectID": "05_slides.html#todays-plan",
+    "href": "05_slides.html#todays-plan",
+    "title": "Linear Regression",
+    "section": "Today’s plan",
+    "text": "Today’s plan\n\nAn overview of linear regression\nClass work on the high-wage economy debate"
+  },
+  {
+    "objectID": "05_slides.html#our-goal-conditional-averages",
+    "href": "05_slides.html#our-goal-conditional-averages",
+    "title": "Linear Regression",
+    "section": "Our goal: conditional averages",
+    "text": "Our goal: conditional averages\n\nThe best case: so many observations per date that we could calculate the average for each day\nThis would be the conditional average: the average conditional on the day a person was born\nWe don’t have enough data for this, but at least we know our goal is a conditional average\nSolution: calculate an average that depends on the date and a very small number of unknown parameters"
   }
 ]

@@ -1,0 +1,637 @@
+---
+title: "Linear Regression"
+author: "Gabriel Mesevage"
+format:
+  revealjs:
+    slide-number: c/t
+    chalkboard:
+      buttons: true
+editor:
+  markdown:
+    wrap: sentence
+bibliography: references.bib
+---
+
+## Today's plan {.smaller}
+
+1. An overview of linear regression
+2. Class work on the high-wage economy debate
+
+## A motivating example {.smaller}
+
+-   Imagine we are conducting an anthropometric study using a dataset of **1,517 heights** recorded in 1850
+
+-   1,215 have recorded gender as male and 302 as female
+
+-   For each record we also measure the person's **date of birth**
+
+-   We want to understand the relationship between height, gender, and date of birth
+
+-   We can think of regression as a way of **comparing averages** [@gelman2020]
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(modelsummary)
+library(scales)
+library(cowplot)
+
+set.seed(1850)
+```
+
+```{r}
+#| label: simulate-data
+#| echo: false
+
+# Number of observations
+n_male <- 1215
+n_female <- 302
+n <- n_male + n_female
+
+# Gender
+gender <- factor(c(rep("M", n_male), rep("F", n_female)), levels = c("M", "F"))
+
+# Date of birth: uniform between 1820-01-01 and 1830-12-31
+dob <- as.Date("1820-01-01") + sample(0:as.integer(as.Date("1830-12-31") - as.Date("1820-01-01")), n, replace = TRUE)
+
+# Convert to decimal years
+dob_decimal <- decimal_date(dob)
+mean_dob <- mean(dob_decimal)
+
+# Base heights by gender
+base_height <- ifelse(gender == "M", 170, 160)
+
+# Height = base + trend + noise
+height <- base_height + 0.3 * (dob_decimal - mean_dob) + rnorm(n, 0, 7)
+
+# Assemble dataframe
+df <- data.frame(
+  id = 1:n,
+  height = round(height, 2),
+  gender = gender,
+  dob = dob,
+  dob_decimal = dob_decimal
+)
+```
+
+## A snippet of the data {.smaller}
+
+```{r}
+#| label: tbl-snippet
+#| echo: false
+#| tbl-cap: "A snippet of the height data"
+
+df |>
+  slice(c(1:3, n())) |>
+  mutate(dob = as.character(dob)) |>
+  select(id, height, gender, dob) |>
+  knitr::kable(
+    col.names = c("Individual", "Height (cm)", "Gender", "DOB"),
+    align = "clcl"
+  )
+```
+
+## Comparing averages by gender {.smaller}
+
+We can calculate averages separately by gender:
+
+$$
+\text{Avg}_M = \sum_{i=1}^{1215} \frac{h_i}{1215} \qquad \text{Avg}_F = \sum_{i=1}^{302} \frac{h_i}{302}
+$$
+
+```{r}
+#| label: gender-stats
+#| echo: false
+
+gender_stats <- df |>
+  group_by(gender) |>
+  summarise(
+    n = n(),
+    mean_height = mean(height),
+    sd_height = sd(height),
+    se_height = sd(height) / sqrt(n()),
+    .groups = "drop"
+  )
+
+sigma_pooled <- sqrt(mean(gender_stats$sd_height^2))
+```
+
+## Precision differs by group size {.smaller}
+
+-   Assume the standard deviation of men's and women's heights is the same value $\sigma$
+
+-   Standard error of male heights: $\sigma_M = \frac{\sigma}{\sqrt{1215}} \approx \frac{\sigma}{35}$
+
+-   Standard error of female heights: $\sigma_F = \frac{\sigma}{\sqrt{302}} \approx \frac{\sigma}{17}$
+
+-   Our measure of male heights is about **2 times as accurate** as our measure of female heights
+
+-   This occurs simply because we observe fewer women in the data
+
+## Heights by gender {.smaller}
+
+```{r}
+#| label: fig-gender-comparison
+#| echo: false
+#| fig-cap: "Heights by gender. Red points and error bars show the mean $\\pm$ 2 standard errors."
+#| fig-width: 6
+#| fig-height: 5
+
+ggplot(df, aes(x = gender, y = height)) +
+  geom_jitter(width = 0.25, alpha = 0.15, size = 0.8, colour = "grey40") +
+  geom_point(
+    data = gender_stats,
+    aes(x = gender, y = mean_height),
+    colour = "red", size = 3
+  ) +
+  geom_errorbar(
+    data = gender_stats,
+    aes(x = gender, y = mean_height,
+        ymin = mean_height - 2 * se_height,
+        ymax = mean_height + 2 * se_height),
+    colour = "red", width = 0.1, linewidth = 0.8
+  ) +
+  labs(x = "Gender", y = "Height (cm)") +
+  theme_minimal(base_size = 14)
+```
+
+## Averaging by date of birth {.smaller}
+
+What if we want to calculate the average by date of birth?
+
+```{r}
+#| label: fig-height-dob
+#| echo: false
+#| fig-cap: "Individual heights plotted against date of birth in 1822."
+#| fig-width: 7
+#| fig-height: 5
+
+df |> 
+  filter(dob >= "1822-01-01", dob <= "1823-01-01") |>
+  ggplot(aes(x = dob, y = height)) +
+  geom_point(alpha = 0.5, size = 0.8, colour = "grey40") +
+  labs(x = "Date of birth", y = "Height (cm)") +
+  scale_x_date(date_labels = "%Y-%m", date_breaks = "1 month") +
+  theme_minimal(base_size = 14)
+```
+
+## The problem with fine-grained averages {.smaller}
+
+-   If we reduce DOB to the **year** of birth we can calculate an average, but it is less precise
+
+-   At the year-and-**month** level it becomes almost impossible
+
+-   At the actual **day** of birth most days have 1 or no observations
+
+-   We need an approach that uses **all** of the observed data and generalizes to any date
+
+## Thinking about prediction {.smaller}
+
+-   Let's shift perspective: consider a date we have **no observations** for
+
+-   What is a good strategy for guessing the average height at this date?
+
+```{r}
+#| label: fig-monthly-means
+#| echo: false
+#| fig-cap: "Average height by week. Point size indicates the number of observations."
+#| fig-width: 7
+#| fig-height: 5
+
+monthly <- df |>
+  filter(dob >= "1822-01-01", dob <= "1823-01-01") |>
+  mutate(year_month = floor_date(dob, "week")) |>
+  group_by(year_month) |>
+  summarise(
+    mean_height = mean(height),
+    n_obs = n(),
+    .groups = "drop"
+  )
+
+ggplot(monthly, aes(x = year_month, y = mean_height)) +
+  geom_line(colour = "grey60", linewidth = 0.4) +
+  geom_point(aes(size = n_obs), colour = "steelblue", alpha = 0.7) +
+  scale_size_continuous(range = c(1, 4), name = "Observations") +
+  scale_x_date(date_labels = "%m", date_breaks = "1 month") +
+  labs(x = "Year-month", y = "Mean height (cm)") +
+  theme_minimal(base_size = 14)
+```
+
+## Interpolation {.smaller}
+
+-   Say we observe average heights for February 1822 and April 1822
+
+-   A reasonable guess for March 1822:
+
+$$
+\hat{h}_{1822\text{-Mar}} = h_{1822\text{-Feb}} + \frac{h_{1822\text{-Apr}} - h_{1822\text{-Feb}}}{t_{1822\text{-Apr}} - t_{1822\text{-Feb}}}
+$$
+
+-   This is the **rise over run**: change in height divided by change in time
+
+## Limitations of interpolation {.smaller}
+
+-   The individual monthly observations are based on **few observations** --- they may not be very accurate
+
+-   We observe **many** data points --- how do we include all of them?
+
+-   What if we are missing **two observations in a row**?
+
+-   We are working with time averages but really we see the **day** people are born
+
+-   We need an approach that:
+    1. Uses **all** of the observed data
+    2. Generalizes to **any** date with missing values
+
+## Our goal: conditional averages {.smaller}
+
+-   The **best case**: so many observations per date that we could calculate the average for each day
+
+-   This would be the **conditional average**: the average conditional on the day a person was born
+
+-   We don't have enough data for this, but at least we know our **goal** is a conditional average
+
+-   Solution: calculate an average that depends on the date and a very small number of unknown **parameters**
+
+## Linear regression {.smaller}
+
+Linear regression computes a **linear approximation** to the conditional average.
+
+The word *linear* means:
+
+1.  The relationship is the **same** no matter what time period we look at: moving from 1822-02-10 to 1822-02-20 has the same effect as moving from 1823-02-10 to 1823-02-20
+
+2.  The relationship between the outcome and the predictor is governed by a **single parameter**
+
+## The regression equation {.smaller}
+
+$$
+h_i = \alpha + \beta \, d_i + \varepsilon_i
+$$
+
+-   $h_i$: the height of individual $i$ (one of 1,517 observations)
+
+-   $d_i$: the date of birth, expressed in decimal years
+
+-   $\alpha$: the **intercept** --- the predicted average height when $d_i = 0$
+
+-   $\beta$: the **slope** --- the predicted change in average height for a one-year increase in DOB
+
+-   $\varepsilon_i$: the **error term** --- the deviation of a person's height from the average height of someone born on their birthday
+
+## Ordinary Least Squares {.smaller}
+
+We estimate $\alpha$ and $\beta$ by minimizing the sum of squared errors:
+
+$$
+\min_{\alpha,\,\beta} \sum_{i=1}^{1517} \varepsilon_i^2
+$$
+
+where
+
+$$
+\varepsilon_i^2 = (h_i - \alpha - \beta \, d_i)^2
+$$
+
+-   We pick the values of $\alpha$ and $\beta$ that make the squared deviations **as small as possible**
+
+-   There are closed form solutions to this model (you cold solve by hand) but your computer can do it trivially.
+
+## Our first regression {.smaller}
+
+```{r}
+#| label: model1
+#| echo: false
+
+model1 <- lm(height ~ dob_decimal, data = df)
+```
+
+```{r}
+#| label: model1-values
+#| echo: false
+
+beta_dob <- coef(model1)["dob_decimal"]
+alpha_hat <- coef(model1)["(Intercept)"]
+pred_2026 <- predict(model1, newdata = data.frame(dob_decimal = decimal_date(as.Date("2026-01-01"))))
+```
+
+```{r}
+#| label: fig-regression-line
+#| echo: false
+#| fig-cap: "Height versus date of birth with OLS regression line and 95% confidence band."
+#| fig-width: 7
+#| fig-height: 5
+
+ggplot(df, aes(x = dob, y = height)) +
+  geom_point(alpha = 0.15, size = 0.8, colour = "grey40") +
+  geom_smooth(method = "lm", colour = "steelblue", fill = "steelblue", alpha = 0.2) +
+  labs(x = "Date of birth", y = "Height (cm)") +
+  scale_x_date(date_labels = "%Y", date_breaks = "2 years") +
+  theme_minimal(base_size = 14)
+```
+
+## Predicting off the support {.smaller}
+
+-   The slope $\hat\beta$ is `r round(beta_dob, 3)` cm per year of birth --- slightly positive
+
+-   What if we predict height for someone born on 2026-01-01?
+
+$$
+\hat{h}_{2026\text{-}01\text{-}01} = \hat\alpha + \hat\beta \, d_{2026\text{-}01\text{-}01}
+$$
+
+-   Our prediction: `r round(pred_2026, 1)` cm --- much too tall for average height!
+
+-   The linear relationship holds across the dates we observe, but the machine can predict at **any** date
+
+-   Predictions become less reliable the farther we move from observed dates
+
+-   This is called **predicting off the support of the distribution**
+
+## Errors vs residuals {.smaller}
+
+An important distinction:
+
+-   **Errors** $\varepsilon_i = h_i - \alpha - \beta \, d_i$: the difference between a person's height and the *true* conditional average. We **never observe** these because we never know the true $\alpha$ and $\beta$.
+
+-   **Residuals** $\hat\varepsilon_i = h_i - \hat\alpha - \hat\beta \, d_i$: the difference between observed heights and the *estimated* regression line. We **do observe** these.
+
+-   The residuals are our best available **stand-in** for the unknown errors
+
+-   Our measures of uncertainty are themselves estimates, built from residuals rather than true errors
+
+## Statistical uncertainty {.smaller}
+
+-   The regression coefficients come from a **sample** and are therefore uncertain
+
+-   Just as with a mean, we need a **standard error**
+
+-   Recall: for the sample mean $\bar{h}$, the standard error is
+
+$$
+\text{SE}(\bar{h}) = \frac{\hat\sigma}{\sqrt{n}}
+$$
+
+-   More noise $\rightarrow$ less certain; more data $\rightarrow$ more certain
+
+## Standard error of a slope {.smaller}
+
+The standard error for a regression slope follows the same logic:
+
+$$
+\text{SE}(\hat\beta) = \sqrt{\frac{\hat\sigma^2}{\sum_{i=1}^{n}(d_i - \bar{d})^2}}
+$$
+
+where $\hat\sigma^2 = \frac{1}{n-2}\sum_{i=1}^{n}\hat\varepsilon_i^2$
+
+-   **Numerator**: how noisy the data are around the regression line
+
+-   **Denominator**: how spread out the predictor is along the x-axis
+
+## Why the spread of the predictor matters {.smaller}
+
+-   A regression slope measures a **rate of change** (cm per year of DOB)
+
+-   To pin down a rate of change, what matters is not just how many people we observe but **how spread out they are along the x-axis**
+
+-   Two datasets, both with 1,000 observations:
+    -   First: everyone born within a **single month**
+    -   Second: births spread over a **decade**
+
+-   The second dataset is far more informative about the slope
+
+-   $\sum(d_i - \bar{d})^2$ captures this: larger when dates are more spread out, making $\text{SE}(\hat\beta)$ smaller
+
+## Confidence intervals {.smaller}
+
+$$
+\hat\beta \pm 2 \times \text{SE}(\hat\beta)
+$$
+
+-   If we repeated our study many times, approximately **95%** of these intervals would contain the true value of $\beta$
+
+-   Any single interval either contains the truth or it doesn't, but the **procedure** is right 95% of the time
+
+-   When **zero falls inside** the interval: data are consistent with no relationship
+
+-   When **zero falls outside** the interval: data suggest the true slope is different from zero
+
+## The t-statistic {.smaller}
+
+$$
+t = \frac{\hat\beta}{\text{SE}(\hat\beta)}
+$$
+
+-   How many standard errors our estimate is away from zero
+
+-   Rule of thumb: $|t| > 2$ means "statistically significant" at conventional levels
+
+-   Equivalent to saying zero lies outside the 95% confidence interval
+
+-   A coefficient of 0.5 with SE of 0.1 ($t = 5$) is much more convincing than a coefficient of 0.5 with SE of 0.4 ($t = 1.25$)
+
+## Reading a regression table {.smaller}
+
+```{r}
+#| label: tbl-reg-simple
+#| echo: false
+#| tbl-cap: "Simple regression of height on date of birth."
+
+modelsummary(
+  list("Height (cm)" = model1),
+  stars = c("*" = 0.1, "**" = 0.05, "***" = 0.01),
+  gof_map = c("nobs", "r.squared"),
+  coef_rename = c("dob_decimal" = "Date of birth (year)", "(Intercept)" = "Intercept"),
+  output = "kableExtra"
+)
+```
+
+## Elements of a regression table {.smaller}
+
+-   **Coefficient estimates**: each row is a variable; the number is the point estimate
+
+-   **Standard errors in parentheses**: below each coefficient, indicating precision
+
+-   **Stars**: `*` means $p < 0.1$, `**` means $p < 0.05$, `***` means $p < 0.01$
+
+-   **Intercept**: predicted height when DOB = 0 (not meaningful here, but necessary)
+
+-   **$R^2$**: how much variation in height is explained by DOB alone (close to 0 = very little)
+
+-   **Num.Obs.** ($N$): the number of observations
+
+## Adding another regressor {.smaller}
+
+We can include both DOB and gender in a **multiple regression**:
+
+$$
+\text{height}_i = \alpha + \beta_1 \cdot \text{dob}_i + \beta_2 \cdot \mathbf{1}[\text{female}_i] + \varepsilon_i
+$$
+
+-   $\mathbf{1}[\text{female}_i]$ is an **indicator variable** (equals 1 if female, 0 if male)
+
+-   For a **male**: predicted height is $\alpha + \beta_1 d$
+
+-   For a **female**: predicted height is $\alpha + \beta_1 d + \beta_2$
+
+-   $\beta_2$ measures the average height difference for females relative to males
+
+```{r}
+#| label: model2
+#| echo: false
+
+model2 <- lm(height ~ dob_decimal + gender, data = df)
+```
+
+## "Holding constant" {.smaller}
+
+Multiple regression estimates each coefficient **holding the other variables constant**:
+
+-   $\beta_1$: the effect of DOB on height *holding gender constant* --- comparing people of the **same gender** born at different dates
+
+-   $\beta_2$: the average height difference for females relative to males *holding DOB constant* --- comparing men and women born at the **same time**
+
+## Visualizing "holding constant" {.smaller}
+
+```{r}
+#| label: fig-multiple-regression
+#| echo: false
+#| fig-cap: "How multiple regression isolates the DOB effect after removing gender. Panel A: raw data coloured by gender, with group means marked. Panel B: after subtracting each group's mean height, the two clouds overlap vertically; group mean DOB is marked. Panel C: after also subtracting each group's mean DOB, the data are centred at the origin. Panel D: the regression slope through the doubly-residualized data equals $\\hat\\beta_1$ from the multiple regression."
+#| fig-width: 10
+#| fig-height: 9
+
+gender_means <- df |>
+  group_by(gender) |>
+  summarise(
+    mean_height = mean(height),
+    mean_dob = mean(dob_decimal),
+    mean_dob_date = mean(dob),
+    .groups = "drop"
+  )
+
+df_aug <- df |>
+  left_join(gender_means, by = "gender")
+
+beta1_multiple <- coef(model2)["dob_decimal"]
+
+base_theme <- theme_minimal(base_size = 11) +
+  theme(legend.position = "none")
+
+# Panel A: raw data with group means
+panel_a <- ggplot(df_aug, aes(x = dob, y = height, colour = gender)) +
+  geom_point(alpha = 0.10, size = 0.5) +
+  geom_hline(data = gender_means, aes(yintercept = mean_height, colour = gender),
+             linewidth = 0.8, linetype = "dashed") +
+  scale_colour_manual(values = c("M" = "steelblue", "F" = "coral")) +
+  scale_x_date(date_labels = "%Y", date_breaks = "3 years") +
+  labs(x = "Date of birth", y = "Height (cm)",
+       title = "A: Raw data with group mean heights") +
+  base_theme
+
+# Panel B: subtract group mean height, mark group mean DOB
+panel_b <- ggplot(df_aug, aes(x = dob, y = height - mean_height, colour = gender)) +
+  geom_point(alpha = 0.10, size = 0.5) +
+  geom_hline(yintercept = 0, linewidth = 0.4, colour = "grey30") +
+  geom_vline(data = gender_means, aes(xintercept = mean_dob_date, colour = gender),
+             linewidth = 0.8, linetype = "dashed") +
+  scale_colour_manual(values = c("M" = "steelblue", "F" = "coral")) +
+  scale_x_date(date_labels = "%Y", date_breaks = "3 years") +
+  labs(x = "Date of birth", y = "Height minus group mean (cm)",
+       title = "B: Subtract group mean height") +
+  base_theme
+
+# Panel C: subtract both group means
+panel_c <- ggplot(df_aug, aes(x = dob_decimal - mean_dob, y = height - mean_height, colour = gender)) +
+  geom_point(alpha = 0.10, size = 0.5) +
+  geom_hline(yintercept = 0, linewidth = 0.4, colour = "grey30") +
+  geom_vline(xintercept = 0, linewidth = 0.4, colour = "grey30") +
+  scale_colour_manual(values = c("M" = "steelblue", "F" = "coral")) +
+  labs(x = "DOB minus group mean (years)", y = "Height minus group mean (cm)",
+       title = "C: Subtract group mean DOB too") +
+  base_theme
+
+# Panel D: residualized regression
+df_resid <- df_aug |>
+  mutate(
+    height_resid = height - mean_height,
+    dob_resid = dob_decimal - mean_dob
+  )
+
+panel_d <- ggplot(df_resid, aes(x = dob_resid, y = height_resid)) +
+  geom_point(alpha = 0.10, size = 0.5, colour = "grey40") +
+  geom_smooth(method = "lm", se = FALSE, colour = "steelblue", linewidth = 1) +
+  geom_hline(yintercept = 0, linewidth = 0.4, colour = "grey30") +
+  geom_vline(xintercept = 0, linewidth = 0.4, colour = "grey30") +
+  annotate(
+    "text", x = max(df_resid$dob_resid) * 0.55, y = max(df_resid$height_resid) * 0.85,
+    label = paste0("slope = ", round(beta1_multiple, 3)),
+    colour = "steelblue", size = 4, hjust = 0
+  ) +
+  labs(x = "DOB minus group mean (years)", y = "Height minus group mean (cm)",
+       title = "D: Regression on residualized data") +
+  base_theme
+
+plot_grid(panel_a, panel_b, panel_c, panel_d, nrow = 2)
+```
+
+## What the panels show {.smaller}
+
+-   **Panel A**: Raw data coloured by gender, with group mean heights marked
+
+-   **Panel B**: After subtracting each group's mean height, the two clouds overlap vertically
+
+-   **Panel C**: After also subtracting each group's mean DOB, both variables are "cleaned" of gender
+
+-   **Panel D**: The regression slope through this doubly-residualized data **equals** $\hat\beta_1$ from the multiple regression (Frisch-Waugh-Lovell theorem)
+
+-   Multiple regression is, at its core, about **comparing like with like**
+
+## Multiple regression table {.smaller}
+
+```{r}
+#| label: tbl-reg-both
+#| echo: false
+#| tbl-cap: "Regression results: simple and multiple regression."
+
+modelsummary(
+  list("(1)" = model1, "(2)" = model2),
+  stars = c("*" = 0.1, "**" = 0.05, "***" = 0.01),
+  gof_map = c("nobs", "r.squared", "adj.r.squared"),
+  coef_rename = c(
+    "dob_decimal" = "Date of birth (year)",
+    "genderF" = "Female",
+    "(Intercept)" = "Intercept"
+  ),
+  output = "kableExtra"
+)
+```
+
+## Comparing the two columns {.smaller}
+
+-   **DOB coefficient increases** from (1) to (2): the simple regression was attenuated by mixing men and women. The **standard error falls** because including gender shrinks the residuals.
+
+-   **Female coefficient** is large and negative: the well-known average height difference between men and women. Statistically significant at the 1% level.
+
+-   **$R^2$ jumps substantially**: DOB alone explains little, but adding gender explains the ~10 cm gap between men and women.
+
+-   **Adjusted $R^2$** penalizes for number of predictors. When it rises meaningfully, the added variable genuinely improves fit.
+
+## Key takeaways {.smaller}
+
+-   Regression is a way of **comparing averages** --- it computes a linear approximation to the conditional mean
+
+-   OLS picks the line that minimizes the **sum of squared errors**
+
+-   Standard errors tell us about the **precision** of our estimates
+
+-   Multiple regression estimates each coefficient **holding other variables constant**
+
+-   Always check: is the relationship **linear**? Are you **predicting off the support**?
+
+## Bibliography
