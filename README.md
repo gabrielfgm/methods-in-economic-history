@@ -149,6 +149,13 @@ Additional readings:
     patriarchal perspective,” *The Economic History Review* (2013), 66:
     3, 693–714.
 
+Slides on linear regression
+
+Slides are available
+[here](https://gabrielfgm.github.io/methods-in-economic-history/05_slides.html#/title-slide).
+Lecture notes on the slides are available
+[here](https://gabrielfgm.github.io/economic-history-methods-lecture-notes/linear-regression.html).
+
 ## 6. Rival models: empire and historical bond yields
 
 Bond yields have the potential to summarize a large amount of
@@ -164,10 +171,17 @@ Core reading:
 
 1.  Michael D Bordo and Hugh Rockoff “The Gold Standard as a "Good
     Housekeeping Seal of Approval"” (1996), 56: 2, 41.
+    ([link](https://www.jstor.org/stable/2123971))
 2.  Niall Ferguson and Moritz Schularick “The Empire Effect,” *The
     Journal of Economic History* (June 2006), 66: 2, 283–312.
+    ([link](https://www.jstor.org/stable/3874878))
 3.  Olivier Accominotti, Marc Flandreau, and Riad Rezzik “The spread of
     empire,” *The Economic History Review* (May 2011), 64: 2, 385–407.
+    ([link](https://www.jstor.org/stable/41262429))
+
+In addition you may want to refer to the lecture notes on linear
+regression
+[here](https://gabrielfgm.github.io/economic-history-methods-lecture-notes/linear-regression.html).
 
 ## 7. Measuring the price level
 

@@ -87,15 +87,22 @@ Additional readings:
 1.  @allen2011
 2.  @humphries2013
 
+Slides on linear regression
+
+Slides are available [here](https://gabrielfgm.github.io/methods-in-economic-history/05_slides.html#/title-slide).
+Lecture notes on the slides are available [here](https://gabrielfgm.github.io/economic-history-methods-lecture-notes/linear-regression.html).
+
 ## 6. Rival models: empire and historical bond yields
 
 Bond yields have the potential to summarize a large amount of information about interest rate risk, political risk, default risk, exchange rate risk, etc. and have been objects of intensive interest. We will tackle here debates around the measurement of default risk for sovereign vs colonial borrowers and the relative role of colonialism vs the gold standard as categories of explanation. The key methodological tension this week is the question of what model you bring to the same data.
 
 Core reading:
 
-1.  @bordo1996
-2.  @ferguson2006
-3.  @accominotti2011
+1.  @bordo1996 ([link](https://www.jstor.org/stable/2123971))
+2.  @ferguson2006 ([link](https://www.jstor.org/stable/3874878))
+3.  @accominotti2011 ([link](https://www.jstor.org/stable/41262429))
+
+In addition you may want to refer to the lecture notes on linear regression [here](https://gabrielfgm.github.io/economic-history-methods-lecture-notes/linear-regression.html).
 
 ## 7. Measuring the price level
 
