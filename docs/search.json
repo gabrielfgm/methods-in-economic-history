@@ -873,5 +873,208 @@
     "title": "Introduction",
     "section": "Bibliography",
     "text": "Bibliography\n\n\n\n\n\n\n\n\nAcemoglu, Daron, Simon Johnson, and James A Robinson. 2001. “The Colonial Origins of Comparative Development: An Empirical Investigation.” THE AMERICAN ECONOMIC REVIEW 91 (5): 289.\n\n\nAngrist, Joshua D., and Jörn-Steffen Pischke. 2008. Mostly Harmless Econometrics: An Empiricist’s Companion. Princeton University Press.\n\n\nBeckert, Sven. 2004. “Emancipation and Empire: Reconstructing the Worldwide Web of Cotton Production in the Age of the American Civil War.” The American Historical Review 109 (5): 1405–38. https://doi.org/10.1086/530931.\n\n\nFogel, Robert. 1966. “The New Economic History. I. Its Findings and Methods.” Economic History Review 19 (3): 642–56.\n\n\nGutmann, M., E. Klancher Merchant, and E. Roberts. 2018. ““Big Data” in Economic History.” Journal of Economic History 78 (1): 268299.\n\n\nMokyr, Joel. 2005. “The Intellectual Origins of Modern Economic Growth.” The Journal of Economic History 65 (2): 285351. http://www.jstor.org/stable/3875064.\n\n\nRuggles, Steven. 2021. “The Revival of Quantification: Reflections on Old New Histories.” Social Science History 45 (1): 1–25. https://doi.org/10.1017/ssh.2020.44."
+  },
+  {
+    "objectID": "06_slides.html#todays-plan",
+    "href": "06_slides.html#todays-plan",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Today’s plan",
+    "text": "Today’s plan\n\nWhat are bonds and bond yields?\nBond yields in 19th-century sovereign debt markets\nRival explanations: gold, empire, and the limits of regression"
+  },
+  {
+    "objectID": "06_slides.html#what-is-a-bond",
+    "href": "06_slides.html#what-is-a-bond",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "What is a bond?",
+    "text": "What is a bond?\n\nBonds are debt instruments — a way of borrowing money from investors\nKey features:\n\nNominal amount: the face value of the bond, expressed in a currency\nCoupon: the interest payment paid periodically (usually annually or semi-annually)\nMaturity: the date when the borrower repays the principal\n\nHistorically, many sovereign bonds were issued in London in sterling (e.g., £100 per bond) and traded on the London Stock Exchange"
+  },
+  {
+    "objectID": "06_slides.html#reading-a-bond-price-list",
+    "href": "06_slides.html#reading-a-bond-price-list",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Reading a bond price list",
+    "text": "Reading a bond price list\n\n\n\nA snippet from the 1872 Investors Monthly Manual"
+  },
+  {
+    "objectID": "06_slides.html#issue-price-par-and-market-price",
+    "href": "06_slides.html#issue-price-par-and-market-price",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Issue price, par, and market price",
+    "text": "Issue price, par, and market price\nTake the Honduras 10% Railway Loan, 1867 as an example:\n\nPar (£100): the amount Honduras is contracted to repay per bond\nIssue price (£80): what investors paid when the bond was first sold — Honduras’s effective borrowing rate was \\(£10/£80 = 12.5\\%\\)\nMarket price (≈£16): what the bond trades for today on the LSE — investors buy it from other investors, not from Honduras\nThe denomination (£100) is conventional and not intrinsically important"
+  },
+  {
+    "objectID": "06_slides.html#the-yield",
+    "href": "06_slides.html#the-yield",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "The yield",
+    "text": "The yield\n\nThe yield is the coupon divided by the current market price\nFor the Honduras bond at £16:\n\n\\[\n\\text{yield} = \\frac{£10}{£16} = 62.5\\%\n\\]\n\nThis is a current yield (also called a simple yield) — there are more complex yield-to-maturity calculations that account for the time until the £100 par value is repaid\nA high yield signals something important: will the next coupon actually be paid?"
+  },
+  {
+    "objectID": "06_slides.html#arbitrage-and-risk-adjusted-returns",
+    "href": "06_slides.html#arbitrage-and-risk-adjusted-returns",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Arbitrage and risk-adjusted returns",
+    "text": "Arbitrage and risk-adjusted returns\n\nImagine a British government bond yields 2% — close to risk-free\nThe Honduras bond yields 62.5% — why wouldn’t every investor buy it?\nBond traders tend to equalize risk-adjusted returns: you buy the Honduras bond only if, adjusting for default probability, you expect to earn at least as much:\n\n\\[\n(1 - p_{\\text{default}}) \\times 62.5\\% \\ge 2\\%\n\\]\n\nSolving: for an investor just indifferent at the current price, \\(p_{\\text{default}} \\approx 96.8\\%\\)\nHigh yield \\(\\Rightarrow\\) market prices you as a very high default risk"
+  },
+  {
+    "objectID": "06_slides.html#limitations-risk-aversion",
+    "href": "06_slides.html#limitations-risk-aversion",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Limitations: risk aversion",
+    "text": "Limitations: risk aversion\nThe framework above is too simple in two ways. First, investors are risk-averse:\n\nA certain £100 is worth more than a 50% chance of £0 and a 50% chance of £200 — even though both have the same expected value\nLosing money now costs you even more later because you have less to invest in the next opportunity (see: Kelly betting and volatility drag)\nAs a result, riskier bonds carry a risk premium — the yield is somewhat higher than the default probability alone would justify"
+  },
+  {
+    "objectID": "06_slides.html#limitations-defaults-arent-binary",
+    "href": "06_slides.html#limitations-defaults-arent-binary",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Limitations: defaults aren’t binary",
+    "text": "Limitations: defaults aren’t binary\nSecond, default is not an all-or-nothing event:\n\nMost defaulting borrowers reach a restructured settlement with bondholders — paying back something, just not everything\nThere are soft defaults: paying in a devalued currency, or (for bonds denominated in local currency) inflating away the real value\nWhy is high inflation a form of soft default on a local-currency bond?\nThe full calculation of default probability from market prices is therefore more complex than the simple model"
+  },
+  {
+    "objectID": "06_slides.html#what-bond-yields-can-tell-us",
+    "href": "06_slides.html#what-bond-yields-can-tell-us",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "What bond yields can tell us",
+    "text": "What bond yields can tell us\nDespite these complications, the core insight holds:\n\nHigher yield \\(\\Rightarrow\\) higher market-perceived probability of default (in some form)\nDefault can take many shapes: non-payment, currency abandonment, inflation\nThis makes bond yields a key object of study for understanding market perceptions of governments: their stability, macroeconomic policies, currency commitments\nCaveat: bond yields measure default risk, not growth prospects — bondholder interests may not align with broader economic welfare"
+  },
+  {
+    "objectID": "06_slides.html#the-literature-on-19th-century-sovereign-yields",
+    "href": "06_slides.html#the-literature-on-19th-century-sovereign-yields",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "The literature on 19th-century sovereign yields",
+    "text": "The literature on 19th-century sovereign yields\n\nBond yields differ across countries — these differences reflect investor perceptions of credit-worthiness\nA natural question: what factors explain these differences?\nTwo candidates feature prominently in the literature:\n\nGold standard adherence — did commitment to gold signal fiscal and monetary discipline? (Bordo and Rockoff 1996)\nEmpire membership — did being part of the British Empire substitute for that discipline? (Ferguson and Schularick 2006)\n\nA third paper shows that the regression specification matters enormously for what we conclude (Accominotti, Flandreau, and Rezzik 2011)"
+  },
+  {
+    "objectID": "06_slides.html#bordo-and-rockoff-the-gold-standard",
+    "href": "06_slides.html#bordo-and-rockoff-the-gold-standard",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Bordo and Rockoff: the gold standard",
+    "text": "Bordo and Rockoff: the gold standard\n\nBordo and Rockoff (1996) start from the observation that bond yields vary substantially across countries\nTheir hypothesis: adherence to the gold standard was a credible commitment device that reduced borrowing costs\nWhat are some possible mechanisms?\nThey test this by regressing sovereign bond yields on country characteristics and a gold standard dummy (= 1 if on gold)"
+  },
+  {
+    "objectID": "06_slides.html#the-bordo-rockoff-regression",
+    "href": "06_slides.html#the-bordo-rockoff-regression",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "The Bordo-Rockoff regression",
+    "text": "The Bordo-Rockoff regression\n\nRegression results from Bordo and Rockoff (1996)"
+  },
+  {
+    "objectID": "06_slides.html#interpreting-the-gold-coefficient",
+    "href": "06_slides.html#interpreting-the-gold-coefficient",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Interpreting the gold coefficient",
+    "text": "Interpreting the gold coefficient\n\nThe “On gold?” dummy takes a value of approximately −0.4 across specifications\nThis means: being on the gold standard is associated with borrowing costs 0.4 percentage points lower, holding other country characteristics constant\nBordo and Rockoff (1996) interpret their findings:\n\n\n“Countries that adhered faithfully to the standard were charged rates only slightly above the British consol rate; countries that made only sporadic attempts to maintain convertibility and that altered their parities were charged much higher rates… We interpret these findings to mean that adhering to gold was like the ‘good housekeeping seal of approval.’”"
+  },
+  {
+    "objectID": "06_slides.html#a-potential-identification-problem",
+    "href": "06_slides.html#a-potential-identification-problem",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "A potential identification problem",
+    "text": "A potential identification problem\n\nIs gold standard adherence really driving the yield difference, or something else?\nThe countries that most consistently stayed on gold were places like France, the US, and British colonies like Canada — already relatively creditworthy\nCountries that struggled, like Italy, inherited severe fiscal problems from unification — independent of their monetary regime\nThis invites a classic concern: omitted variable bias\nPerhaps the same underlying characteristics that made gold adherence easy also made borrowing costs low, independent of gold"
+  },
+  {
+    "objectID": "06_slides.html#from-gold-to-empire-ferguson-and-schularick",
+    "href": "06_slides.html#from-gold-to-empire-ferguson-and-schularick",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "From gold to empire: Ferguson and Schularick",
+    "text": "From gold to empire: Ferguson and Schularick\n\nFerguson and Schularick (2006) argue the explanation lies less in gold and more in empire membership\nThey acknowledge Bordo and Rockoff, but note the two variables are hard to disentangle: being in the empire also typically meant being on gold — and much more\nTheir key claim:\n\n\n“The main inference we draw is that the empire effect reflected the confidence of investors that British-governed countries would maintain sound fiscal, monetary, and trade policies.”\n\n\nThey replicate Bordo and Rockoff’s approach with a larger sample, adding a dummy variable for empire membership"
+  },
+  {
+    "objectID": "06_slides.html#the-identification-challenge",
+    "href": "06_slides.html#the-identification-challenge",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "The identification challenge",
+    "text": "The identification challenge\n\nFerguson and Schularick face a serious challenge:\n\n\n“There are only three borrowers in our sample which became (de facto or de jure) colonies within the period: Egypt in 1882, and the Transvaal and the Orange Free State after the Boer War in 1900.”\n\n\nMost countries are either always or never in the empire during the sample period\nThis means the “empire effect” is estimated almost entirely from cross-sectional variation: comparing yield levels between empire and non-empire countries\nWhy is within-country variation (before vs after joining the empire) more convincing than between-country comparison?"
+  },
+  {
+    "objectID": "06_slides.html#ferguson-and-schularick-results",
+    "href": "06_slides.html#ferguson-and-schularick-results",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Ferguson and Schularick: results",
+    "text": "Ferguson and Schularick: results\n\n\n\nKey results from Ferguson and Schularick (2006) comparing average yields for empire vs non-empire borrowers"
+  },
+  {
+    "objectID": "06_slides.html#ferguson-and-schularick-conclusions",
+    "href": "06_slides.html#ferguson-and-schularick-conclusions",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Ferguson and Schularick: conclusions",
+    "text": "Ferguson and Schularick: conclusions\n\nCountries in the British Empire paid approximately 100 basis points (1%) lower interest rates\nThey conclude:\n\n\n“Even when we allow for differences in monetary and fiscal policy, openness to trade, political stability, as well as geographical location and level of economic development, we find that a country that was a part of the British Empire was still able to borrow at significantly lower interest rates than one that was not.”\n\n\nThey argue India was the main beneficiary — the empire effect cut risk premia for poor and underdeveloped parts of the empire"
+  },
+  {
+    "objectID": "06_slides.html#accominotti-et-al.-revisiting-the-regression",
+    "href": "06_slides.html#accominotti-et-al.-revisiting-the-regression",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Accominotti et al.: revisiting the regression",
+    "text": "Accominotti et al.: revisiting the regression\n\nAccominotti, Flandreau, and Rezzik (2011) revisit Ferguson and Schularick (2006) and argue the regression specification is fundamentally flawed\nThe critique is conceptual but maps directly onto the dummy variable approach\nBoth earlier papers model empire as:\n\n\\[\n\\text{yield}_{it} = \\alpha + \\beta_1 \\text{Empire}_i + X_{it} + \\epsilon_{it}\n\\]\n\nThe empire dummy shifts the intercept: colonies get a constant discount on borrowing costs, other things equal\nAccominotti, Flandreau, and Rezzik (2011) challenge this: “it is not possible to move between sovereignty and colonial status while keeping other things equal”"
+  },
+  {
+    "objectID": "06_slides.html#the-problem-with-dummy-variables",
+    "href": "06_slides.html#the-problem-with-dummy-variables",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "The problem with dummy variables",
+    "text": "The problem with dummy variables\n\nAccominotti, Flandreau, and Rezzik (2011) identify a critical assumption embedded in the dummy variable approach:\n\n\n“…a critical assumption of this methodology is that the institution under scrutiny has a constant marginal effect on the variable that it is supposed to be influencing. In many cases this does not hold. ‘Institutions’ do not have a marginal effect, but a structural one.”\n\n\nWhat does “constant marginal effect” mean here?\nThe regression assumes that the relationship between yields and debt burden (or any other fiscal variable) is the same for colonies and sovereign states — empire just shifts the level\nAccominotti et al. argue this is wrong"
+  },
+  {
+    "objectID": "06_slides.html#what-the-dummy-variable-assumes-about-investors",
+    "href": "06_slides.html#what-the-dummy-variable-assumes-about-investors",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "What the dummy variable assumes about investors",
+    "text": "What the dummy variable assumes about investors\n\nAccominotti, Flandreau, and Rezzik (2011) spell out the implicit investor model:\n\n\n“…it is assumed that investors thought of British colonies in essentially the same way as they thought of sovereign countries; that is, they priced them according to the very same formula, involving the same variables. Then in a second stage, investors applied a bonus and traded colonies at a higher price… The second stage reduction in interest rates is the so-called ‘empire effect’, and it is measured ‘other things being equal’.”\n\n\nBy analogy: this would be like mixing the debt pricing of a local council and a sovereign state in the same regression, then adding a dummy for council/state"
+  },
+  {
+    "objectID": "06_slides.html#the-key-figure",
+    "href": "06_slides.html#the-key-figure",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "The key figure",
+    "text": "The key figure\n\n\n\nDefault probability vs debt burden for colonies and sovereign states (Accominotti, Flandreau, and Rezzik 2011, fig. 1)"
+  },
+  {
+    "objectID": "06_slides.html#interpreting-the-key-figure",
+    "href": "06_slides.html#interpreting-the-key-figure",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Interpreting the key figure",
+    "text": "Interpreting the key figure\n\nThe y-axis shows a default probability derived from bond yields (a way of putting all yields on a 0–1 scale)\nThe x-axis shows the debt burden: interest payments divided by government revenue\nSovereign states (one colour): a strongly positive relationship — higher debt burden \\(\\Rightarrow\\) higher default risk\nColonies (other colour): a flat relationship — debt burden is essentially unrelated to default risk\nInterpretation: nobody cares what India’s debt burden is if the British government will cover its obligations; everybody cares what Italy’s debt burden is"
+  },
+  {
+    "objectID": "06_slides.html#regression-results-by-group",
+    "href": "06_slides.html#regression-results-by-group",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Regression results by group",
+    "text": "Regression results by group\n\n\n\nCoefficients estimated separately for colonies and sovereign states (Accominotti, Flandreau, and Rezzik 2011, Table 3)"
+  },
+  {
+    "objectID": "06_slides.html#accominotti-et-al.-conclusions",
+    "href": "06_slides.html#accominotti-et-al.-conclusions",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Accominotti et al.: conclusions",
+    "text": "Accominotti et al.: conclusions\n\nAccominotti, Flandreau, and Rezzik (2011) conclude:\n\n\n“The Empire made the spread paid by subject countries insensitive to their performance because credibility was decided elsewhere. You would not look in India for indications of India’s credit. More likely, you would look at Downing Street. The effect of empire was not to provide subjects with a marginal interest rate benefit but to remove the default risk altogether.”\n\n\nIf the price was subsidised by the imperial core, we should look at quantities: who was actually allowed to borrow, and how much?"
+  },
+  {
+    "objectID": "06_slides.html#who-benefited-from-the-imperial-subsidy",
+    "href": "06_slides.html#who-benefited-from-the-imperial-subsidy",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Who benefited from the imperial subsidy?",
+    "text": "Who benefited from the imperial subsidy?\n\n\n\nBorrowing by settler vs dependent colonies (Accominotti, Flandreau, and Rezzik 2011)\n\n\n\nIt was predominantly settler colonies that borrowed beyond their fundamentals — not the dependent colonies\nFollowing Davis and Huttenback: dependent colonies benefited little if at all relative to self-governing colonies"
+  },
+  {
+    "objectID": "06_slides.html#key-takeaways",
+    "href": "06_slides.html#key-takeaways",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nBond yields are a measure of market-perceived default risk — useful for studying government credibility, not growth performance\nBoth gold adherence and empire membership are associated with lower borrowing costs, but isolating the cause is hard when the two are correlated\nThe dummy variable approach assumes institutions have a constant marginal effect on outcomes — this is a strong and often incorrect assumption\nA more appropriate approach allows the relationship between yields and fundamentals to differ across institutional regimes\nInterpretive disagreements in economic history often arise not from different data but from different regression specifications"
+  },
+  {
+    "objectID": "06_slides.html#bibliography",
+    "href": "06_slides.html#bibliography",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\n\nAccominotti, Olivier, Marc Flandreau, and Riad Rezzik. 2011. “The Spread of Empire: Clio and the Measurement of Colonial Borrowing Costs1: SPREAD OF EMPIRE.” The Economic History Review 64 (2): 385–407. https://doi.org/10.1111/j.1468-0289.2010.00536.x.\n\n\nBordo, Michael D, and Hugh Rockoff. 1996. “The Gold Standard as a \"Good Housekeeping Seal of Approval\"” 56 (2): 41.\n\n\nFerguson, Niall, and Moritz Schularick. 2006. “The Empire Effect: The Determinants of Country Risk in the First Age of Globalization, 18801913.” The Journal of Economic History 66 (2): 283–312. https://doi.org/10.1017/S002205070600012X."
+  },
+  {
+    "objectID": "06_slides.html#what-do-we-think",
+    "href": "06_slides.html#what-do-we-think",
+    "title": "Rival Models: Empire and Historical Bond Yields",
+    "section": "What do we think?",
+    "text": "What do we think?\n\nDo we think the gold standard or policies linked to empire are better explanations of the variation in bond yields?\nDo we agree with the criticisms of Accominotti, Flandreau, and Rezzik (2011) that the dummy variable approach to institutions is mis-specified?\nHow do we map the Accominotti, Flandreau, and Rezzik (2011) critique onto a warning about the limits of regression analysis?"
   }
 ]
