@@ -183,6 +183,9 @@ In addition you may want to refer to the lecture notes on linear
 regression
 [here](https://gabrielfgm.github.io/economic-history-methods-lecture-notes/linear-regression.html).
 
+Lecture slides
+[here](https://gabrielfgm.github.io/methods-in-economic-history/06_slides.html#/title-slide)
+
 ## 7. Measuring the price level
 
 Inter-temporal comparisons of prices only make sense if we can adjust
@@ -200,11 +203,14 @@ Core reading:
 
 1.  E. J. Hobsbawm “The standard of living during the industrial
     revolution,” *The Economic History Review* (1963), 16: 1, 119–134.
+    ([link](https://doi.org/10.2307/2592521))
 2.  Peter H. Lindert and Jeffrey G. Williamson “English workers’ living
     standards during the industrial revolution,” *The Economic History
     Review* (1983), 36: 1, 1–25.
+    ([link](https://doi.org/10.2307/2598895))
 3.  Charles H. Feinstein “Pessimism Perpetuated,” *The Journal of
     Economic History* (September 1998), 58: 3, 625–658.
+    ([link](https://doi.org/10.1017/S0022050700021100))
 
 ## 8. Measuring GDP
 
