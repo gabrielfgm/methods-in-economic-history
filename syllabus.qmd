@@ -104,15 +104,17 @@ Core reading:
 
 In addition you may want to refer to the lecture notes on linear regression [here](https://gabrielfgm.github.io/economic-history-methods-lecture-notes/linear-regression.html).
 
+Lecture slides [here](https://gabrielfgm.github.io/methods-in-economic-history/06_slides.html#/title-slide)
+
 ## 7. Measuring the price level
 
 Inter-temporal comparisons of prices only make sense if we can adjust those prices by how much things cost. This is not straightforward and gets harder in earlier periods where prices are more difficult to come by. We will tackle this week the ‘standard of living debate’ about whether the industrial revolution in Britain improved or worsened wages and by extension living standards for the average labourer. We will go over how the ‘optimistic’ early wage series of Lindert and Williamson proved optimistic precisely because of poor measures of changing prices, and how this series was revised by Feinstein in his article “Pessimism perpetuated”.
 
 Core reading:
 
-1.  @hobsbawm1963
-2.  @lindert1983
-3.  @feinstein1998
+1.  @hobsbawm1963 ([link](https://doi.org/10.2307/2592521))
+2.  @lindert1983 ([link](https://doi.org/10.2307/2598895))
+3.  @feinstein1998 ([link](https://doi.org/10.1017/S0022050700021100))
 
 ## 8. Measuring GDP
 
