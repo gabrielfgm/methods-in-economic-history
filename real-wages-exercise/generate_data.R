@@ -3,7 +3,7 @@
 # Run this script once to populate the data/ directory.
 # All monetary values are in £ (decimal).
 
-dates <- c(1770, 1790, 1810, 1830, 1850)
+if (!dir.exists("data")) stop("Run this script from the repo root (where data/ exists).")
 
 # --- Table 1: London wages (£/week) ---
 wages_london <- data.frame(
