@@ -1,0 +1,183 @@
+---
+title: "Measuring the Standard of Living: Real Wages"
+author: "Gabriel Mesevage"
+format:
+  revealjs:
+    slide-number: c/t
+    chalkboard:
+      buttons: true
+editor:
+  markdown:
+    wrap: sentence
+bibliography: references.bib
+---
+
+## Today's plan {.smaller}
+
+1.  The standard of living debate: optimists vs pessimists
+2.  Constructing a nominal wage index
+3.  Constructing a cost-of-living index
+4.  What real wages can (and cannot) tell us about welfare
+
+## The debate {.smaller}
+
+-   **Hobsbawm (1963)**: pessimist — living standards fell or stagnated during industrialisation [@hobsbawm1963]
+
+-   **Lindert & Williamson (1983)**: optimist — real wages roughly doubled 1780–1850 [@lindert1983]
+
+-   **Feinstein (1998)**: pessimist — Lindert & Williamson's price index understated inflation; real wages stagnated [@feinstein1998]
+
+-   The debate turns on *measurement*: which nominal wage series?
+    which price index?
+
+## Two methodological questions {.smaller}
+
+-   *Practical*: how do you actually build a real wage index?
+
+-   *Conceptual*: what does a real wage index tell us about welfare?
+
+-   Focus today: the **practical** question
+
+-   Building a real wage index requires two components:
+
+    1.  A **nominal wage index** $\mathcal{W}_t$
+    2.  A **cost-of-living index** $\mathcal{P}_t$
+
+## Nominal vs real {.smaller}
+
+-   **Nominal wage**: wage measured in £ — "what the labourer was actually handed"
+
+-   **Real wage**: what those £ can buy
+
+-   Example: a Lindert & Williamson farm labourer earns £21 in 1781 and £29 in 1851
+
+    -   Is that better or worse?
+    -   Depends entirely on what happened to prices
+
+-   We need a way to convert nominal £ into purchasing power
+
+## Why an index? The weeks problem {.smaller}
+
+-   Wages are typically observed as **weekly rates**
+
+-   We don't know weeks worked per year
+
+-   Annual wage $= w^k_t \times H$ where $H$ = weeks worked — **unknown**
+
+-   Index approach: divide all dates by base year, $H$ cancels if stable over time
+
+$$\mathcal{W}_t = \frac{\bar{W}_t}{\bar{W}_0} = \frac{\sum_k s^k_t\, w^k_t}{\sum_k s^k_0\, w^k_0}$$
+
+-   If $H$ is roughly constant over time, it drops out of the ratio
+
+## Combining sectors: the nominal wage index {.smaller}
+
+-   Single-sector wages give a partial picture
+
+-   Weight sector wages by employment share $s^k_t$ (from census or other sources)
+
+-   Weighted average nominal wage:
+
+$$\bar{W}_t = \sum_k s^k_t\, w^k_t$$
+
+-   $w^k_t$ = nominal wage in sector $k$ at time $t$; $s^k_t$ = employment share of sector $k$ at time $t$
+
+-   Caveat: regional relocation of industries can bias the average
+
+## The unemployment problem {.smaller}
+
+-   Wages are conditional on employment; the unemployed earn $w = 0$
+
+-   One option: add an "unemployment" sector with weight = unemployment rate and wage = 0
+
+-   But: unemployment $\neq$ not working
+
+    -   elderly, children, and caregivers are out of the labour force — not unemployed
+    -   mixing these groups conflates involuntary and voluntary non-employment
+
+-   Keep analytically distinct: **involuntary unemployment** vs **non-participation**
+
+## The consumption basket {.smaller}
+
+-   To convert £ into purchasing power we need a **consumption basket**
+
+-   Record what fraction $\omega^j$ of income is spent on each good $j$
+
+-   Multiply consumption shares by prices to get cost of basket
+
+-   Two main index approaches: **Laspeyres** and **Paasche**
+
+-   Both express the cost of the basket relative to a base year $t_0$
+
+## Laspeyres index (fixed base-year basket) {.smaller}
+
+$$\mathcal{P}^L_t = \sum_j \omega^j \frac{p^j_t}{p^j_0}$$
+
+-   Holds consumption shares $\omega^j$ fixed at base year $t_0$
+
+-   Easy to compute: you only need to collect consumption data once
+
+-   **Bias**: assumes households keep buying expensive goods even as prices rise
+
+    -   If bread becomes expensive, real households substitute toward cheaper foods
+    -   Laspeyres ignores this adjustment
+
+-   Tends to **overstate** increases in the cost of living
+
+## Paasche index (current-year basket) {.smaller}
+
+$$\mathcal{P}^P_t = \sum_j \omega^j_t \frac{p^j_t}{p^j_0}$$
+
+-   Re-samples the consumption basket $\omega^j_t$ each period
+
+-   If households switch from beef (expensive) to chicken (cheap), records no welfare loss
+
+-   **Bias**: treats all price-induced substitution as welfare-neutral
+
+    -   But forced substitution away from preferred goods *is* a welfare loss
+    -   Paasche ignores the loss of consumer surplus
+
+-   Tends to **understate** increases in the cost of living
+
+## Fisher and chained {.smaller}
+
+-   **Fisher ideal index**: geometric mean of Laspeyres and Paasche — rarely done in historical work due to data requirements
+
+-   **Chained index** (modern practice): compute a Laspeyres index from $t$ to $t+1$, then multiply the period-by-period changes:
+
+$$\mathcal{P}^C_T = \prod_{t=0}^{T-1} \mathcal{P}^L_{t \to t+1}$$
+
+-   Updates basket each period but avoids full Paasche substitution bias
+
+-   Sensitive to base year when price changes are large
+
+## From nominal to real: the units {.smaller}
+
+-   Nominal wage $\bar{W}_t$ measured in **£**
+
+-   Cost-of-living index $\mathcal{P}_t$ measured in **£/basket**
+
+-   Divide to get real wage measured in **baskets**:
+
+$$\mathcal{R}_t = \frac{\mathcal{W}_t}{\mathcal{P}_t}$$
+
+-   $\mathcal{R}_t > 1$: higher purchasing power than base year
+
+-   $\mathcal{R}_t < 1$: lower purchasing power than base year
+
+-   This is why Feinstein's revision matters: a higher $\mathcal{P}_t$ mechanically lowers $\mathcal{R}_t$
+
+## What do real wages tell us? {.smaller}
+
+-   Real wages measure **purchasing power** of market wages
+
+-   What they miss:
+
+    -   Mortality, working conditions, and social dislocation
+    -   Childhood experience and autonomy
+    -   Food *quality*, not just quantity
+    -   Lots of other stuff!
+
+-   Even if all these were measurable — how do we combine them into a single "standard of living"?
+
+## Bibliography

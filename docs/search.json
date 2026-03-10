@@ -1069,5 +1069,103 @@
     "title": "Basic tools: central tendencies and dispersion",
     "section": "Bibliography",
     "text": "Bibliography\n\n\n\n\n\n\n\n\nMcCloskey, Deirdre N., and Stephen T. Ziliak. 1996. “The Standard Error of Regressions.” Journal of Economic Literature 34 (1): 97–114. http://www.jstor.org/stable/2729411.\n\n\nStigler, Stephen M. 2016. The seven pillars of statistical wisdom. Cambridge, Massachusetts London, England: Harvard University Press."
+  },
+  {
+    "objectID": "07_slides.html#todays-plan",
+    "href": "07_slides.html#todays-plan",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "Today’s plan",
+    "text": "Today’s plan\n\nThe standard of living debate: optimists vs pessimists\nConstructing a nominal wage index\nConstructing a cost-of-living index\nWhat real wages can (and cannot) tell us about welfare"
+  },
+  {
+    "objectID": "07_slides.html#the-debate",
+    "href": "07_slides.html#the-debate",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "The debate",
+    "text": "The debate\n\nHobsbawm (1963): pessimist — living standards fell or stagnated during industrialisation (Hobsbawm 1963)\nLindert & Williamson (1983): optimist — real wages roughly doubled 1780–1850 (Lindert and Williamson 1983)\nFeinstein (1998): pessimist — Lindert & Williamson’s price index understated inflation; real wages stagnated (Feinstein 1998)\nThe debate turns on measurement: which nominal wage series? which price index?"
+  },
+  {
+    "objectID": "07_slides.html#two-methodological-questions",
+    "href": "07_slides.html#two-methodological-questions",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "Two methodological questions",
+    "text": "Two methodological questions\n\nPractical: how do you actually build a real wage index?\nConceptual: what does a real wage index tell us about welfare?\nFocus today: the practical question\nBuilding a real wage index requires two components:\n\nA nominal wage index \\(\\mathcal{W}_t\\)\nA cost-of-living index \\(\\mathcal{P}_t\\)"
+  },
+  {
+    "objectID": "07_slides.html#nominal-vs-real",
+    "href": "07_slides.html#nominal-vs-real",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "Nominal vs real",
+    "text": "Nominal vs real\n\nNominal wage: wage measured in £ — “what the labourer was actually handed”\nReal wage: what those £ can buy\nExample: a Lindert & Williamson farm labourer earns £21 in 1781 and £29 in 1851\n\nIs that better or worse?\nDepends entirely on what happened to prices\n\nWe need a way to convert nominal £ into purchasing power"
+  },
+  {
+    "objectID": "07_slides.html#why-an-index-the-weeks-problem",
+    "href": "07_slides.html#why-an-index-the-weeks-problem",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "Why an index? The weeks problem",
+    "text": "Why an index? The weeks problem\n\nWages are typically observed as weekly rates\nWe don’t know weeks worked per year\nAnnual wage \\(= w^k_t \\times H\\) where \\(H\\) = weeks worked — unknown\nIndex approach: divide all dates by base year, \\(H\\) cancels if stable over time\n\n\\[\\mathcal{W}_t = \\frac{\\bar{W}_t}{\\bar{W}_0} = \\frac{\\sum_k s^k_t\\, w^k_t}{\\sum_k s^k_0\\, w^k_0}\\]\n\nIf \\(H\\) is roughly constant over time, it drops out of the ratio"
+  },
+  {
+    "objectID": "07_slides.html#combining-sectors-the-nominal-wage-index",
+    "href": "07_slides.html#combining-sectors-the-nominal-wage-index",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "Combining sectors: the nominal wage index",
+    "text": "Combining sectors: the nominal wage index\n\nSingle-sector wages give a partial picture\nWeight sector wages by employment share \\(s^k_t\\) (from census or other sources)\nWeighted average nominal wage:\n\n\\[\\bar{W}_t = \\sum_k s^k_t\\, w^k_t\\]\n\n\\(w^k_t\\) = nominal wage in sector \\(k\\) at time \\(t\\); \\(s^k_t\\) = employment share of sector \\(k\\) at time \\(t\\)\nCaveat: regional relocation of industries can bias the average"
+  },
+  {
+    "objectID": "07_slides.html#the-unemployment-problem",
+    "href": "07_slides.html#the-unemployment-problem",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "The unemployment problem",
+    "text": "The unemployment problem\n\nWages are conditional on employment; the unemployed earn \\(w = 0\\)\nOne option: add an “unemployment” sector with weight = unemployment rate and wage = 0\nBut: unemployment \\(\\neq\\) not working\n\nelderly, children, and caregivers are out of the labour force — not unemployed\nmixing these groups conflates involuntary and voluntary non-employment\n\nKeep analytically distinct: involuntary unemployment vs non-participation"
+  },
+  {
+    "objectID": "07_slides.html#the-consumption-basket",
+    "href": "07_slides.html#the-consumption-basket",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "The consumption basket",
+    "text": "The consumption basket\n\nTo convert £ into purchasing power we need a consumption basket\nRecord what fraction \\(\\omega^j\\) of income is spent on each good \\(j\\)\nMultiply consumption shares by prices to get cost of basket\nTwo main index approaches: Laspeyres and Paasche\nBoth express the cost of the basket relative to a base year \\(t_0\\)"
+  },
+  {
+    "objectID": "07_slides.html#laspeyres-index-fixed-base-year-basket",
+    "href": "07_slides.html#laspeyres-index-fixed-base-year-basket",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "Laspeyres index (fixed base-year basket)",
+    "text": "Laspeyres index (fixed base-year basket)\n\\[\\mathcal{P}^L_t = \\sum_j \\omega^j \\frac{p^j_t}{p^j_0}\\]\n\nHolds consumption shares \\(\\omega^j\\) fixed at base year \\(t_0\\)\nEasy to compute: you only need to collect consumption data once\nBias: assumes households keep buying expensive goods even as prices rise\n\nIf bread becomes expensive, real households substitute toward cheaper foods\nLaspeyres ignores this adjustment\n\nTends to overstate increases in the cost of living"
+  },
+  {
+    "objectID": "07_slides.html#paasche-index-current-year-basket",
+    "href": "07_slides.html#paasche-index-current-year-basket",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "Paasche index (current-year basket)",
+    "text": "Paasche index (current-year basket)\n\\[\\mathcal{P}^P_t = \\sum_j \\omega^j_t \\frac{p^j_t}{p^j_0}\\]\n\nRe-samples the consumption basket \\(\\omega^j_t\\) each period\nIf households switch from beef (expensive) to chicken (cheap), records no welfare loss\nBias: treats all price-induced substitution as welfare-neutral\n\nBut forced substitution away from preferred goods is a welfare loss\nPaasche ignores the loss of consumer surplus\n\nTends to understate increases in the cost of living"
+  },
+  {
+    "objectID": "07_slides.html#fisher-and-chained",
+    "href": "07_slides.html#fisher-and-chained",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "Fisher and chained",
+    "text": "Fisher and chained\n\nFisher ideal index: geometric mean of Laspeyres and Paasche — rarely done in historical work due to data requirements\nChained index (modern practice): compute a Laspeyres index from \\(t\\) to \\(t+1\\), then multiply the period-by-period changes:\n\n\\[\\mathcal{P}^C_T = \\prod_{t=0}^{T-1} \\mathcal{P}^L_{t \\to t+1}\\]\n\nUpdates basket each period but avoids full Paasche substitution bias\nSensitive to base year when price changes are large"
+  },
+  {
+    "objectID": "07_slides.html#from-nominal-to-real-the-units",
+    "href": "07_slides.html#from-nominal-to-real-the-units",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "From nominal to real: the units",
+    "text": "From nominal to real: the units\n\nNominal wage \\(\\bar{W}_t\\) measured in £\nCost-of-living index \\(\\mathcal{P}_t\\) measured in £/basket\nDivide to get real wage measured in baskets:\n\n\\[\\mathcal{R}_t = \\frac{\\mathcal{W}_t}{\\mathcal{P}_t}\\]\n\n\\(\\mathcal{R}_t &gt; 1\\): higher purchasing power than base year\n\\(\\mathcal{R}_t &lt; 1\\): lower purchasing power than base year\nThis is why Feinstein’s revision matters: a higher \\(\\mathcal{P}_t\\) mechanically lowers \\(\\mathcal{R}_t\\)"
+  },
+  {
+    "objectID": "07_slides.html#what-do-real-wages-tell-us",
+    "href": "07_slides.html#what-do-real-wages-tell-us",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "What do real wages tell us?",
+    "text": "What do real wages tell us?\n\nReal wages measure purchasing power of market wages\nWhat they miss:\n\nMortality, working conditions, and social dislocation\nChildhood experience and autonomy\nFood quality, not just quantity\nLots of other stuff!\n\nEven if all these were measurable — how do we combine them into a single “standard of living”?"
+  },
+  {
+    "objectID": "07_slides.html#bibliography",
+    "href": "07_slides.html#bibliography",
+    "title": "Measuring the Standard of Living: Real Wages",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\n\nFeinstein, Charles H. 1998. “Pessimism Perpetuated: Real Wages and the Standard of Living in Britain During and After the Industrial Revolution.” The Journal of Economic History 58 (3): 625–58. https://doi.org/10.1017/S0022050700021100.\n\n\nHobsbawm, E. J. 1963. “The Standard of Living During the Industrial Revolution: A Discussion.” The Economic History Review 16 (1): 119–34. https://doi.org/10.2307/2592521.\n\n\nLindert, Peter H., and Jeffrey G. Williamson. 1983. “English Workers’ Living Standards During the Industrial Revolution: A New Look.” The Economic History Review 36 (1): 1–25. https://doi.org/10.2307/2598895."
   }
 ]
