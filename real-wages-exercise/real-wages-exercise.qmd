@@ -137,7 +137,7 @@ worker could expect to find no paid employment.*
 df <- read.csv("data/unemployment_textiles.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = rep("r", 5),
       caption = "Textile Industry: Estimated Weeks Unemployed per Year") |>
-  kable_styling(latex_options = c("hold_position"), font_size = 10)
+  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
 ```
 
 ## Parliamentary Report on Female Employment in Selected Industries
