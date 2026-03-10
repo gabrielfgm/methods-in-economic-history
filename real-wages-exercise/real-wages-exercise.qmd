@@ -1,0 +1,27 @@
+---
+title: |
+  Primary Sources for the Study of Real Wages \
+  in England, 1770--1850
+subtitle: "Selected Parliamentary Reports and Statistical Returns"
+date: "c. 1851"
+format:
+  pdf:
+    documentclass: article
+    fontsize: 11pt
+    geometry: "margin=1in"
+    keep-tex: false
+    include-in-header:
+      text: |
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{amsmath}
+params:
+  solutions: false
+---
+
+The following tables are drawn from parliamentary inquiries and Board of
+Trade returns compiled between 1770 and 1851. They are arranged by subject.
+Students should note that these reports were produced at different times and
+by different investigators; some inconsistencies in coverage and definition
+should be expected.
