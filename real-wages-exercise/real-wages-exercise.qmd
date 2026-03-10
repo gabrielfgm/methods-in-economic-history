@@ -20,8 +20,136 @@ params:
   solutions: false
 ---
 
+```{r}
+#| include: false
+library(knitr)
+library(kableExtra)
+```
+
 The following tables are drawn from parliamentary inquiries and Board of
 Trade returns compiled between 1770 and 1851. They are arranged by subject.
 Students should note that these reports were produced at different times and
 by different investigators; some inconsistencies in coverage and definition
 should be expected.
+
+## Parliamentary Report on Wages in London Industries
+
+*Report of the Select Committee on Wages and Employment, 1851.
+Weekly wages in pounds sterling for adult male workers.*
+
+```{r}
+#| echo: false
+#| message: false
+df <- read.csv("data/wages_london.csv", check.names = FALSE)
+kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
+      caption = "London: Weekly Wages by Industry (£/week)") |>
+  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+```
+
+## Parliamentary Report on Wages in the Northern Counties
+
+*Report of the Factory Inspectors and Poor Law Commissioners, 1851.
+Weekly wages in pounds sterling for adult male workers.*
+
+```{r}
+#| echo: false
+df <- read.csv("data/wages_northern.csv", check.names = FALSE)
+kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
+      caption = "Northern Counties: Weekly Wages by Industry (£/week)") |>
+  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+```
+
+## Parliamentary Report on Employment by Industry, England and Wales
+
+*Derived from decennial census returns and Board of Trade inquiries.
+Figures represent percentage of the occupied male population.*
+
+```{r}
+#| echo: false
+df <- read.csv("data/employment_shares.csv", check.names = FALSE)
+kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
+      caption = "National Employment Shares by Industry (\\%)") |>
+  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+```
+
+## Parliamentary Report on Grain Prices in London and Northern Markets
+
+*Report of the Corn Committee, compiled from returns of market inspectors.
+Prices are for one quarter (8 bushels) of best wheaten grain.*
+
+```{r}
+#| echo: false
+df <- read.csv("data/prices_wheat.csv", check.names = FALSE)
+kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
+      caption = "Wheat Prices by Region (£/quarter)") |>
+  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+```
+
+## Parliamentary Report on Retail Prices of Selected Commodities
+
+*Select Committee on Artisan Conditions, 1851. Prices collected from
+retail markets in five major English towns and averaged nationally.*
+
+```{r}
+#| echo: false
+df <- read.csv("data/prices_national.csv", check.names = FALSE)
+kable(df, booktabs = TRUE, align = c("l", "l", rep("r", 5)),
+      caption = "National Retail Prices of Selected Commodities") |>
+  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+```
+
+## Parliamentary Report on Weekly Rents by Region
+
+*Report of the Poor Law Commissioners on the Condition of Labouring
+Families, 1851. Typical rent for a two-room labourer's dwelling.*
+
+```{r}
+#| echo: false
+df <- read.csv("data/prices_rent.csv", check.names = FALSE)
+kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
+      caption = "Weekly Dwelling Rents by Region (£/week)") |>
+  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+```
+
+## Parliamentary Report on Expenditure of Labouring Families
+
+*Drawn from the household budgets collected by Eden (1797) and
+subsequent Board of Trade surveys. Figures represent average
+expenditure shares for a family of four in England.*
+
+```{r}
+#| echo: false
+df <- read.csv("data/budget_shares.csv", check.names = FALSE)
+kable(df, booktabs = TRUE, align = c("l", "r"),
+      col.names = c("Category of Expenditure", "Budget Share (\\%)"),
+      caption = "Household Expenditure Shares, Labouring Families") |>
+  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+```
+
+## Parliamentary Report on Employment Conditions in the Textile Industry
+
+*Report of the Factory Inspectors, various years. Figures represent
+the estimated average number of weeks per year in which a textile
+worker could expect to find no paid employment.*
+
+```{r}
+#| echo: false
+df <- read.csv("data/unemployment_textiles.csv", check.names = FALSE)
+kable(df, booktabs = TRUE, align = rep("r", 5),
+      caption = "Textile Industry: Estimated Weeks Unemployed per Year") |>
+  kable_styling(latex_options = c("hold_position"), font_size = 10)
+```
+
+## Parliamentary Report on Female Employment in Selected Industries
+
+*Select Committee on the Employment of Women and Children, 1851.
+Figures represent the share of the female population of working age
+(15--60) recorded as gainfully employed in each industry.*
+
+```{r}
+#| echo: false
+df <- read.csv("data/female_lfp.csv", check.names = FALSE)
+kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
+      caption = "Female Labour Force Participation by Industry (\\%)") |>
+  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+```
