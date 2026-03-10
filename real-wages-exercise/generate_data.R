@@ -100,14 +100,10 @@ write.csv(unemployment_textiles, "data/unemployment_textiles.csv",
           row.names = FALSE)
 
 # --- Table 9: Female labour force participation (%) ---
+# Single row: overall share of women aged 15-60 in paid employment.
+# Declining trend reflects withdrawal from market labour over industrialisation.
 female_lfp <- data.frame(
-  Industry = c("Agriculture", "Textiles", "Building & Construction",
-               "Mining", "Domestic Service"),
-  `1770` = c(15, 42, 2, 8, 68),
-  `1790` = c(13, 45, 2, 7, 70),
-  `1810` = c(11, 38, 1, 6, 72),
-  `1830` = c(9, 35, 1, 5, 74),
-  `1850` = c(7, 40, 1, 4, 76),
+  `1770` = 38, `1790` = 34, `1810` = 30, `1830` = 26, `1850` = 24,
   check.names = FALSE
 )
 write.csv(female_lfp, "data/female_lfp.csv", row.names = FALSE)
