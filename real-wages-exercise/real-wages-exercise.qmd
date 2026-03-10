@@ -252,17 +252,22 @@ P_index   <- colSums(price_rel * weights)
 # --- Real wage index ---
 RW_index <- W_index / P_index
 
+# --- Absolute cost of living: basket anchored to 1770 nominal wage ---
+P_abs <- W_abs[1] * P_index
+
 # --- Summary table ---
 results <- data.frame(
-  Year                   = dates,
-  `Nominal Wage Index`   = round(W_index, 3),
-  `Cost of Living Index` = round(P_index, 3),
-  `Real Wage Index`      = round(RW_index, 3),
+  Year                          = dates,
+  `Nominal Wage (£/week)`       = round(W_abs, 4),
+  `Nominal Wage Index`          = round(W_index, 3),
+  `Cost of Basket (£/week)`     = round(P_abs, 4),
+  `Cost of Living Index`        = round(P_index, 3),
+  `Real Wage Index`             = round(RW_index, 3),
   check.names = FALSE
 )
 
-kable(results, booktabs = TRUE, align = c("r", "r", "r", "r"),
-      caption = "Real Wage Index, England 1770--1850 (1770 = 1.00)") |>
+kable(results, booktabs = TRUE, align = rep("r", 6),
+      caption = "Real Wage Index, England 1770--1850 (1770 = 1.00). \\textit{Nominal Wage} and \\textit{Cost of Basket} are levels in £/week; index columns have base year 1770 = 1.00.") |>
   kable_styling(latex_options = c("HOLD_position", "striped"))
 
 # --- Plot ---

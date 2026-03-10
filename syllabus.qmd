@@ -116,15 +116,17 @@ Core reading:
 2.  @lindert1983 ([link](https://doi.org/10.2307/2598895))
 3.  @feinstein1998 ([link](https://doi.org/10.1017/S0022050700021100))
 
+Slides are [here](https://gabrielfgm.github.io/methods-in-economic-history/07_slides.html#/title-slide)
+
 ## 8. Measuring GDP
 
 GDP is one of the most frequently referenced economic measures. It is also widely misunderstood, highly constructed, and in many instances unreliable. We focus this week on several problems with measuring GDP, ranging from institutional capacity to adjustments for variety and quality.
 
 Core reading:
 
-1.  @jerven2013, Intro and Chapter 1
-2.  @coyle2014, Chapter 4
-3.  @nordhaus1997
+1.  @jerven2013, Intro and Chapter 1 ([link](https://ebookcentral.proquest.com/lib/kcl/detail.action?docID=3138431))
+2.  @coyle2014, Chapter 4 ([link](https://ebookcentral.proquest.com/lib/kcl/detail.action?docID=5695246))
+3.  @nordhaus1997 ([link](https://www.nber.org/system/files/chapters/c6064/c6064.pdf))
 
 ## 9. Measuring historical population
 
