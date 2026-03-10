@@ -16,6 +16,7 @@ format:
         \usepackage{longtable}
         \usepackage{array}
         \usepackage{amsmath}
+        \usepackage{float}
 params:
   solutions: false
 execute:
@@ -45,7 +46,7 @@ Weekly wages in pounds sterling for adult male workers.*
 df <- read.csv("data/wages_london.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
       caption = "London: Weekly Wages by Industry (£/week)") |>
-  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+  kable_styling(latex_options = c("HOLD_position", "striped"), font_size = 10)
 ```
 
 ## Parliamentary Report on Wages in the Northern Counties
@@ -58,7 +59,7 @@ Weekly wages in pounds sterling for adult male workers.*
 df <- read.csv("data/wages_northern.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
       caption = "Northern Counties: Weekly Wages by Industry (£/week)") |>
-  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+  kable_styling(latex_options = c("HOLD_position", "striped"), font_size = 10)
 ```
 
 ## Parliamentary Report on Employment by Industry, England and Wales
@@ -71,7 +72,7 @@ Figures represent percentage of the occupied male population.*
 df <- read.csv("data/employment_shares.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
       caption = "National Employment Shares by Industry (\\%)") |>
-  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+  kable_styling(latex_options = c("HOLD_position", "striped"), font_size = 10)
 ```
 
 ## Parliamentary Report on Grain Prices in London and Northern Markets
@@ -84,7 +85,7 @@ Prices are for one quarter (8 bushels) of best wheaten grain.*
 df <- read.csv("data/prices_wheat.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
       caption = "Wheat Prices by Region (£/quarter)") |>
-  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+  kable_styling(latex_options = c("HOLD_position", "striped"), font_size = 10)
 ```
 
 ## Parliamentary Report on Retail Prices of Selected Commodities
@@ -97,7 +98,7 @@ retail markets in five major English towns and averaged nationally.*
 df <- read.csv("data/prices_national.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = c("l", "l", rep("r", 5)),
       caption = "National Retail Prices of Selected Commodities") |>
-  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+  kable_styling(latex_options = c("HOLD_position", "striped"), font_size = 10)
 ```
 
 ## Parliamentary Report on Weekly Rents by Region
@@ -110,7 +111,7 @@ Families, 1851. Typical rent for a two-room labourer's dwelling.*
 df <- read.csv("data/prices_rent.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = c("l", rep("r", 5)),
       caption = "Weekly Dwelling Rents by Region (£/week)") |>
-  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+  kable_styling(latex_options = c("HOLD_position", "striped"), font_size = 10)
 ```
 
 ## Parliamentary Report on Expenditure of Labouring Families
@@ -125,7 +126,7 @@ df <- read.csv("data/budget_shares.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = c("l", "r"),
       col.names = c("Category of Expenditure", "Budget Share (\\%)"),
       caption = "Household Expenditure Shares, Labouring Families") |>
-  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+  kable_styling(latex_options = c("HOLD_position", "striped"), font_size = 10)
 ```
 
 ## Parliamentary Report on Employment Conditions in the Textile Industry
@@ -139,7 +140,7 @@ worker could expect to find no paid employment.*
 df <- read.csv("data/unemployment_textiles.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = rep("r", 5),
       caption = "Textile Industry: Estimated Weeks Unemployed per Year") |>
-  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+  kable_styling(latex_options = c("HOLD_position", "striped"), font_size = 10)
 ```
 
 ## Parliamentary Report on Female Employment
@@ -153,7 +154,7 @@ recorded as being in paid employment.*
 df <- read.csv("data/female_lfp.csv", check.names = FALSE)
 kable(df, booktabs = TRUE, align = rep("r", 5),
       caption = "Female Labour Force Participation (\\% of women aged 15--60 in paid employment)") |>
-  kable_styling(latex_options = c("hold_position", "striped"), font_size = 10)
+  kable_styling(latex_options = c("HOLD_position", "striped"), font_size = 10)
 ```
 
 `r if (params$solutions) "\\newpage"`
@@ -205,7 +206,7 @@ below 1.00 indicates lower real purchasing power.
 ```
 
 ```{r}
-#| echo: true
+#| echo: !expr params$solutions
 #| eval: !expr params$solutions
 #| message: false
 library(knitr)
@@ -262,7 +263,7 @@ results <- data.frame(
 
 kable(results, booktabs = TRUE, align = c("r", "r", "r", "r"),
       caption = "Real Wage Index, England 1770--1850 (1770 = 1.00)") |>
-  kable_styling(latex_options = c("hold_position", "striped"))
+  kable_styling(latex_options = c("HOLD_position", "striped"))
 
 # --- Plot ---
 long <- data.frame(
