@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "08_slides.html#todays-plan",
+    "href": "08_slides.html#todays-plan",
+    "title": "Measuring GDP",
+    "section": "Today’s plan",
+    "text": "Today’s plan\n\nThe origins and purpose of GDP\nData quality: what do we actually know about GDP?\nHedonic pricing: measuring the price of services, not goods\nExercise: the price of nails"
+  },
+  {
+    "objectID": "08_slides.html#what-is-gdp",
+    "href": "08_slides.html#what-is-gdp",
+    "title": "Measuring GDP",
+    "section": "What is GDP?",
+    "text": "What is GDP?\n\nGDP measures a flow of economic activity within a particular location over a particular period of time\nThree equivalent approaches to measurement:\n\nExpenditure: sum of all spending on final goods and services — \\(C + I + G + (X - M)\\)\nIncome: sum of all incomes earned in production\nOutput: sum of value added at each stage of production\n\nIn principle all three give the same number; in practice they diverge\nSummary point: GDP is primarily a tool for economic planning not a measure of welfare"
+  },
+  {
+    "objectID": "08_slides.html#early-modern-precursors",
+    "href": "08_slides.html#early-modern-precursors",
+    "title": "Measuring GDP",
+    "section": "Early modern precursors",
+    "text": "Early modern precursors\n\nCoyle (2014) opens with the claim that “GDP is one of the many inventions of World War II”\n\nEarly precursors:\n\nWilliam Petty (1660s): estimated English income, expenditure, population, and assets — explicitly to show England could finance war against Holland and France\nCharles Davenant: similar exercises in England\nJacques Necker (France): national accounting geared towards showing the ruler the fiscal capacity of the state for war\nThese early efforts are instruments of statecraft, usually for war"
+  },
+  {
+    "objectID": "08_slides.html#smiths-productiveunproductive-distinction",
+    "href": "08_slides.html#smiths-productiveunproductive-distinction",
+    "title": "Measuring GDP",
+    "section": "Smith’s productive/unproductive distinction",
+    "text": "Smith’s productive/unproductive distinction\n\nAdam Smith drew a sharp line between productive and unproductive labour in The Wealth of Nations:\n\n\nThere is one sort of labour which adds to the value of the subject upon which it is bestowed: There is another which has no such effect. … The labour of a menial servant, on the contrary, adds to the value of nothing. … A man grows rich by employing a multitude of manufacturers: He grows poor, by maintaining a multitude of menial servants.\n\n\nThis excluded much of what we now call services from national income\nThe prejudice was echoed by Marx; the Soviet Union “largely ignored service activities” (Coyle 2014)\nBy the late 19th century, Alfred Marshall and others pushed for an expansive view closer to modern usage"
+  },
+  {
+    "objectID": "08_slides.html#interwar-institutionalisation",
+    "href": "08_slides.html#interwar-institutionalisation",
+    "title": "Measuring GDP",
+    "section": "Interwar institutionalisation",
+    "text": "Interwar institutionalisation\n\nNational income estimation became more formalised in the interwar period, linked to understanding the economic crises of the time\nUK: Colin Clark produced national income and expenditure estimates; appointed in 1930 to the National Economic Advisory Council\nUS: Simon Kuznets worked under President Roosevelt to adapt these methods; his first report to Congress in 1934 estimated national income had halved between 1929 and 1932\nThis offered a far more complete picture than what Hoover had been working with: scattered industrial statistics and share prices"
+  },
+  {
+    "objectID": "08_slides.html#kuznets-welfare-vs-output",
+    "href": "08_slides.html#kuznets-welfare-vs-output",
+    "title": "Measuring GDP",
+    "section": "Kuznets: welfare vs output",
+    "text": "Kuznets: welfare vs output\n\nKuznets recognised he was producing an output series, but thought welfare was the more important and interesting problem\nHe wrote in 1937:\n\n\nIt would be of great value to have national income estimates that would remove from the total the elements which … represent dis-service rather than service. Such estimates would subtract … all expenses on armament, most of the outlays on advertising … and what is perhaps most important, the outlays that have been made necessary in order to overcome difficulties that are, properly speaking, costs implicit in our economic civilization.\n\n\nThis was not what the US government wanted (Coyle 2014)"
+  },
+  {
+    "objectID": "08_slides.html#the-wartime-battle",
+    "href": "08_slides.html#the-wartime-battle",
+    "title": "Measuring GDP",
+    "section": "The wartime battle",
+    "text": "The wartime battle\n\nBy the late 1930s the US government needed national accounts that showed productive capacity for war — and that included government expenditure as part of output\nEarlier definitions generally excluded government spending; as government expanded at the expense of the private economy, GDP would appear to shrink\nThe first official American GNP statistics (1942) included government expenditure and were designed to analyse the burden of the war\nKuznets remained skeptical: including government spending “tautologically ensured that fiscal spending would increase measured economic growth regardless of whether it actually benefited individuals’ welfare” (Coyle 2014)"
+  },
+  {
+    "objectID": "08_slides.html#the-conceptual-shift",
+    "href": "08_slides.html#the-conceptual-shift",
+    "title": "Measuring GDP",
+    "section": "The conceptual shift",
+    "text": "The conceptual shift\n\nThe modern settlement: government consumption is included in GDP.\nGiven government consumption is around 18% of GDP in modern OECD countries this is a big difference, and sensible to include\nBut Kuznets’s point has force: a $1 billion bridge to nowhere is measured by its cost — an input measure, not a welfare measure\nSome economists have argued that Chinese GDP growth has similar cost/output issues\nGDP measures economic activity, not welfare"
+  },
+  {
+    "objectID": "08_slides.html#gdp-as-empirical-construct",
+    "href": "08_slides.html#gdp-as-empirical-construct",
+    "title": "Measuring GDP",
+    "section": "GDP as empirical construct",
+    "text": "GDP as empirical construct\n\nRichard Stone, a pioneer of national accounts in the UK, emphasised that GDP is a theory-laden construct, not a fact (Coyle 2014):\n\n\nTo ascertain income it is necessary to set up a theory from which income is derived as a concept by postulation and then associate this concept with a certain set of primary facts.\n\n\nDifferent theoretical frameworks would yield quite different measures\nThe UN System of National Accounts states explicitly that the accounting framework “is designed for purposes of economic analysis, decision-taking and policymaking” — not welfare\nTwo key features: (1) theory-dependent, (2) geared to economic management, not welfare measurement"
+  },
+  {
+    "objectID": "08_slides.html#gesturing-beyond-gdp",
+    "href": "08_slides.html#gesturing-beyond-gdp",
+    "title": "Measuring GDP",
+    "section": "Gesturing beyond GDP",
+    "text": "Gesturing beyond GDP\n\nRecognition of GDP’s limits has prompted alternatives aimed more explicitly at welfare\nStiglitz-Sen-Fitoussi Commission (2009): recommended supplementing GDP with measures of inequality, sustainability, and subjective well-being\nHuman Development Index (HDI): Amartya Sen and Mahbub ul Haq — combines income, health, and education; used by UNDP\nThese are important but raise their own deep measurement problems: how do you combine health and income into a single index?\nToday’s focus is different: before asking “should we go beyond GDP?” we need to understand how well GDP itself is measured"
+  },
+  {
+    "objectID": "08_slides.html#jerven-the-veneer-of-accuracy",
+    "href": "08_slides.html#jerven-the-veneer-of-accuracy",
+    "title": "Measuring GDP",
+    "section": "Jerven: the veneer of accuracy",
+    "text": "Jerven: the veneer of accuracy\n\nJerven (2013) argues that GDP statistics for sub-Saharan Africa present a veneer of greater accuracy than is warranted\nThe answer to “what do we know about income and growth in sub-Saharan Africa?” is “much less than we like to think”\nThe core issue: where to place the production boundary — what counts as economic activity?\nPigou’s famous example: if you marry your cook, what happens to GDP?\nThe boundary is a conceptual choice, not a natural fact — and different choices yield very different numbers"
+  },
+  {
+    "objectID": "08_slides.html#the-base-year-problem",
+    "href": "08_slides.html#the-base-year-problem",
+    "title": "Measuring GDP",
+    "section": "The base year problem",
+    "text": "The base year problem\n\nTo measure real (inflation-adjusted) GDP you need a base year in which prices are held constant\nThe base year also defines the sectoral weights: the relative size of agriculture, industry, services, etc.\nAs sectors grow at different rates and relative prices shift, the base-year weights become increasingly misleading\nIMF best practice: rebase every five years — but this is rarely followed in low-income countries due to cost\nConsequence: GDP figures reflect the structure of the economy in the base year, not today — introducing systematic bias"
+  },
+  {
+    "objectID": "08_slides.html#ghanas-gdp-revision",
+    "href": "08_slides.html#ghanas-gdp-revision",
+    "title": "Measuring GDP",
+    "section": "Ghana’s GDP revision",
+    "text": "Ghana’s GDP revision\n\nGhana was using 1993 as the base year until the mid-2000s\nIn 2010 they updated the base year to 2006 sector weights and prices\nResult: measured GDP jumped from cedi 21.7 billion (old base) to cedi 36.9 billion (new base) — nearly doubling overnight\nOne concrete problem with the 1993 base:\n\nGhana has a large and growing telecoms sector — but its contribution was measured using 1993 landline-era weights and prices\nThe mobile phone revolution was essentially invisible in the old accounts\n\nJerven (2013): the statistics are not fabricated but unreliable, and costs of collection result in very variable quality"
+  },
+  {
+    "objectID": "08_slides.html#the-core-measurement-problem",
+    "href": "08_slides.html#the-core-measurement-problem",
+    "title": "Measuring GDP",
+    "section": "The core measurement problem",
+    "text": "The core measurement problem\n\nEven if data collection is perfect, price indices face a deeper challenge: they track the prices of goods, not the prices of the services those goods provide\nNordhaus (1997):\n\n\nFor many practical reasons, traditional price indexes measure the prices of goods that consumers buy rather than the prices of the services that consumers enjoy.\n\n\nThis matters whenever goods change quality or are replaced by new products\n\nA laptop in 2025 and a laptop in 1995 are both called “a laptop” — but they are radically different objects\nTracking the price of “a laptop” misses the enormous improvement in computing services per dollar\n\nHedonic pricing (from the Greek hedone, pleasure): price the bundle of services goods provide, not the goods themselves"
+  },
+  {
+    "objectID": "08_slides.html#nordhaus-measuring-the-price-of-light",
+    "href": "08_slides.html#nordhaus-measuring-the-price-of-light",
+    "title": "Measuring GDP",
+    "section": "Nordhaus: measuring the price of light",
+    "text": "Nordhaus: measuring the price of light\n\nNordhaus (1997) chooses a deliberately simple case: the price of illumination\nPeople do not want candles, whale oil, kerosene, or electricity — they want light\nThe service can be measured cleanly: lumens per watt — units of illuminance per unit of energy input\nThis allows Nordhaus to track the price of the service rather than the price of the energy source\nThe key insight: as technology changes (candles → gas → electricity → LEDs), traditional price indices track a shifting set of goods; Nordhaus tracks a fixed service\nResult: the true fall in the cost of light is far larger than traditional price indices suggest"
+  },
+  {
+    "objectID": "08_slides.html#bias-in-price-indexes",
+    "href": "08_slides.html#bias-in-price-indexes",
+    "title": "Measuring GDP",
+    "section": "Bias in price indexes",
+    "text": "Bias in price indexes\n\n\n\nNordhaus (1997) Fig. 1.2: price of gas/kerosene vs electric light, 1883–1993 (1883 = 100)"
+  },
+  {
+    "objectID": "08_slides.html#the-price-of-light-over-time",
+    "href": "08_slides.html#the-price-of-light-over-time",
+    "title": "Measuring GDP",
+    "section": "The price of light over time",
+    "text": "The price of light over time\n\n\n\nNordhaus (1997): price indices for light showing the dramatic long-run fall in illumination costs"
+  },
+  {
+    "objectID": "08_slides.html#the-labour-hours-measure",
+    "href": "08_slides.html#the-labour-hours-measure",
+    "title": "Measuring GDP",
+    "section": "The labour-hours measure",
+    "text": "The labour-hours measure\n\nNordhaus extends the hedonic argument by expressing the cost of light in labour hours:\n\n\nOne modern one-hundred-watt incandescent bulb burning for three hours each night would produce 1.5 million lumen-hours of light per year. At the beginning of the last century, obtaining this amount of light would have required burning seventeen thousand candles, and the average worker would have had to toil almost one thousand hours to earn the dollars to buy the candles. (Nordhaus 1997)\n\n\nNot only is light much cheaper — the time we must devote to earning it has fallen even further\nModern practice: US statistical agencies now “quality-adjust” price indices — a new car’s price is adjusted for mileage, safety features, fuel efficiency — tracking the services the car provides, not just its sticker price\nThis remains contested and difficult: how do you price all the services bundled in a smartphone?"
+  },
+  {
+    "objectID": "08_slides.html#the-nail-price-exercise",
+    "href": "08_slides.html#the-nail-price-exercise",
+    "title": "Measuring GDP",
+    "section": "The nail price exercise",
+    "text": "The nail price exercise\n\nWe now work through a similar exercise using the price of nails (Sichel 2022)\nWhat kinds of services do nails provide?\nThe data: real price of a nail in 2012 US cents, 1695–2019\n\nSource: Sichel (2022), matched-model index (column PRMATCHCN)\nSplices together hand-forged, cut, and wire nail price series\n\n\n\n\n\nSichel (2022): real price of nails, 1695–2019"
+  },
+  {
+    "objectID": "08_slides.html#a-history-of-nail-technology",
+    "href": "08_slides.html#a-history-of-nail-technology",
+    "title": "Measuring GDP",
+    "section": "A history of nail technology",
+    "text": "A history of nail technology\n\n\n\n\n\n\n\n\nPeriod\nTechnology\nKey change\n\n\n\n\nRoman era – 1820\nHand-forged\n~1 minute per nail by a nailsmith\n\n\n1790s – 1890s\nCut nails\nMachine-cut from iron/steel sheet; steam-powered rolling mills\n\n\n1880s – 1920\nWire nails\nDrawn from wire; 300–450/min by machine\n\n\nEarly 1980s\nPneumatic nail guns\nFirst appear in Sears catalogue\n\n\nToday\nFully automated\nSome machines: 2,000 nails/minute\n\n\n\nNote: the 1880s–1890s saw overlapping use of cut and wire nails during the transition period.\n\nWhat does this imply for a traditional price index vs a hedonic one?"
+  },
+  {
+    "objectID": "08_slides.html#exercise",
+    "href": "08_slides.html#exercise",
+    "title": "Measuring GDP",
+    "section": "Exercise",
+    "text": "Exercise\nOpen the data file: nail_prices.xlsx\nThe spreadsheet contains: Year and Real_Price_Cents_Per_Nail_2012USD (Sichel’s matched-model index, column PRMATCHCN)\nQuestions to consider:\n\nPlot the series (or sketch the shape). Where are the major price breaks? Can you connect them to the technology timeline on the previous slide?\nWhat services do nails provide? List as many as you can.\nHow have those services changed across the three nail technologies (forged → cut → wire)? Think about: holding power, ease of driving, weight, uniformity.\nIf you were constructing a hedonic price index for nails, what unit of service would you use — analogous to Nordhaus’s lumen-hours per dollar?\nDo you think a hedonic adjustment would make the price fall look larger or smaller than the raw matched-model series? Why?"
+  },
+  {
+    "objectID": "08_slides.html#bibliography",
+    "href": "08_slides.html#bibliography",
+    "title": "Measuring GDP",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\n\nCoyle, Diane. 2014. Gdp: A Brief but Affectionate History - Revised and Expanded Edition. Princeton, UNITED STATES: Princeton University Press. http://ebookcentral.proquest.com/lib/kcl/detail.action?docID=5695246.\n\n\nJerven, Morten. 2013. Poor Numbers: How We Are Misled by African Development Statistics and What to Do about It. Ithaca, UNITED STATES: Cornell University Press. http://ebookcentral.proquest.com/lib/kcl/detail.action?docID=3138431.\n\n\nNordhaus, William. 1997. “Do Real-Output and Real-Wage Measures Capture Reality? The History of Lighting Suggests Not.” In, edited by Timothy F. Bresnahan and Robert J. Gordon. Studies in Income and Wealth, v. 58. Chicago: University of Chicago Press.\n\n\nSichel, Daniel E. 2022. “The Price of Nails Since 1695: A Window into Economic Change.” Journal of Economic Perspectives 36 (1): 125–50."
+  },
+  {
+    "objectID": "08_slides.html#conceptualizing-national-income",
+    "href": "08_slides.html#conceptualizing-national-income",
+    "title": "Measuring GDP",
+    "section": "Conceptualizing national income",
+    "text": "Conceptualizing national income\n\nAdam Smith drew a sharp line between productive and unproductive labour in The Wealth of Nations:\n\n\nThere is one sort of labour which adds to the value of the subject upon which it is bestowed: There is another which has no such effect. … The labour of a menial servant, on the contrary, adds to the value of nothing. … A man grows rich by employing a multitude of manufacturers: He grows poor, by maintaining a multitude of menial servants.\n\n\nExcludes much of services from national income\nThe prejudice was echoed by Marx; the Soviet Union “largely ignored service activities” (Coyle 2014)\nBy the late 19th century, Alfred Marshall and others pushed for an expansive view closer to modern usage"
+  },
+  {
+    "objectID": "08_slides.html#beyond-gdp",
+    "href": "08_slides.html#beyond-gdp",
+    "title": "Measuring GDP",
+    "section": "Beyond GDP",
+    "text": "Beyond GDP\n\nRecognition of GDP’s limits has prompted alternatives aimed more explicitly at welfare\nStiglitz-Sen-Fitoussi Commission (2009): recommended supplementing GDP with measures of inequality, sustainability, and subjective well-being\nHuman Development Index (HDI): Amartya Sen and Mahbub ul Haq — combines income, health, and education; used by UNDP\nThese are important but raise their own deep measurement problems: how do you combine health and income into a single index?\nDifferent question: how well GDP itself is measured"
+  }
+]
