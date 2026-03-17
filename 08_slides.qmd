@@ -99,7 +99,7 @@ bibliography: references.bib
 
 -   But Kuznets's point has force: a $1 billion bridge to nowhere is measured by its **cost** — an input measure, not a welfare measure
 
--   There are echoes in modern debates: economists like Pettis have argued that much Chinese GDP growth comes from politically-directed investment (real-estate construction) valued at cost, where the consumption benefits may be illusory
+-   There are echoes in modern debates: some economists have argued that much Chinese GDP growth comes from politically-directed investment (real-estate construction) valued at cost, where the consumption benefits may be illusory
 
 -   GDP measures **economic activity**, not **welfare** — that distinction is built into its history
 
@@ -138,7 +138,7 @@ bibliography: references.bib
 -   Pigou's famous example: if you marry your cook, what happens to GDP?
 
     -   Before: cook's wages counted as GDP (market transaction)
-    -   After: domestic labour is unpaid and outside the production boundary — GDP *falls*
+    -   After: domestic labour is unpaid and outside the production boundary — *measured* GDP falls
 
 -   The boundary is a **conceptual choice**, not a natural fact — and different choices yield very different numbers
 
@@ -241,6 +241,8 @@ bibliography: references.bib
 | Early 1980s | **Pneumatic nail guns** | First appear in Sears catalogue |
 | Today | Fully automated | Some machines: 2,000 nails/minute |
 
+*Note: the 1880s–1890s saw overlapping use of cut and wire nails during the transition period.*
+
 -   Cut nails have roughly **twice the holding power** of wire nails of the same size — but wire nails won because of lower cost and shipping weight [@sichel2022]
 
 -   What does this imply for a traditional price index vs a hedonic one?
@@ -259,7 +261,7 @@ The spreadsheet contains: **Year** and **Real_Price_Cents_Per_Nail_2012USD** (Si
 
 3.  How have those services **changed** across the three nail technologies (forged → cut → wire)? Think about: holding power, ease of driving, weight, uniformity.
 
-4.  If you were constructing a **hedonic price index** for nails, what unit of service would you use — analogous to Nordhaus's lumens per watt?
+4.  If you were constructing a **hedonic price index** for nails, what unit of service would you use — analogous to Nordhaus's lumen-hours per dollar?
 
 5.  Do you think a hedonic adjustment would make the price fall look *larger* or *smaller* than the raw matched-model series? Why?
 
