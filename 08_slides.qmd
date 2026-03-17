@@ -243,7 +243,7 @@ Early precursors:
 
 ## Exercise {.smaller}
 
-Open the data file: [nail_prices.xlsx](nails-exercise/nail_prices.xlsx)
+Open the data file: [nail_prices.xlsx](https://github.com/gabrielfgm/methods-in-economic-history/blob/main/nails-exercise/nail_prices.xlsx)
 
 The spreadsheet contains: **Year** and **Real_Price_Cents_Per_Nail_2012USD** (Sichel's matched-model index, column PRMATCHCN)
 
