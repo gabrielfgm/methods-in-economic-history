@@ -249,14 +249,14 @@ The spreadsheet contains: **Year** and **Real_Price_Cents_Per_Nail_2012USD** (Si
 
 **Questions to consider:**
 
-1.  Plot the series (or sketch the shape). Where are the major price breaks? Can you connect them to the technology timeline on the previous slide?
+1.  What **services** do nails provide? 
 
-2.  What **services** do nails provide? List as many as you can.
+2.  Have those services **changed**? 
 
-3.  How have those services **changed** across the three nail technologies (forged → cut → wire)? Think about: holding power, ease of driving, weight, uniformity.
+3.  If you were constructing a **hedonic price index** for nails, what unit of service would you use — analogous to Nordhaus's lumen-hours per dollar?
 
-4.  If you were constructing a **hedonic price index** for nails, what unit of service would you use — analogous to Nordhaus's lumen-hours per dollar?
+4.  Do you think a hedonic adjustment would make the price fall look *larger* or *smaller* than the raw series? Why?
 
-5.  Do you think a hedonic adjustment would make the price fall look *larger* or *smaller* than the raw matched-model series? Why?
+5. Construct an ad-hoc adjustment based on assuming changes in the quantity of the service provided by nails to the existing price series to get a new 'hedonic' price series.
 
 ## Bibliography

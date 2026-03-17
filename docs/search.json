@@ -144,7 +144,7 @@
     "href": "08_slides.html#exercise",
     "title": "Measuring GDP",
     "section": "Exercise",
-    "text": "Exercise\nOpen the data file: nail_prices.xlsx\nThe spreadsheet contains: Year and Real_Price_Cents_Per_Nail_2012USD (Sichel’s matched-model index, column PRMATCHCN)\nQuestions to consider:\n\nPlot the series (or sketch the shape). Where are the major price breaks? Can you connect them to the technology timeline on the previous slide?\nWhat services do nails provide? List as many as you can.\nHow have those services changed across the three nail technologies (forged → cut → wire)? Think about: holding power, ease of driving, weight, uniformity.\nIf you were constructing a hedonic price index for nails, what unit of service would you use — analogous to Nordhaus’s lumen-hours per dollar?\nDo you think a hedonic adjustment would make the price fall look larger or smaller than the raw matched-model series? Why?"
+    "text": "Exercise\nOpen the data file: nail_prices.xlsx\nThe spreadsheet contains: Year and Real_Price_Cents_Per_Nail_2012USD (Sichel’s matched-model index, column PRMATCHCN)\nQuestions to consider:\n\nWhat services do nails provide?\nHave those services changed?\nIf you were constructing a hedonic price index for nails, what unit of service would you use — analogous to Nordhaus’s lumen-hours per dollar?\nDo you think a hedonic adjustment would make the price fall look larger or smaller than the raw series? Why?\nConstruct an ad-hoc adjustment based on assuming changes in the quantity of the service provided by nails to the existing price series to get a new ‘hedonic’ price series."
   },
   {
     "objectID": "08_slides.html#bibliography",
