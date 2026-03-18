@@ -134,8 +134,8 @@ Many social scientists rely on historical measures of population in regression m
 
 Core reading:
 
-1.  @guinnane2023
-2.  @nunn2011
+1.  @guinnane2023 ([link](https://doi.org/10.1017/S0022050723000293))
+2.  @nunn2011 ([link](https://doi.org/10.1093/qje/qjr009))
 
 ## 10. Measuring inequality
 

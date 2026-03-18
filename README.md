@@ -251,9 +251,10 @@ Core reading:
 1.  Timothy W. Guinnane “We Do Not Know the Population of Every Country
     in the World for the Past Two Thousand Years,” *The Journal of
     Economic History* (September 2023), 83: 3, 912–938.
+    ([link](https://doi.org/10.1017/S0022050723000293))
 2.  N. Nunn and N. Qian “The Potato’s Contribution to Population and
     Urbanization,” *The Quarterly Journal of Economics* (May 2011), 126:
-    2, 593–650.
+    2, 593–650. ([link](https://doi.org/10.1093/qje/qjr009))
 
 ## 10. Measuring inequality
 
