@@ -1,9 +1,11 @@
 project:
   type: website
   output-dir: docs
-  # This script runs after rendering. It copies the markdown output 
+  render:
+    - "*.qmd"
+  # This script runs after rendering. It copies the markdown output
   # from the docs folder to the root README.md
-  post-render: 
+  post-render:
     - cp docs/syllabus.md README.md
 
 website:
@@ -13,7 +15,7 @@ website:
       - text: "Syllabus"
         href: syllabus.qmd
       - text: "Slides"
-        href: slides/01_slides.qmd 
+        href: index.qmd
 
 # Global bibliography (so it works for both slides and syllabus)
 bibliography: references.bib

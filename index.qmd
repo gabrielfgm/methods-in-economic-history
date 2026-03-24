@@ -1,0 +1,15 @@
+---
+title: "Methods in Economic History — Slides"
+---
+
+| Week | Topic |
+|------|-------|
+| [Week 1](01_slides.html) | Introduction |
+| [Week 2](02_slides.html) | Reasoning about a quantitative world |
+| [Week 3](03_slides.html) | Basic tools: central tendencies and dispersion |
+| [Week 4](04_slides.html) | Selection bias |
+| [Week 5](05_slides.html) | Linear Regression |
+| [Week 6](06_slides.html) | Rival Models: Empire and Historical Bond Yields |
+| [Week 7](07_slides.html) | Measuring the Standard of Living: Real Wages |
+| [Week 8](08_slides.html) | Measuring GDP |
+| [Week 9](09_slides.html) | Measurement Error |

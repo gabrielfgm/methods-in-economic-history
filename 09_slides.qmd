@@ -1,0 +1,220 @@
+---
+title: "Measurement Error"
+author: "Gabriel Mesevage"
+format:
+  revealjs:
+    slide-number: c/t
+    chalkboard:
+      buttons: true
+editor:
+  markdown:
+    wrap: sentence
+bibliography: references.bib
+---
+
+## Today's plan {.smaller}
+
+1.  Classical measurement error and why averaging works
+2.  Systematic but uncorrelated bias: we can still recover $\beta$
+3.  Non-classical (correlated) bias: destroys inference
+4.  Measurement error in the explanatory variable: attenuation bias
+5.  Application: population data, Nunn & Qian, and Guinnane's critique
+
+## Classical measurement error {.smaller}
+
+-   Imagine timing a book-toss with your phone: some people hit stop too early, some too late
+
+-   Index each student's measurement $\tau_i$; the true duration is $\tau^*$:
+
+$$\tau_i = \tau^* + \epsilon_i$$
+
+-   If errors are **classical** — mean-zero, symmetric, uncorrelated with $\tau^*$:
+
+$$\text{Avg}(\tau_i) = \frac{1}{N}\sum_i \tau_i = \tau^* + \text{Avg}(\epsilon_i) \xrightarrow{N \to \infty} \tau^*$$
+
+-   **Key result**: averaging over many noisy measurements recovers the truth
+
+-   This is why repeated measurement and averaging are so powerful in empirical science
+
+## The experiment — round 1 {.smaller}
+
+:::: {.columns}
+::: {.column width="35%"}
+
+I will toss a book. Time how long it stays in the air (seconds, to 2 decimal places) and enter your measurement in the spreadsheet.
+
+```{r}
+#| echo: false
+#| fig-height: 3.5
+#| fig-width: 3.5
+#| message: false
+#| warning: false
+library(qrcode)
+qr <- qr_code("https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing")
+plot(qr)
+```
+
+:::
+::: {.column width="65%"}
+
+```{=html}
+<iframe src="https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/pubhtml?widget=true&amp;headers=false" width="100%" height="420px" frameborder="0"></iframe>
+```
+
+:::
+::::
+
+## Systematic bias — still useful {.smaller}
+
+-   Suppose all students are systematically slow: average error is $b > 0$, not zero
+
+-   But the bias is the **same** regardless of which hand I toss with
+
+-   Let $D_i = 1$ for right-hand toss, $D_i = 0$ for left. Then:
+
+$$\tau_i = D_i \tau^R + (1-D_i)\tau^L + b + \epsilon_i$$
+
+Rearranging:
+
+$$\tau_i = \underbrace{\tau^L + b}_{\alpha} + \underbrace{(\tau^R - \tau^L)}_{\beta} D_i + \epsilon_i = \alpha + \beta D_i + \epsilon_i$$
+
+-   We still recover $\beta$ — the **difference** between groups — correctly
+
+-   Only the intercept $\alpha$ absorbs the bias
+
+-   **Intuition**: if bias is the same across groups, it cancels in the comparison
+
+## The experiment — round 2 {.smaller}
+
+:::: {.columns}
+::: {.column width="35%"}
+
+I will toss with my **right** then **left** hand. Record each timing and which hand. We will estimate the difference between hands.
+
+```{r}
+#| echo: false
+#| fig-height: 3.5
+#| fig-width: 3.5
+#| message: false
+#| warning: false
+library(qrcode)
+qr <- qr_code("https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing")
+plot(qr)
+```
+
+:::
+::: {.column width="65%"}
+
+```{=html}
+<iframe src="https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/pubhtml?widget=true&amp;headers=false" width="100%" height="420px" frameborder="0"></iframe>
+```
+
+:::
+::::
+
+## Non-classical bias: inference breaks down {.smaller}
+
+-   Now suppose the bias is **larger for higher tosses** — and I throw higher with my right hand
+
+-   Let $b^R \neq b^L$; the bias is correlated with the treatment $D_i$:
+
+$$\tau_i = \underbrace{\tau^L + b^L}_{\alpha} + \underbrace{(\tau^R - \tau^L) + (b^R - b^L)}_{\beta} D_i + \epsilon_i$$
+
+-   $\hat\beta$ now conflates the **true difference** with the **difference in biases** — we cannot separate them
+
+-   A large $\hat\beta = 1$ second is consistent with:
+    -   A real 1-second gap, zero bias difference
+    -   No real gap, a 1-second bias difference
+    -   Any combination in between
+
+-   **Lesson**: measurement error correlated with your explanatory variable destroys inference
+
+## Measurement error in the explanatory variable {.smaller}
+
+-   Now suppose the error is in $x$, not $y$: we observe $x_i = x^*_i + u_i$
+
+-   **Classical error**: mean-zero, uncorrelated with $x^*_i$ and $\epsilon_i$
+
+The OLS estimator gives:
+
+$$\hat\beta = \beta \cdot \frac{\text{Var}(x^*_i)}{\text{Var}(x^*_i) + \text{Var}(u_i)}$$
+
+-   The fraction is between 0 and 1: **attenuation bias** — the coefficient is pushed toward zero
+
+-   The larger $\text{Var}(u_i)$ relative to $\text{Var}(x^*_i)$, the more the coefficient shrinks
+
+-   A *constant* error (zero variance) causes no bias — only variance in the error matters
+
+-   **Important**: this holds only for classical error; non-classical error in $x$ can bias in any direction
+
+## Attenuation bias — adding noise to $x$ {.smaller}
+
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-height: 5
+#| message: false
+#| warning: false
+library(ggplot2)
+library(patchwork)
+
+set.seed(42)
+n <- 200
+x_true <- rnorm(n, 0, 1)
+y <- 1.5 * x_true + rnorm(n, 0, 0.5)
+
+make_plot <- function(noise_sd, label) {
+  x_obs <- x_true + rnorm(n, 0, noise_sd)
+  df <- data.frame(x = x_obs, y = y)
+  b <- round(coef(lm(y ~ x, data = df))[2], 2)
+  ggplot(df, aes(x, y)) +
+    geom_point(alpha = 0.3, size = 0.8) +
+    geom_smooth(method = "lm", se = FALSE, colour = "steelblue") +
+    labs(title = label, subtitle = paste0("\u03b2\u0302 = ", b),
+         x = "Observed x", y = "y") +
+    theme_minimal(base_size = 11)
+}
+
+p1 <- make_plot(0,   "No noise (true x, \u03b2 = 1.5)")
+p2 <- make_plot(0.5, "Low noise (sd = 0.5)")
+p3 <- make_plot(1.5, "Medium noise (sd = 1.5)")
+p4 <- make_plot(4,   "High noise (sd = 4)")
+
+(p1 | p2) / (p3 | p4)
+```
+
+## Application: population data and the potato {.smaller}
+
+-   @nunn2011 study the impact of the potato on European population after 1700
+
+-   Simplified regression:
+
+$$y_{it} = \beta \cdot \text{PotatoSuitable}_i \times \mathbf{1}[\text{After 1700}]_t + \alpha_i + \tau_t + \epsilon_{it}$$
+
+-   Outcome $y_{it}$: log population, from McEvedy & Jones (MJ) *Atlas of World Population History*
+
+-   MJ's construction: round to nearest $x$, guesses from perceived economic activity, round-number growth rates, neighbour benchmarks
+
+-   To assign MJ figures to sub-national regions, researchers allocate by **land area share** — a further approximation
+
+-   @guinnane2023 argues this measurement error is almost certainly **non-classical**
+
+## Why non-classical? Guinnane's critique {.smaller}
+
+-   MJ's errors are likely **larger in magnitude for larger populations** — more aggressive rounding for big countries
+
+-   The errors are likely **correlated with potato suitability**: suitable areas are specific agricultural zones with particular population patterns
+
+-   Area-based allocation of population introduces errors proportional to the size and economic character of the region — not random
+
+Therefore:
+
+-   The bias in $\hat\beta$ is **unknown in sign and magnitude**
+
+-   Scholars who argue "the bias just attenuates" are invoking classical measurement error — an assumption that requires justification
+
+-   Guinnane: the assumption is implausible given how the data were constructed
+
+-   **Lesson**: always ask *how* your data were constructed before assuming measurement error is classical
+
+## Bibliography
