@@ -237,6 +237,9 @@ Core reading:
     Press, 1997).
     ([link](https://www.nber.org/system/files/chapters/c6064/c6064.pdf))
 
+Slides for this week are available
+[here](https://gabrielfgm.github.io/methods-in-economic-history/08_slides.html)
+
 ## 9. Measuring historical population
 
 Many social scientists rely on historical measures of population in
@@ -277,7 +280,7 @@ Core reading:
 
 1.  Thomas Piketty, Emmanuel Saez, and Gabriel Zucman “Distributional
     National Accounts,” *The Quarterly Journal of Economics* (May 2018),
-    133: 2, 553–609.
+    133: 2, 553–609. ([link](https://doi.org/10.1093/qje/qjx043))
 2.  Gerald Auten and David Splinter “Income Inequality in the United
     States,” *Journal of Political Economy* (July 2024), 132: 7,
-    2179–2227.
+    2179–2227. ([link](https://doi.org/10.1086/728741))

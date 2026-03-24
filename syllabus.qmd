@@ -128,6 +128,9 @@ Core reading:
 2.  @coyle2014, Chapter 4 ([link](https://ebookcentral.proquest.com/lib/kcl/detail.action?docID=5695246))
 3.  @nordhaus1997 ([link](https://www.nber.org/system/files/chapters/c6064/c6064.pdf))
 
+Slides for this week are available [here](https://gabrielfgm.github.io/methods-in-economic-history/08_slides.html)
+
+
 ## 9. Measuring historical population
 
 Many social scientists rely on historical measures of population in regression models or theoretical accounts of growth or political change. This week we will tackle a recent critique of this data from Guinnane (2023), which highlights the difficulty of relying on very approximate data (correct only to an order of magnitude at best), which is itself the product of a model.
@@ -145,5 +148,5 @@ Measuring inequality is intrinsically quite difficult because it requires measur
 
 Core reading:
 
-1.  @piketty2018
-2.  @auten2024
+1.  @piketty2018 ([link](https://doi.org/10.1093/qje/qjx043))
+2.  @auten2024 ([link](https://doi.org/10.1086/728741))
