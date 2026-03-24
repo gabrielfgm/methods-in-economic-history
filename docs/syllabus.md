@@ -256,6 +256,9 @@ Core reading:
     Urbanization,” *The Quarterly Journal of Economics* (May 2011), 126:
     2, 593–650. ([link](https://doi.org/10.1093/qje/qjr009))
 
+Slides for this week are available
+[here](https://gabrielfgm.github.io/methods-in-economic-history/09_slides.html)
+
 ## 10. Measuring inequality
 
 Measuring inequality is intrinsically quite difficult because it

@@ -137,6 +137,8 @@ Core reading:
 1.  @guinnane2023 ([link](https://doi.org/10.1017/S0022050723000293))
 2.  @nunn2011 ([link](https://doi.org/10.1093/qje/qjr009))
 
+Slides for this week are available [here](https://gabrielfgm.github.io/methods-in-economic-history/09_slides.html)
+
 ## 10. Measuring inequality
 
 Measuring inequality is intrinsically quite difficult because it requires measurements of the whole distribution of income or wealth and not simply its average. This makes inequality measures much more sensitive to problems of sample selection in which high or low values are more likely to be missed. In this week we tackle debates between Auten and Splinter on the one side, and Piketty, Saez and Zucman on the other, as to whether 20th century inequality has increased and by how much. As this debate reveals, even with very extensive modern income tax data, answering questions about inequality depend crucially on what we assume about individuals not in the data set – if they are mostly rich or mostly poor.

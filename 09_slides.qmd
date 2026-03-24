@@ -30,7 +30,7 @@ bibliography: references.bib
 
     1.  **Mean-zero**: errors are symmetric — as often too high as too low, $E[\epsilon_i] = 0$
     2.  **Uncorrelated with the true value**: big things are not measured with bigger errors
-    3.  **Uncorrelated with other errors**: your mistake does not depend on mine
+    3.  **Uncorrelated with other errors**: e.g. in a regression
 
 -   Under these conditions, averaging works:
 
@@ -51,11 +51,11 @@ Time how long it stays in the air (seconds, to 2 decimal places) and enter your 
 #| message: false
 #| warning: false
 library(qrcode)
-qr <- qr_code("https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing")
+qr <- qr_code("https://tinyurl.com/253ndpxe")
 plot(qr)
 ```
 
-[https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing)
+<https://tinyurl.com/253ndpxe>
 :::
 
 ## What is systematic bias? {.smaller}
@@ -104,11 +104,11 @@ Now open the sheet and **add a left-hand toss only** — record the time and mar
 #| message: false
 #| warning: false
 library(qrcode)
-qr <- qr_code("https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing")
+qr <- qr_code("https://tinyurl.com/253ndpxe")
 plot(qr)
 ```
 
-[https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing)
+<https://tinyurl.com/253ndpxe>
 :::
 
 ## Non-classical bias: the algebra {.smaller}
@@ -133,6 +133,7 @@ $$\tau_i = \underbrace{(\tau^L + b^L)}_{\alpha} + \underbrace{[(\tau^R - \tau^L)
 -   We cannot separate the true difference from the bias difference — they are bundled into a single number $\hat\beta$
 
 -   A finding of $\hat\beta = 1$ second is consistent with **any** of:
+
     -   A real 1-second gap, zero bias difference
     -   No real gap, a 1-second bias difference
     -   A 2-second real gap offset by a −1-second bias difference
@@ -144,13 +145,15 @@ $$\tau_i = \underbrace{(\tau^L + b^L)}_{\alpha} + \underbrace{[(\tau^R - \tau^L)
 
 ## Measurement error in the explanatory variable {.smaller}
 
--   So far the error has been in the **outcome** $\tau_i$. What if the error is in the **explanatory variable**?
+-   So far the error has been in the **outcome** $\tau_i$.
+    What if the error is in the **explanatory variable**?
 
 -   True model: $y_i = \alpha + \beta x^*_i + \epsilon_i$, but we observe $x_i = x^*_i + u_i$
 
 -   Assume **classical** $u_i$: mean-zero, uncorrelated with $x^*_i$ and $\epsilon_i$
 
--   Recall $\hat\beta = \text{Cov}(x_i, y_i) / \text{Var}(x_i)$. Substituting:
+-   Recall $\hat\beta = \text{Cov}(x_i, y_i) / \text{Var}(x_i)$.
+    Substituting:
 
 $$\text{Cov}(x_i, y_i) = \text{Cov}(x^*_i + u_i,\; \beta x^*_i + \epsilon_i) = \beta\,\text{Var}(x^*_i)$$
 
@@ -234,7 +237,8 @@ $$y_{it} = \beta \cdot \text{PotatoSuitable}_i \times \mathbf{1}[\text{After 170
 
 -   Population data come from McEvedy & Jones (MJ), *Atlas of World Population History*
 
--   MJ describe their construction process openly. Key features:
+-   MJ describe their construction process openly.
+    Key features per @guinnane2023
 
     -   Figures are **rounded** to the nearest unit (where the unit itself depends on the size of the population)
     -   Estimates for periods with little evidence rely on **perceived level of economic activity**
@@ -243,6 +247,7 @@ $$y_{it} = \beta \cdot \text{PotatoSuitable}_i \times \mathbf{1}[\text{After 170
 
 -   To use MJ for sub-national regions, researchers **allocate population by land area share** — a further step not in MJ
 
--   **Question for discussion**: given how this data was constructed, what would you expect the measurement error to look like? Is it likely to be classical?
+-   **Question for discussion**: given how this data was constructed, what would you expect the measurement error to look like?
+    Is it likely to be classical?
 
 ## Bibliography

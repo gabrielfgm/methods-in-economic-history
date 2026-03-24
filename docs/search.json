@@ -1348,7 +1348,7 @@
     "href": "09_slides.html#the-experiment-round-1",
     "title": "Measurement Error",
     "section": "The experiment — round 1",
-    "text": "The experiment — round 1\nI will toss a book in the air. Time how long it stays in the air (seconds, to 2 decimal places) and enter your measurement in the spreadsheet.\n\n\n\n\n\n\n\n\n\n\nhttps://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing"
+    "text": "The experiment — round 1\nI will toss a book in the air. Time how long it stays in the air (seconds, to 2 decimal places) and enter your measurement in the spreadsheet.\n\n\n\n\n\n\n\n\n\n\nhttps://tinyurl.com/253ndpxe"
   },
   {
     "objectID": "09_slides.html#systematic-bias-still-useful",
@@ -1362,7 +1362,7 @@
     "href": "09_slides.html#the-experiment-round-2",
     "title": "Measurement Error",
     "section": "The experiment — round 2",
-    "text": "The experiment — round 2\nThe data from round 1 (right-hand toss) is still in the spreadsheet. Now open the sheet and add a left-hand toss only — record the time and mark which hand.\n\n\n\n\n\n\n\n\n\n\nhttps://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing"
+    "text": "The experiment — round 2\nThe data from round 1 (right-hand toss) is still in the spreadsheet. Now open the sheet and add a left-hand toss only — record the time and mark which hand.\n\n\n\n\n\n\n\n\n\n\nhttps://tinyurl.com/253ndpxe"
   },
   {
     "objectID": "09_slides.html#non-classical-bias-inference-breaks-down",
@@ -1404,14 +1404,14 @@
     "href": "09_slides.html#bibliography",
     "title": "Measurement Error",
     "section": "Bibliography",
-    "text": "Bibliography\n\n\n\n\n\n\n\n\nNunn, N., and N. Qian. 2011. “The Potato’s Contribution to Population and Urbanization: Evidence From A Historical Experiment.” The Quarterly Journal of Economics 126 (2): 593–650. https://doi.org/10.1093/qje/qjr009."
+    "text": "Bibliography\n\n\n\n\n\n\n\n\nGuinnane, Timothy W. 2023. “We Do Not Know the Population of Every Country in the World for the Past Two Thousand Years.” The Journal of Economic History 83 (3): 912–38. https://doi.org/10.1017/S0022050723000293.\n\n\nNunn, N., and N. Qian. 2011. “The Potato’s Contribution to Population and Urbanization: Evidence From A Historical Experiment.” The Quarterly Journal of Economics 126 (2): 593–650. https://doi.org/10.1093/qje/qjr009."
   },
   {
     "objectID": "09_slides.html#what-is-classical-measurement-error",
     "href": "09_slides.html#what-is-classical-measurement-error",
     "title": "Measurement Error",
     "section": "What is classical measurement error?",
-    "text": "What is classical measurement error?\n\nAny measurement of a true quantity \\(\\tau^*\\) will contain some error\nWe write the measured value as \\(\\tau_i = \\tau^* + \\epsilon_i\\)\nClassical measurement error has three properties:\n\nMean-zero: errors are symmetric — as often too high as too low, \\(E[\\epsilon_i] = 0\\)\nUncorrelated with the true value: big things are not measured with bigger errors\nUncorrelated with other errors: your mistake does not depend on mine\n\nUnder these conditions, averaging works:\n\n\\[\\text{Avg}(\\tau_i) = \\frac{1}{N}\\sum_i \\tau_i = \\tau^* + \\underbrace{\\text{Avg}(\\epsilon_i)}_{\\to\\, 0} \\xrightarrow{N \\to \\infty} \\tau^*\\]\n\nKey result: with enough measurements, the errors cancel and we recover the truth"
+    "text": "What is classical measurement error?\n\nAny measurement of a true quantity \\(\\tau^*\\) will contain some error\nWe write the measured value as \\(\\tau_i = \\tau^* + \\epsilon_i\\)\nClassical measurement error has three properties:\n\nMean-zero: errors are symmetric — as often too high as too low, \\(E[\\epsilon_i] = 0\\)\nUncorrelated with the true value: big things are not measured with bigger errors\nUncorrelated with other errors: e.g. in a regression\n\nUnder these conditions, averaging works:\n\n\\[\\text{Avg}(\\tau_i) = \\frac{1}{N}\\sum_i \\tau_i = \\tau^* + \\underbrace{\\text{Avg}(\\epsilon_i)}_{\\to\\, 0} \\xrightarrow{N \\to \\infty} \\tau^*\\]\n\nKey result: with enough measurements, the errors cancel and we recover the truth"
   },
   {
     "objectID": "09_slides.html#what-is-systematic-bias",
@@ -1467,6 +1467,6 @@
     "href": "09_slides.html#the-data-mcevedy-jones",
     "title": "Measurement Error",
     "section": "The data: McEvedy & Jones",
-    "text": "The data: McEvedy & Jones\n\nPopulation data come from McEvedy & Jones (MJ), Atlas of World Population History\nMJ describe their construction process openly. Key features:\n\nFigures are rounded to the nearest unit (where the unit itself depends on the size of the population)\nEstimates for periods with little evidence rely on perceived level of economic activity\nGrowth rates are set to round numbers (e.g. “doubling every century”)\nCountries with thin evidence are benchmarked against neighbours\n\nTo use MJ for sub-national regions, researchers allocate population by land area share — a further step not in MJ\nQuestion for discussion: given how this data was constructed, what would you expect the measurement error to look like? Is it likely to be classical?"
+    "text": "The data: McEvedy & Jones\n\nPopulation data come from McEvedy & Jones (MJ), Atlas of World Population History\nMJ describe their construction process openly. Key features per Guinnane (2023)\n\nFigures are rounded to the nearest unit (where the unit itself depends on the size of the population)\nEstimates for periods with little evidence rely on perceived level of economic activity\nGrowth rates are set to round numbers (e.g. “doubling every century”)\nCountries with thin evidence are benchmarked against neighbours\n\nTo use MJ for sub-national regions, researchers allocate population by land area share — a further step not in MJ\nQuestion for discussion: given how this data was constructed, what would you expect the measurement error to look like? Is it likely to be classical?"
   }
 ]
