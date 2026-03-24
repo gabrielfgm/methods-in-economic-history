@@ -369,140 +369,169 @@ Gabriel Mesevage
 <li>Application: population data, Nunn &amp; Qian, and Guinnane’s critique</li>
 </ol>
 </section>
-<section id="classical-measurement-error" class="slide level2 smaller">
-<h2>Classical measurement error</h2>
+<section id="what-is-classical-measurement-error" class="slide level2 smaller">
+<h2>What is classical measurement error?</h2>
 <ul>
-<li><p>Imagine timing a book-toss with your phone: some people hit stop too early, some too late</p></li>
-<li><p>Index each student’s measurement <span class="math inline">\(\tau_i\)</span>; the true duration is <span class="math inline">\(\tau^*\)</span>:</p></li>
+<li><p>Any measurement of a true quantity <span class="math inline">\(\tau^*\)</span> will contain some error</p></li>
+<li><p>We write the measured value as <span class="math inline">\(\tau_i = \tau^* + \epsilon_i\)</span></p></li>
+<li><p><strong>Classical</strong> measurement error has three properties:</p>
+<ol type="1">
+<li><strong>Mean-zero</strong>: errors are symmetric — as often too high as too low, <span class="math inline">\(E[\epsilon_i] = 0\)</span></li>
+<li><strong>Uncorrelated with the true value</strong>: big things are not measured with bigger errors</li>
+<li><strong>Uncorrelated with other errors</strong>: your mistake does not depend on mine</li>
+</ol></li>
+<li><p>Under these conditions, averaging works:</p></li>
 </ul>
-<p><span class="math display">\[\tau_i = \tau^* + \epsilon_i\]</span></p>
+<p><span class="math display">\[\text{Avg}(\tau_i) = \frac{1}{N}\sum_i \tau_i = \tau^* + \underbrace{\text{Avg}(\epsilon_i)}_{\to\, 0} \xrightarrow{N \to \infty} \tau^*\]</span></p>
 <ul>
-<li>If errors are <strong>classical</strong> — mean-zero, symmetric, uncorrelated with <span class="math inline">\(\tau^*\)</span>:</li>
-</ul>
-<p><span class="math display">\[\text{Avg}(\tau_i) = \frac{1}{N}\sum_i \tau_i = \tau^* + \text{Avg}(\epsilon_i) \xrightarrow{N \to \infty} \tau^*\]</span></p>
-<ul>
-<li><p><strong>Key result</strong>: averaging over many noisy measurements recovers the truth</p></li>
-<li><p>This is why repeated measurement and averaging are so powerful in empirical science</p></li>
+<li><strong>Key result</strong>: with enough measurements, the errors cancel and we recover the truth</li>
 </ul>
 </section>
 <section id="the-experiment-round-1" class="slide level2 smaller">
 <h2>The experiment — round 1</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
-<p>I will toss a book. Time how long it stays in the air (seconds, to 2 decimal places) and enter your measurement in the spreadsheet.</p>
+<p>I will toss a book in the air. Time how long it stays in the air (seconds, to 2 decimal places) and enter your measurement in the spreadsheet.</p>
+<div style="text-align: center; margin-top: 0.5em;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="09_slides_files/figure-revealjs/unnamed-chunk-1-1.png" width="336"></p>
+<p><img data-src="09_slides_files/figure-revealjs/unnamed-chunk-1-1.png" width="364"></p>
 </figure>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:65%;">
-<iframe src="https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/pubhtml?widget=true&amp;headers=false" width="100%" height="420px" frameborder="0"></iframe>
-</div>
+<p><a href="https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing</a></p>
 </div>
 </section>
-<section id="systematic-bias-still-useful" class="slide level2 smaller">
-<h2>Systematic bias — still useful</h2>
+<section id="what-is-systematic-bias" class="slide level2 smaller">
+<h2>What is systematic bias?</h2>
 <ul>
-<li><p>Suppose all students are systematically slow: average error is <span class="math inline">\(b &gt; 0\)</span>, not zero</p></li>
-<li><p>But the bias is the <strong>same</strong> regardless of which hand I toss with</p></li>
-<li><p>Let <span class="math inline">\(D_i = 1\)</span> for right-hand toss, <span class="math inline">\(D_i = 0\)</span> for left. Then:</p></li>
+<li><p>Classical measurement error assumes errors are mean-zero — but what if they are not?</p></li>
+<li><p><strong>Systematic bias</strong>: the average error is not zero, <span class="math inline">\(E[\epsilon_i] = b \neq 0\)</span></p></li>
+<li><p>Example: when timing the book-toss, students may be systematically slow to hit stop — over-estimating time in the air on average</p></li>
+<li><p>This is a <strong>constant bias</strong> — it shifts every measurement by the same amount</p></li>
+<li><p>The good news: if the bias does not depend on what you are measuring, it can still be harmless for many purposes</p></li>
+<li><p>Specifically, if the bias is the <strong>same across all groups</strong> being compared, it cancels in the comparison — as we will now show</p></li>
+</ul>
+</section>
+<section id="systematic-bias-in-the-experiment" class="slide level2 smaller">
+<h2>Systematic bias in the experiment</h2>
+<ul>
+<li>Let <span class="math inline">\(D_i = 1\)</span> if the toss is right-handed, <span class="math inline">\(D_i = 0\)</span> if left-handed</li>
+<li>Suppose the bias <span class="math inline">\(b\)</span> is the same whichever hand I use:</li>
 </ul>
 <p><span class="math display">\[\tau_i = D_i \tau^R + (1-D_i)\tau^L + b + \epsilon_i\]</span></p>
-<p>Rearranging:</p>
-<p><span class="math display">\[\tau_i = \underbrace{\tau^L + b}_{\alpha} + \underbrace{(\tau^R - \tau^L)}_{\beta} D_i + \epsilon_i = \alpha + \beta D_i + \epsilon_i\]</span></p>
+<p>Rearranging step by step:</p>
+<p><span class="math display">\[\tau_i = D_i \tau^R + \tau^L - D_i \tau^L + b + \epsilon_i\]</span></p>
+<p><span class="math display">\[\tau_i = \underbrace{\tau^L + b}_{\alpha} + \underbrace{(\tau^R - \tau^L)}_{\beta}\, D_i + \epsilon_i\]</span></p>
 <ul>
-<li><p>We still recover <span class="math inline">\(\beta\)</span> — the <strong>difference</strong> between groups — correctly</p></li>
-<li><p>Only the intercept <span class="math inline">\(\alpha\)</span> absorbs the bias</p></li>
-<li><p><strong>Intuition</strong>: if bias is the same across groups, it cancels in the comparison</p></li>
+<li><p>The regression coefficient <span class="math inline">\(\beta\)</span> still estimates the <strong>true difference</strong> between right and left-handed tosses</p></li>
+<li><p>The bias is absorbed entirely into the intercept <span class="math inline">\(\alpha\)</span></p></li>
+<li><p><strong>Intuition</strong>: if you make the same mistake measuring both groups, the mistake cancels when you take the difference</p></li>
 </ul>
 </section>
 <section id="the-experiment-round-2" class="slide level2 smaller">
 <h2>The experiment — round 2</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
-<p>I will toss with my <strong>right</strong> then <strong>left</strong> hand. Record each timing and which hand. We will estimate the difference between hands.</p>
+<p>The data from round 1 (right-hand toss) is still in the spreadsheet. Now open the sheet and <strong>add a left-hand toss only</strong> — record the time and mark which hand.</p>
+<div style="text-align: center; margin-top: 0.5em;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="09_slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="336"></p>
+<p><img data-src="09_slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="364"></p>
 </figure>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:65%;">
-<iframe src="https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/pubhtml?widget=true&amp;headers=false" width="100%" height="420px" frameborder="0"></iframe>
-</div>
+<p><a href="https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing</a></p>
 </div>
 </section>
-<section id="non-classical-bias-inference-breaks-down" class="slide level2 smaller">
-<h2>Non-classical bias: inference breaks down</h2>
+<section id="non-classical-bias-the-algebra" class="slide level2 smaller">
+<h2>Non-classical bias: the algebra</h2>
 <ul>
-<li><p>Now suppose the bias is <strong>larger for higher tosses</strong> — and I throw higher with my right hand</p></li>
-<li><p>Let <span class="math inline">\(b^R \neq b^L\)</span>; the bias is correlated with the treatment <span class="math inline">\(D_i\)</span>:</p></li>
+<li>Now suppose the bias is <strong>different</strong> for the two groups: <span class="math inline">\(b^R\)</span> for right-hand, <span class="math inline">\(b^L\)</span> for left-hand</li>
+<li>The bias is correlated with the treatment <span class="math inline">\(D_i\)</span></li>
 </ul>
-<p><span class="math display">\[\tau_i = \underbrace{\tau^L + b^L}_{\alpha} + \underbrace{(\tau^R - \tau^L) + (b^R - b^L)}_{\beta} D_i + \epsilon_i\]</span></p>
+<p>Starting from:</p>
+<p><span class="math display">\[\tau_i = D_i(\tau^R + b^R) + (1-D_i)(\tau^L + b^L) + \epsilon_i\]</span></p>
+<p>Expanding:</p>
+<p><span class="math display">\[\tau_i = D_i(\tau^R + b^R) + (\tau^L + b^L) - D_i(\tau^L + b^L) + \epsilon_i\]</span></p>
+<p><span class="math display">\[\tau_i = \underbrace{(\tau^L + b^L)}_{\alpha} + \underbrace{[(\tau^R - \tau^L) + (b^R - b^L)]}_{\beta}\, D_i + \epsilon_i\]</span></p>
 <ul>
-<li><p><span class="math inline">\(\hat\beta\)</span> now conflates the <strong>true difference</strong> with the <strong>difference in biases</strong> — we cannot separate them</p></li>
-<li><p>A large <span class="math inline">\(\hat\beta = 1\)</span> second is consistent with:</p>
+<li>The slope <span class="math inline">\(\beta\)</span> now <strong>mixes together</strong> the true difference <span class="math inline">\((\tau^R - \tau^L)\)</span> and the bias difference <span class="math inline">\((b^R - b^L)\)</span></li>
+</ul>
+</section>
+<section id="non-classical-bias-what-it-means" class="slide level2 smaller">
+<h2>Non-classical bias: what it means</h2>
+<ul>
+<li><p>We cannot separate the true difference from the bias difference — they are bundled into a single number <span class="math inline">\(\hat\beta\)</span></p></li>
+<li><p>A finding of <span class="math inline">\(\hat\beta = 1\)</span> second is consistent with <strong>any</strong> of:</p>
 <ul>
 <li>A real 1-second gap, zero bias difference</li>
 <li>No real gap, a 1-second bias difference</li>
-<li>Any combination in between</li>
+<li>A 2-second real gap offset by a −1-second bias difference</li>
+<li>… and infinitely many other combinations</li>
 </ul></li>
-<li><p><strong>Lesson</strong>: measurement error correlated with your explanatory variable destroys inference</p></li>
+<li><p>Sometimes context or logic lets us put reasonable bounds on the biases — but not in general</p></li>
+<li><p><strong>Lesson</strong>: measurement error that is correlated with your explanatory variable destroys inference — you cannot recover the true relationship</p></li>
 </ul>
 </section>
 <section id="measurement-error-in-the-explanatory-variable" class="slide level2 smaller">
 <h2>Measurement error in the explanatory variable</h2>
 <ul>
-<li><p>Now suppose the error is in <span class="math inline">\(x\)</span>, not <span class="math inline">\(y\)</span>: we observe <span class="math inline">\(x_i = x^*_i + u_i\)</span></p></li>
-<li><p><strong>Classical error</strong>: mean-zero, uncorrelated with <span class="math inline">\(x^*_i\)</span> and <span class="math inline">\(\epsilon_i\)</span></p></li>
+<li><p>So far the error has been in the <strong>outcome</strong> <span class="math inline">\(\tau_i\)</span>. What if the error is in the <strong>explanatory variable</strong>?</p></li>
+<li><p>True model: <span class="math inline">\(y_i = \alpha + \beta x^*_i + \epsilon_i\)</span>, but we observe <span class="math inline">\(x_i = x^*_i + u_i\)</span></p></li>
+<li><p>Assume <strong>classical</strong> <span class="math inline">\(u_i\)</span>: mean-zero, uncorrelated with <span class="math inline">\(x^*_i\)</span> and <span class="math inline">\(\epsilon_i\)</span></p></li>
+<li><p>Recall <span class="math inline">\(\hat\beta = \text{Cov}(x_i, y_i) / \text{Var}(x_i)\)</span>. Substituting:</p></li>
 </ul>
-<p>The OLS estimator gives:</p>
+<p><span class="math display">\[\text{Cov}(x_i, y_i) = \text{Cov}(x^*_i + u_i,\; \beta x^*_i + \epsilon_i) = \beta\,\text{Var}(x^*_i)\]</span></p>
+<p><span class="math display">\[\text{Var}(x_i) = \text{Var}(x^*_i) + \text{Var}(u_i)\]</span></p>
+<p>Therefore:</p>
 <p><span class="math display">\[\hat\beta = \beta \cdot \frac{\text{Var}(x^*_i)}{\text{Var}(x^*_i) + \text{Var}(u_i)}\]</span></p>
+</section>
+<section id="attenuation-bias-implications" class="slide level2 smaller">
+<h2>Attenuation bias — implications</h2>
+<p><span class="math display">\[\hat\beta = \beta \cdot \underbrace{\frac{\text{Var}(x^*_i)}{\text{Var}(x^*_i) + \text{Var}(u_i)}}_{\text{between 0 and 1}}\]</span></p>
 <ul>
-<li><p>The fraction is between 0 and 1: <strong>attenuation bias</strong> — the coefficient is pushed toward zero</p></li>
-<li><p>The larger <span class="math inline">\(\text{Var}(u_i)\)</span> relative to <span class="math inline">\(\text{Var}(x^*_i)\)</span>, the more the coefficient shrinks</p></li>
-<li><p>A <em>constant</em> error (zero variance) causes no bias — only variance in the error matters</p></li>
-<li><p><strong>Important</strong>: this holds only for classical error; non-classical error in <span class="math inline">\(x\)</span> can bias in any direction</p></li>
+<li><p>The fraction is always between 0 and 1: <strong>attenuation bias</strong> — <span class="math inline">\(\hat\beta\)</span> is pushed toward zero</p></li>
+<li><p>The larger the noise variance <span class="math inline">\(\text{Var}(u_i)\)</span> relative to the signal, the closer <span class="math inline">\(\hat\beta\)</span> gets to zero</p></li>
+<li><p>A <strong>constant</strong> error (zero variance) causes no bias — it is only <em>variation</em> in the error that attenuates</p></li>
+<li><p>You will often see scholars argue: “even if there is measurement error, it just makes us under-estimate the relationship” — this is true only for <strong>classical</strong> error</p></li>
+<li><p>If error in <span class="math inline">\(x\)</span> is non-classical, the bias is unknown in sign and magnitude</p></li>
+<li><p>Moreover: ME in <span class="math inline">\(x\)</span> corrupts estimates of all other coefficients in a multiple regression, even if their own regressors are perfectly measured</p></li>
 </ul>
 </section>
-<section id="attenuation-bias-adding-noise-to-x" class="slide level2 smaller">
-<h2>Attenuation bias — adding noise to <span class="math inline">\(x\)</span></h2>
+<section id="attenuation-bias-visualised" class="slide level2 smaller">
+<h2>Attenuation bias — visualised</h2>
 
 <img data-src="09_slides_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
-<section id="application-population-data-and-the-potato" class="slide level2 smaller">
-<h2>Application: population data and the potato</h2>
+<section id="nunn-qian-the-potato-and-population" class="slide level2 smaller">
+<h2>Nunn &amp; Qian: the potato and population</h2>
 <ul>
-<li><p><span class="citation" data-cites="nunn2011">Nunn and Qian (<a href="#/bibliography" role="doc-biblioref" onclick="">2011</a>)</span> study the impact of the potato on European population after 1700</p></li>
+<li><p><span class="citation" data-cites="nunn2011">Nunn and Qian (<a href="#/bibliography" role="doc-biblioref" onclick="">2011</a>)</span> ask: did the introduction of the potato to Europe after 1700 drive population growth?</p></li>
+<li><p>The potato originated in South America; it spread through Europe unevenly, largely determined by <strong>soil and climate suitability</strong></p></li>
+<li><p>This suitability is plausibly unrelated to other determinants of population growth — which makes it a useful source of variation</p></li>
 <li><p>Simplified regression:</p></li>
 </ul>
 <p><span class="math display">\[y_{it} = \beta \cdot \text{PotatoSuitable}_i \times \mathbf{1}[\text{After 1700}]_t + \alpha_i + \tau_t + \epsilon_{it}\]</span></p>
 <ul>
-<li><p>Outcome <span class="math inline">\(y_{it}\)</span>: log population, from McEvedy &amp; Jones (MJ) <em>Atlas of World Population History</em></p></li>
-<li><p>MJ’s construction: round to nearest <span class="math inline">\(x\)</span>, guesses from perceived economic activity, round-number growth rates, neighbour benchmarks</p></li>
-<li><p>To assign MJ figures to sub-national regions, researchers allocate by <strong>land area share</strong> — a further approximation</p></li>
-<li><p><span class="citation" data-cites="guinnane2023">Guinnane (<a href="#/bibliography" role="doc-biblioref" onclick="">2023</a>)</span> argues this measurement error is almost certainly <strong>non-classical</strong></p></li>
+<li><p><span class="math inline">\(y_{it}\)</span>: log population; <span class="math inline">\(\alpha_i\)</span>: region fixed effects; <span class="math inline">\(\tau_t\)</span>: period fixed effects</p></li>
+<li><p><span class="math inline">\(\beta\)</span> captures the extra population growth <strong>after 1700</strong> in regions more suitable for potatoes</p></li>
 </ul>
 </section>
-<section id="why-non-classical-guinnanes-critique" class="slide level2 smaller">
-<h2>Why non-classical? Guinnane’s critique</h2>
+<section id="the-data-mcevedy-jones" class="slide level2 smaller">
+<h2>The data: McEvedy &amp; Jones</h2>
 <ul>
-<li><p>MJ’s errors are likely <strong>larger in magnitude for larger populations</strong> — more aggressive rounding for big countries</p></li>
-<li><p>The errors are likely <strong>correlated with potato suitability</strong>: suitable areas are specific agricultural zones with particular population patterns</p></li>
-<li><p>Area-based allocation of population introduces errors proportional to the size and economic character of the region — not random</p></li>
-</ul>
-<p>Therefore:</p>
+<li><p>Population data come from McEvedy &amp; Jones (MJ), <em>Atlas of World Population History</em></p></li>
+<li><p>MJ describe their construction process openly. Key features:</p>
 <ul>
-<li><p>The bias in <span class="math inline">\(\hat\beta\)</span> is <strong>unknown in sign and magnitude</strong></p></li>
-<li><p>Scholars who argue “the bias just attenuates” are invoking classical measurement error — an assumption that requires justification</p></li>
-<li><p>Guinnane: the assumption is implausible given how the data were constructed</p></li>
-<li><p><strong>Lesson</strong>: always ask <em>how</em> your data were constructed before assuming measurement error is classical</p></li>
+<li>Figures are <strong>rounded</strong> to the nearest unit (where the unit itself depends on the size of the population)</li>
+<li>Estimates for periods with little evidence rely on <strong>perceived level of economic activity</strong></li>
+<li>Growth rates are set to <strong>round numbers</strong> (e.g.&nbsp;“doubling every century”)</li>
+<li>Countries with thin evidence are <strong>benchmarked against neighbours</strong></li>
+</ul></li>
+<li><p>To use MJ for sub-national regions, researchers <strong>allocate population by land area share</strong> — a further step not in MJ</p></li>
+<li><p><strong>Question for discussion</strong>: given how this data was constructed, what would you expect the measurement error to look like? Is it likely to be classical?</p></li>
 </ul>
 </section>
 <section id="bibliography" class="slide level2 smaller scrollable">
@@ -514,9 +543,6 @@ Gabriel Mesevage
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-guinnane2023" class="csl-entry" role="listitem">
-Guinnane, Timothy W. 2023. <span>“We Do Not Know the Population of Every Country in the World for the Past Two Thousand Years.”</span> <em>The Journal of Economic History</em> 83 (3): 912–38. <a href="https://doi.org/10.1017/S0022050723000293">https://doi.org/10.1017/S0022050723000293</a>.
-</div>
 <div id="ref-nunn2011" class="csl-entry" role="listitem">
 Nunn, N., and N. Qian. 2011. <span>“The Potato’s Contribution to Population and Urbanization: Evidence From A Historical Experiment.”</span> <em>The Quarterly Journal of Economics</em> 126 (2): 593–650. <a href="https://doi.org/10.1093/qje/qjr009">https://doi.org/10.1093/qje/qjr009</a>.
 </div>

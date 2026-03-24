@@ -1348,7 +1348,7 @@
     "href": "09_slides.html#the-experiment-round-1",
     "title": "Measurement Error",
     "section": "The experiment — round 1",
-    "text": "The experiment — round 1\n\n\nI will toss a book. Time how long it stays in the air (seconds, to 2 decimal places) and enter your measurement in the spreadsheet."
+    "text": "The experiment — round 1\nI will toss a book in the air. Time how long it stays in the air (seconds, to 2 decimal places) and enter your measurement in the spreadsheet.\n\n\n\n\n\n\n\n\n\n\nhttps://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing"
   },
   {
     "objectID": "09_slides.html#systematic-bias-still-useful",
@@ -1362,7 +1362,7 @@
     "href": "09_slides.html#the-experiment-round-2",
     "title": "Measurement Error",
     "section": "The experiment — round 2",
-    "text": "The experiment — round 2\n\n\nI will toss with my right then left hand. Record each timing and which hand. We will estimate the difference between hands."
+    "text": "The experiment — round 2\nThe data from round 1 (right-hand toss) is still in the spreadsheet. Now open the sheet and add a left-hand toss only — record the time and mark which hand.\n\n\n\n\n\n\n\n\n\n\nhttps://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing"
   },
   {
     "objectID": "09_slides.html#non-classical-bias-inference-breaks-down",
@@ -1376,7 +1376,7 @@
     "href": "09_slides.html#measurement-error-in-the-explanatory-variable",
     "title": "Measurement Error",
     "section": "Measurement error in the explanatory variable",
-    "text": "Measurement error in the explanatory variable\n\nNow suppose the error is in \\(x\\), not \\(y\\): we observe \\(x_i = x^*_i + u_i\\)\nClassical error: mean-zero, uncorrelated with \\(x^*_i\\) and \\(\\epsilon_i\\)\n\nThe OLS estimator gives:\n\\[\\hat\\beta = \\beta \\cdot \\frac{\\text{Var}(x^*_i)}{\\text{Var}(x^*_i) + \\text{Var}(u_i)}\\]\n\nThe fraction is between 0 and 1: attenuation bias — the coefficient is pushed toward zero\nThe larger \\(\\text{Var}(u_i)\\) relative to \\(\\text{Var}(x^*_i)\\), the more the coefficient shrinks\nA constant error (zero variance) causes no bias — only variance in the error matters\nImportant: this holds only for classical error; non-classical error in \\(x\\) can bias in any direction"
+    "text": "Measurement error in the explanatory variable\n\nSo far the error has been in the outcome \\(\\tau_i\\). What if the error is in the explanatory variable?\nTrue model: \\(y_i = \\alpha + \\beta x^*_i + \\epsilon_i\\), but we observe \\(x_i = x^*_i + u_i\\)\nAssume classical \\(u_i\\): mean-zero, uncorrelated with \\(x^*_i\\) and \\(\\epsilon_i\\)\nRecall \\(\\hat\\beta = \\text{Cov}(x_i, y_i) / \\text{Var}(x_i)\\). Substituting:\n\n\\[\\text{Cov}(x_i, y_i) = \\text{Cov}(x^*_i + u_i,\\; \\beta x^*_i + \\epsilon_i) = \\beta\\,\\text{Var}(x^*_i)\\]\n\\[\\text{Var}(x_i) = \\text{Var}(x^*_i) + \\text{Var}(u_i)\\]\nTherefore:\n\\[\\hat\\beta = \\beta \\cdot \\frac{\\text{Var}(x^*_i)}{\\text{Var}(x^*_i) + \\text{Var}(u_i)}\\]"
   },
   {
     "objectID": "09_slides.html#attenuation-bias-adding-noise-to-x",
@@ -1404,6 +1404,69 @@
     "href": "09_slides.html#bibliography",
     "title": "Measurement Error",
     "section": "Bibliography",
-    "text": "Bibliography\n\n\n\n\n\n\n\n\nGuinnane, Timothy W. 2023. “We Do Not Know the Population of Every Country in the World for the Past Two Thousand Years.” The Journal of Economic History 83 (3): 912–38. https://doi.org/10.1017/S0022050723000293.\n\n\nNunn, N., and N. Qian. 2011. “The Potato’s Contribution to Population and Urbanization: Evidence From A Historical Experiment.” The Quarterly Journal of Economics 126 (2): 593–650. https://doi.org/10.1093/qje/qjr009."
+    "text": "Bibliography\n\n\n\n\n\n\n\n\nNunn, N., and N. Qian. 2011. “The Potato’s Contribution to Population and Urbanization: Evidence From A Historical Experiment.” The Quarterly Journal of Economics 126 (2): 593–650. https://doi.org/10.1093/qje/qjr009."
+  },
+  {
+    "objectID": "09_slides.html#what-is-classical-measurement-error",
+    "href": "09_slides.html#what-is-classical-measurement-error",
+    "title": "Measurement Error",
+    "section": "What is classical measurement error?",
+    "text": "What is classical measurement error?\n\nAny measurement of a true quantity \\(\\tau^*\\) will contain some error\nWe write the measured value as \\(\\tau_i = \\tau^* + \\epsilon_i\\)\nClassical measurement error has three properties:\n\nMean-zero: errors are symmetric — as often too high as too low, \\(E[\\epsilon_i] = 0\\)\nUncorrelated with the true value: big things are not measured with bigger errors\nUncorrelated with other errors: your mistake does not depend on mine\n\nUnder these conditions, averaging works:\n\n\\[\\text{Avg}(\\tau_i) = \\frac{1}{N}\\sum_i \\tau_i = \\tau^* + \\underbrace{\\text{Avg}(\\epsilon_i)}_{\\to\\, 0} \\xrightarrow{N \\to \\infty} \\tau^*\\]\n\nKey result: with enough measurements, the errors cancel and we recover the truth"
+  },
+  {
+    "objectID": "09_slides.html#what-is-systematic-bias",
+    "href": "09_slides.html#what-is-systematic-bias",
+    "title": "Measurement Error",
+    "section": "What is systematic bias?",
+    "text": "What is systematic bias?\n\nClassical measurement error assumes errors are mean-zero — but what if they are not?\nSystematic bias: the average error is not zero, \\(E[\\epsilon_i] = b \\neq 0\\)\nExample: when timing the book-toss, students may be systematically slow to hit stop — over-estimating time in the air on average\nThis is a constant bias — it shifts every measurement by the same amount\nThe good news: if the bias does not depend on what you are measuring, it can still be harmless for many purposes\nSpecifically, if the bias is the same across all groups being compared, it cancels in the comparison — as we will now show"
+  },
+  {
+    "objectID": "09_slides.html#systematic-bias-in-the-experiment",
+    "href": "09_slides.html#systematic-bias-in-the-experiment",
+    "title": "Measurement Error",
+    "section": "Systematic bias in the experiment",
+    "text": "Systematic bias in the experiment\n\nLet \\(D_i = 1\\) if the toss is right-handed, \\(D_i = 0\\) if left-handed\nSuppose the bias \\(b\\) is the same whichever hand I use:\n\n\\[\\tau_i = D_i \\tau^R + (1-D_i)\\tau^L + b + \\epsilon_i\\]\nRearranging step by step:\n\\[\\tau_i = D_i \\tau^R + \\tau^L - D_i \\tau^L + b + \\epsilon_i\\]\n\\[\\tau_i = \\underbrace{\\tau^L + b}_{\\alpha} + \\underbrace{(\\tau^R - \\tau^L)}_{\\beta}\\, D_i + \\epsilon_i\\]\n\nThe regression coefficient \\(\\beta\\) still estimates the true difference between right and left-handed tosses\nThe bias is absorbed entirely into the intercept \\(\\alpha\\)\nIntuition: if you make the same mistake measuring both groups, the mistake cancels when you take the difference"
+  },
+  {
+    "objectID": "09_slides.html#non-classical-bias-the-algebra",
+    "href": "09_slides.html#non-classical-bias-the-algebra",
+    "title": "Measurement Error",
+    "section": "Non-classical bias: the algebra",
+    "text": "Non-classical bias: the algebra\n\nNow suppose the bias is different for the two groups: \\(b^R\\) for right-hand, \\(b^L\\) for left-hand\nThe bias is correlated with the treatment \\(D_i\\)\n\nStarting from:\n\\[\\tau_i = D_i(\\tau^R + b^R) + (1-D_i)(\\tau^L + b^L) + \\epsilon_i\\]\nExpanding:\n\\[\\tau_i = D_i(\\tau^R + b^R) + (\\tau^L + b^L) - D_i(\\tau^L + b^L) + \\epsilon_i\\]\n\\[\\tau_i = \\underbrace{(\\tau^L + b^L)}_{\\alpha} + \\underbrace{[(\\tau^R - \\tau^L) + (b^R - b^L)]}_{\\beta}\\, D_i + \\epsilon_i\\]\n\nThe slope \\(\\beta\\) now mixes together the true difference \\((\\tau^R - \\tau^L)\\) and the bias difference \\((b^R - b^L)\\)"
+  },
+  {
+    "objectID": "09_slides.html#non-classical-bias-what-it-means",
+    "href": "09_slides.html#non-classical-bias-what-it-means",
+    "title": "Measurement Error",
+    "section": "Non-classical bias: what it means",
+    "text": "Non-classical bias: what it means\n\nWe cannot separate the true difference from the bias difference — they are bundled into a single number \\(\\hat\\beta\\)\nA finding of \\(\\hat\\beta = 1\\) second is consistent with any of:\n\nA real 1-second gap, zero bias difference\nNo real gap, a 1-second bias difference\nA 2-second real gap offset by a −1-second bias difference\n… and infinitely many other combinations\n\nSometimes context or logic lets us put reasonable bounds on the biases — but not in general\nLesson: measurement error that is correlated with your explanatory variable destroys inference — you cannot recover the true relationship"
+  },
+  {
+    "objectID": "09_slides.html#attenuation-bias-implications",
+    "href": "09_slides.html#attenuation-bias-implications",
+    "title": "Measurement Error",
+    "section": "Attenuation bias — implications",
+    "text": "Attenuation bias — implications\n\\[\\hat\\beta = \\beta \\cdot \\underbrace{\\frac{\\text{Var}(x^*_i)}{\\text{Var}(x^*_i) + \\text{Var}(u_i)}}_{\\text{between 0 and 1}}\\]\n\nThe fraction is always between 0 and 1: attenuation bias — \\(\\hat\\beta\\) is pushed toward zero\nThe larger the noise variance \\(\\text{Var}(u_i)\\) relative to the signal, the closer \\(\\hat\\beta\\) gets to zero\nA constant error (zero variance) causes no bias — it is only variation in the error that attenuates\nYou will often see scholars argue: “even if there is measurement error, it just makes us under-estimate the relationship” — this is true only for classical error\nIf error in \\(x\\) is non-classical, the bias is unknown in sign and magnitude\nMoreover: ME in \\(x\\) corrupts estimates of all other coefficients in a multiple regression, even if their own regressors are perfectly measured"
+  },
+  {
+    "objectID": "09_slides.html#attenuation-bias-visualised",
+    "href": "09_slides.html#attenuation-bias-visualised",
+    "title": "Measurement Error",
+    "section": "Attenuation bias — visualised",
+    "text": "Attenuation bias — visualised"
+  },
+  {
+    "objectID": "09_slides.html#nunn-qian-the-potato-and-population",
+    "href": "09_slides.html#nunn-qian-the-potato-and-population",
+    "title": "Measurement Error",
+    "section": "Nunn & Qian: the potato and population",
+    "text": "Nunn & Qian: the potato and population\n\nNunn and Qian (2011) ask: did the introduction of the potato to Europe after 1700 drive population growth?\nThe potato originated in South America; it spread through Europe unevenly, largely determined by soil and climate suitability\nThis suitability is plausibly unrelated to other determinants of population growth — which makes it a useful source of variation\nSimplified regression:\n\n\\[y_{it} = \\beta \\cdot \\text{PotatoSuitable}_i \\times \\mathbf{1}[\\text{After 1700}]_t + \\alpha_i + \\tau_t + \\epsilon_{it}\\]\n\n\\(y_{it}\\): log population; \\(\\alpha_i\\): region fixed effects; \\(\\tau_t\\): period fixed effects\n\\(\\beta\\) captures the extra population growth after 1700 in regions more suitable for potatoes"
+  },
+  {
+    "objectID": "09_slides.html#the-data-mcevedy-jones",
+    "href": "09_slides.html#the-data-mcevedy-jones",
+    "title": "Measurement Error",
+    "section": "The data: McEvedy & Jones",
+    "text": "The data: McEvedy & Jones\n\nPopulation data come from McEvedy & Jones (MJ), Atlas of World Population History\nMJ describe their construction process openly. Key features:\n\nFigures are rounded to the nearest unit (where the unit itself depends on the size of the population)\nEstimates for periods with little evidence rely on perceived level of economic activity\nGrowth rates are set to round numbers (e.g. “doubling every century”)\nCountries with thin evidence are benchmarked against neighbours\n\nTo use MJ for sub-national regions, researchers allocate population by land area share — a further step not in MJ\nQuestion for discussion: given how this data was constructed, what would you expect the measurement error to look like? Is it likely to be classical?"
   }
 ]

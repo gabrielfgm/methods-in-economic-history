@@ -20,33 +20,34 @@ bibliography: references.bib
 4.  Measurement error in the explanatory variable: attenuation bias
 5.  Application: population data, Nunn & Qian, and Guinnane's critique
 
-## Classical measurement error {.smaller}
+## What is classical measurement error? {.smaller}
 
--   Imagine timing a book-toss with your phone: some people hit stop too early, some too late
+-   Any measurement of a true quantity $\tau^*$ will contain some error
 
--   Index each student's measurement $\tau_i$; the true duration is $\tau^*$:
+-   We write the measured value as $\tau_i = \tau^* + \epsilon_i$
 
-$$\tau_i = \tau^* + \epsilon_i$$
+-   **Classical** measurement error has three properties:
 
--   If errors are **classical** — mean-zero, symmetric, uncorrelated with $\tau^*$:
+    1.  **Mean-zero**: errors are symmetric — as often too high as too low, $E[\epsilon_i] = 0$
+    2.  **Uncorrelated with the true value**: big things are not measured with bigger errors
+    3.  **Uncorrelated with other errors**: your mistake does not depend on mine
 
-$$\text{Avg}(\tau_i) = \frac{1}{N}\sum_i \tau_i = \tau^* + \text{Avg}(\epsilon_i) \xrightarrow{N \to \infty} \tau^*$$
+-   Under these conditions, averaging works:
 
--   **Key result**: averaging over many noisy measurements recovers the truth
+$$\text{Avg}(\tau_i) = \frac{1}{N}\sum_i \tau_i = \tau^* + \underbrace{\text{Avg}(\epsilon_i)}_{\to\, 0} \xrightarrow{N \to \infty} \tau^*$$
 
--   This is why repeated measurement and averaging are so powerful in empirical science
+-   **Key result**: with enough measurements, the errors cancel and we recover the truth
 
 ## The experiment — round 1 {.smaller}
 
-:::: {.columns}
-::: {.column width="35%"}
+I will toss a book in the air.
+Time how long it stays in the air (seconds, to 2 decimal places) and enter your measurement in the spreadsheet.
 
-I will toss a book. Time how long it stays in the air (seconds, to 2 decimal places) and enter your measurement in the spreadsheet.
-
+::: {style="text-align: center; margin-top: 0.5em;"}
 ```{r}
 #| echo: false
-#| fig-height: 3.5
-#| fig-width: 3.5
+#| fig-height: 3.8
+#| fig-width: 3.8
 #| message: false
 #| warning: false
 library(qrcode)
@@ -54,47 +55,52 @@ qr <- qr_code("https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd
 plot(qr)
 ```
 
+[https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing)
 :::
-::: {.column width="65%"}
 
-```{=html}
-<iframe src="https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/pubhtml?widget=true&amp;headers=false" width="100%" height="420px" frameborder="0"></iframe>
-```
+## What is systematic bias? {.smaller}
 
-:::
-::::
+-   Classical measurement error assumes errors are mean-zero — but what if they are not?
 
-## Systematic bias — still useful {.smaller}
+-   **Systematic bias**: the average error is not zero, $E[\epsilon_i] = b \neq 0$
 
--   Suppose all students are systematically slow: average error is $b > 0$, not zero
+-   Example: when timing the book-toss, students may be systematically slow to hit stop — over-estimating time in the air on average
 
--   But the bias is the **same** regardless of which hand I toss with
+-   This is a **constant bias** — it shifts every measurement by the same amount
 
--   Let $D_i = 1$ for right-hand toss, $D_i = 0$ for left. Then:
+-   The good news: if the bias does not depend on what you are measuring, it can still be harmless for many purposes
+
+-   Specifically, if the bias is the **same across all groups** being compared, it cancels in the comparison — as we will now show
+
+## Systematic bias in the experiment {.smaller}
+
+-   Let $D_i = 1$ if the toss is right-handed, $D_i = 0$ if left-handed
+-   Suppose the bias $b$ is the same whichever hand I use:
 
 $$\tau_i = D_i \tau^R + (1-D_i)\tau^L + b + \epsilon_i$$
 
-Rearranging:
+Rearranging step by step:
 
-$$\tau_i = \underbrace{\tau^L + b}_{\alpha} + \underbrace{(\tau^R - \tau^L)}_{\beta} D_i + \epsilon_i = \alpha + \beta D_i + \epsilon_i$$
+$$\tau_i = D_i \tau^R + \tau^L - D_i \tau^L + b + \epsilon_i$$
 
--   We still recover $\beta$ — the **difference** between groups — correctly
+$$\tau_i = \underbrace{\tau^L + b}_{\alpha} + \underbrace{(\tau^R - \tau^L)}_{\beta}\, D_i + \epsilon_i$$
 
--   Only the intercept $\alpha$ absorbs the bias
+-   The regression coefficient $\beta$ still estimates the **true difference** between right and left-handed tosses
 
--   **Intuition**: if bias is the same across groups, it cancels in the comparison
+-   The bias is absorbed entirely into the intercept $\alpha$
+
+-   **Intuition**: if you make the same mistake measuring both groups, the mistake cancels when you take the difference
 
 ## The experiment — round 2 {.smaller}
 
-:::: {.columns}
-::: {.column width="35%"}
+The data from round 1 (right-hand toss) is still in the spreadsheet.
+Now open the sheet and **add a left-hand toss only** — record the time and mark which hand.
 
-I will toss with my **right** then **left** hand. Record each timing and which hand. We will estimate the difference between hands.
-
+::: {style="text-align: center; margin-top: 0.5em;"}
 ```{r}
 #| echo: false
-#| fig-height: 3.5
-#| fig-width: 3.5
+#| fig-height: 3.8
+#| fig-width: 3.8
 #| message: false
 #| warning: false
 library(qrcode)
@@ -102,52 +108,75 @@ qr <- qr_code("https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd
 plot(qr)
 ```
 
+[https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/edit?usp=sharing)
 :::
-::: {.column width="65%"}
 
-```{=html}
-<iframe src="https://docs.google.com/spreadsheets/d/1395nN5Ks0V34Qj6R0qJOrLEjd2exci4G7p43NNSgJC8/pubhtml?widget=true&amp;headers=false" width="100%" height="420px" frameborder="0"></iframe>
-```
+## Non-classical bias: the algebra {.smaller}
 
-:::
-::::
+-   Now suppose the bias is **different** for the two groups: $b^R$ for right-hand, $b^L$ for left-hand
+-   The bias is correlated with the treatment $D_i$
 
-## Non-classical bias: inference breaks down {.smaller}
+Starting from:
 
--   Now suppose the bias is **larger for higher tosses** — and I throw higher with my right hand
+$$\tau_i = D_i(\tau^R + b^R) + (1-D_i)(\tau^L + b^L) + \epsilon_i$$
 
--   Let $b^R \neq b^L$; the bias is correlated with the treatment $D_i$:
+Expanding:
 
-$$\tau_i = \underbrace{\tau^L + b^L}_{\alpha} + \underbrace{(\tau^R - \tau^L) + (b^R - b^L)}_{\beta} D_i + \epsilon_i$$
+$$\tau_i = D_i(\tau^R + b^R) + (\tau^L + b^L) - D_i(\tau^L + b^L) + \epsilon_i$$
 
--   $\hat\beta$ now conflates the **true difference** with the **difference in biases** — we cannot separate them
+$$\tau_i = \underbrace{(\tau^L + b^L)}_{\alpha} + \underbrace{[(\tau^R - \tau^L) + (b^R - b^L)]}_{\beta}\, D_i + \epsilon_i$$
 
--   A large $\hat\beta = 1$ second is consistent with:
+-   The slope $\beta$ now **mixes together** the true difference $(\tau^R - \tau^L)$ and the bias difference $(b^R - b^L)$
+
+## Non-classical bias: what it means {.smaller}
+
+-   We cannot separate the true difference from the bias difference — they are bundled into a single number $\hat\beta$
+
+-   A finding of $\hat\beta = 1$ second is consistent with **any** of:
     -   A real 1-second gap, zero bias difference
     -   No real gap, a 1-second bias difference
-    -   Any combination in between
+    -   A 2-second real gap offset by a −1-second bias difference
+    -   … and infinitely many other combinations
 
--   **Lesson**: measurement error correlated with your explanatory variable destroys inference
+-   Sometimes context or logic lets us put reasonable bounds on the biases — but not in general
+
+-   **Lesson**: measurement error that is correlated with your explanatory variable destroys inference — you cannot recover the true relationship
 
 ## Measurement error in the explanatory variable {.smaller}
 
--   Now suppose the error is in $x$, not $y$: we observe $x_i = x^*_i + u_i$
+-   So far the error has been in the **outcome** $\tau_i$. What if the error is in the **explanatory variable**?
 
--   **Classical error**: mean-zero, uncorrelated with $x^*_i$ and $\epsilon_i$
+-   True model: $y_i = \alpha + \beta x^*_i + \epsilon_i$, but we observe $x_i = x^*_i + u_i$
 
-The OLS estimator gives:
+-   Assume **classical** $u_i$: mean-zero, uncorrelated with $x^*_i$ and $\epsilon_i$
+
+-   Recall $\hat\beta = \text{Cov}(x_i, y_i) / \text{Var}(x_i)$. Substituting:
+
+$$\text{Cov}(x_i, y_i) = \text{Cov}(x^*_i + u_i,\; \beta x^*_i + \epsilon_i) = \beta\,\text{Var}(x^*_i)$$
+
+$$\text{Var}(x_i) = \text{Var}(x^*_i) + \text{Var}(u_i)$$
+
+Therefore:
 
 $$\hat\beta = \beta \cdot \frac{\text{Var}(x^*_i)}{\text{Var}(x^*_i) + \text{Var}(u_i)}$$
 
--   The fraction is between 0 and 1: **attenuation bias** — the coefficient is pushed toward zero
+## Attenuation bias — implications {.smaller}
 
--   The larger $\text{Var}(u_i)$ relative to $\text{Var}(x^*_i)$, the more the coefficient shrinks
+$$\hat\beta = \beta \cdot \underbrace{\frac{\text{Var}(x^*_i)}{\text{Var}(x^*_i) + \text{Var}(u_i)}}_{\text{between 0 and 1}}$$
 
--   A *constant* error (zero variance) causes no bias — only variance in the error matters
+-   The fraction is always between 0 and 1: **attenuation bias** — $\hat\beta$ is pushed toward zero
 
--   **Important**: this holds only for classical error; non-classical error in $x$ can bias in any direction
+-   The larger the noise variance $\text{Var}(u_i)$ relative to the signal, the closer $\hat\beta$ gets to zero
 
-## Attenuation bias — adding noise to $x$ {.smaller}
+-   A **constant** error (zero variance) causes no bias — it is only *variation* in the error that attenuates
+
+-   You will often see scholars argue: "even if there is measurement error, it just makes us under-estimate the relationship" — this is true only for **classical** error
+
+-   If error in $x$ is non-classical, the bias is unknown in sign and magnitude
+
+-   Moreover: ME in $x$ corrupts estimates of all other coefficients in a multiple regression, even if their own regressors are perfectly measured
+
+## Attenuation bias — visualised {.smaller}
 
 ```{r}
 #| echo: false
@@ -162,14 +191,16 @@ set.seed(42)
 n <- 200
 x_true <- rnorm(n, 0, 1)
 y <- 1.5 * x_true + rnorm(n, 0, 0.5)
+x_lim <- c(-13, 13)
 
 make_plot <- function(noise_sd, label) {
   x_obs <- x_true + rnorm(n, 0, noise_sd)
   df <- data.frame(x = x_obs, y = y)
   b <- round(coef(lm(y ~ x, data = df))[2], 2)
   ggplot(df, aes(x, y)) +
-    geom_point(alpha = 0.3, size = 0.8) +
+    geom_point(alpha = 0.4, size = 0.8) +
     geom_smooth(method = "lm", se = FALSE, colour = "steelblue") +
+    coord_cartesian(xlim = x_lim) +
     labs(title = label, subtitle = paste0("\u03b2\u0302 = ", b),
          x = "Observed x", y = "y") +
     theme_minimal(base_size = 11)
@@ -183,38 +214,35 @@ p4 <- make_plot(4,   "High noise (sd = 4)")
 (p1 | p2) / (p3 | p4)
 ```
 
-## Application: population data and the potato {.smaller}
+## Nunn & Qian: the potato and population {.smaller}
 
--   @nunn2011 study the impact of the potato on European population after 1700
+-   @nunn2011 ask: did the introduction of the potato to Europe after 1700 drive population growth?
+
+-   The potato originated in South America; it spread through Europe unevenly, largely determined by **soil and climate suitability**
+
+-   This suitability is plausibly unrelated to other determinants of population growth — which makes it a useful source of variation
 
 -   Simplified regression:
 
 $$y_{it} = \beta \cdot \text{PotatoSuitable}_i \times \mathbf{1}[\text{After 1700}]_t + \alpha_i + \tau_t + \epsilon_{it}$$
 
--   Outcome $y_{it}$: log population, from McEvedy & Jones (MJ) *Atlas of World Population History*
+-   $y_{it}$: log population; $\alpha_i$: region fixed effects; $\tau_t$: period fixed effects
 
--   MJ's construction: round to nearest $x$, guesses from perceived economic activity, round-number growth rates, neighbour benchmarks
+-   $\beta$ captures the extra population growth **after 1700** in regions more suitable for potatoes
 
--   To assign MJ figures to sub-national regions, researchers allocate by **land area share** — a further approximation
+## The data: McEvedy & Jones {.smaller}
 
--   @guinnane2023 argues this measurement error is almost certainly **non-classical**
+-   Population data come from McEvedy & Jones (MJ), *Atlas of World Population History*
 
-## Why non-classical? Guinnane's critique {.smaller}
+-   MJ describe their construction process openly. Key features:
 
--   MJ's errors are likely **larger in magnitude for larger populations** — more aggressive rounding for big countries
+    -   Figures are **rounded** to the nearest unit (where the unit itself depends on the size of the population)
+    -   Estimates for periods with little evidence rely on **perceived level of economic activity**
+    -   Growth rates are set to **round numbers** (e.g. "doubling every century")
+    -   Countries with thin evidence are **benchmarked against neighbours**
 
--   The errors are likely **correlated with potato suitability**: suitable areas are specific agricultural zones with particular population patterns
+-   To use MJ for sub-national regions, researchers **allocate population by land area share** — a further step not in MJ
 
--   Area-based allocation of population introduces errors proportional to the size and economic character of the region — not random
-
-Therefore:
-
--   The bias in $\hat\beta$ is **unknown in sign and magnitude**
-
--   Scholars who argue "the bias just attenuates" are invoking classical measurement error — an assumption that requires justification
-
--   Guinnane: the assumption is implausible given how the data were constructed
-
--   **Lesson**: always ask *how* your data were constructed before assuming measurement error is classical
+-   **Question for discussion**: given how this data was constructed, what would you expect the measurement error to look like? Is it likely to be classical?
 
 ## Bibliography
