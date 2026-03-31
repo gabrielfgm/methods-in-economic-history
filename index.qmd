@@ -13,3 +13,5 @@ title: "Methods in Economic History — Slides"
 | [Week 7](07_slides.html) | Measuring the Standard of Living: Real Wages |
 | [Week 8](08_slides.html) | Measuring GDP |
 | [Week 9](09_slides.html) | Measurement Error |
+| [Week 10](10_slides.html) | Measuring Inequality |
+
