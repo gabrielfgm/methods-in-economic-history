@@ -310,7 +310,7 @@ PSZ, Figure V
 
 -   PSZ and AS disagree most on **how much tax evasion occurs, and where in the distribution**
 
--   PSZ draw on work by @guyton, who compare random audits to targeted enforcement operations and tax amnesty programmes to estimate true evasion
+-   Recent work by @guyton compare random audits to targeted enforcement operations and tax amnesty programmes
 
 -   Their finding: substantial evasion concentrated at the top of the distribution
 
