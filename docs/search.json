@@ -1468,5 +1468,159 @@
     "title": "Measurement Error",
     "section": "The data: McEvedy & Jones",
     "text": "The data: McEvedy & Jones\n\nPopulation data come from McEvedy & Jones (MJ), Atlas of World Population History\nMJ describe their construction process openly. Key features per Guinnane (2023)\n\nFigures are rounded to the nearest unit (where the unit itself depends on the size of the population)\nEstimates for periods with little evidence rely on perceived level of economic activity\nGrowth rates are set to round numbers (e.g. “doubling every century”)\nCountries with thin evidence are benchmarked against neighbours\n\nTo use MJ for sub-national regions, researchers allocate population by land area share — a further step not in MJ\nQuestion for discussion: given how this data was constructed, what would you expect the measurement error to look like? Is it likely to be classical?"
+  },
+  {
+    "objectID": "10_slides.html#todays-plan",
+    "href": "10_slides.html#todays-plan",
+    "title": "Measuring Inequality",
+    "section": "Today’s Plan",
+    "text": "Today’s Plan\n\nDefinitions: Gini coefficient and top income shares\nSurvey approaches and their limits\nThe PSZ approach: Distributional National Accounts\nThe hard parts: tax incidence, government spending, capital income\nPSZ vs. AS: the evasion debate\nDiscussion questions"
+  },
+  {
+    "objectID": "10_slides.html#how-to-measure-inequality",
+    "href": "10_slides.html#how-to-measure-inequality",
+    "title": "Measuring Inequality",
+    "section": "How to measure inequality?",
+    "text": "How to measure inequality?\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Gini coefficient measures how far the observed income distribution departs from perfect equality\nYou need to know the full distribution"
+  },
+  {
+    "objectID": "10_slides.html#measuring-inequality-gini",
+    "href": "10_slides.html#measuring-inequality-gini",
+    "title": "Measuring Inequality",
+    "section": "Measuring inequality: Gini",
+    "text": "Measuring inequality: Gini\n\nIf you have full distributions of income/wealth it is straightforward to calculate the Gini as a summary statistic.\nDepends strongly on the reference population: cohort, country, world?\n\nConsider where you are in global income/wealth"
+  },
+  {
+    "objectID": "10_slides.html#top-x-incomes",
+    "href": "10_slides.html#top-x-incomes",
+    "title": "Measuring Inequality",
+    "section": "Top X% incomes?",
+    "text": "Top X% incomes?\n\nCommon to see inequality measured as the percent of income/wealth held by the top 0.1/1/10%, e.g. Alvaredo et al. (2013)\nThis only requires detailed knowledge of:\n\nAggregate wealth/income\nThe percentage of aggregate held by this percentile\n\nStill really difficult"
+  },
+  {
+    "objectID": "10_slides.html#survey-approaches-problems",
+    "href": "10_slides.html#survey-approaches-problems",
+    "title": "Measuring Inequality",
+    "section": "Survey Approaches: Problems",
+    "text": "Survey Approaches: Problems\n\nMost detailed income data comes from household surveys (e.g. Current Population Survey in the US)\nKey problems at the top of the distribution:\n\nTop-coding: surveys cap reported income at a maximum to protect privacy — top earners all look the same\nNon-response: the very wealthy disproportionately refuse to participate\nSampling error: with very few billionaires, missing one person can dramatically shift estimates\nUnder-reporting: even when surveyed, the rich under-report income\n\nThese problems bias surveys downward for top income shares\nMotivation: use administrative tax records instead"
+  },
+  {
+    "objectID": "10_slides.html#the-psz-approach",
+    "href": "10_slides.html#the-psz-approach",
+    "title": "Measuring Inequality",
+    "section": "The PSZ Approach",
+    "text": "The PSZ Approach\n\nPiketty, Saez, and Zucman (2018) seek to allocate all of national income to individuals\nTwo-step process:\n\nStart with the national accounts (GDP): a comprehensive measure of all income in the economy\nAllocate that income to individuals using micro-level tax files\n\nThe IRS data is very large reducing sampling error compared to surveys\nGoal: produce distributional national accounts — who gets what share of the national income as reported in national accounts"
+  },
+  {
+    "objectID": "10_slides.html#pre-tax-vs.-post-tax-income",
+    "href": "10_slides.html#pre-tax-vs.-post-tax-income",
+    "title": "Measuring Inequality",
+    "section": "Pre-tax vs. Post-tax Income",
+    "text": "Pre-tax vs. Post-tax Income\n\nPre-tax income: factor income plus social insurance benefits, before taxes and most transfers\n\nWhat you earn before the government redistributes anything\n\nPost-tax income: pre-tax income minus taxes, plus all government transfers\n\nIncludes money transfers (EITC, social security), in-kind transfers (Medicare, Medicaid), and an allocation of public goods\n\nThe gap between the two series measures the redistribution achieved by the state\nBoth series are informative: pre-tax tells us about market outcomes, post-tax about living standards"
+  },
+  {
+    "objectID": "10_slides.html#top-1-pre-tax-vs.-post-tax",
+    "href": "10_slides.html#top-1-pre-tax-vs.-post-tax",
+    "title": "Measuring Inequality",
+    "section": "Top 1%: Pre-tax vs. Post-tax",
+    "text": "Top 1%: Pre-tax vs. Post-tax\n\nPSZ, Figure V\n\nPre-tax top 1% share has risen sharply since 1980\nPost-tax share has risen less — redistribution compresses the distribution\nBut redistribution has not kept pace with pre-tax divergence"
+  },
+  {
+    "objectID": "10_slides.html#growth-by-percentile-19802014",
+    "href": "10_slides.html#growth-by-percentile-19802014",
+    "title": "Measuring Inequality",
+    "section": "Growth by Percentile, 1980–2014",
+    "text": "Growth by Percentile, 1980–2014\n\n\nPost-tax growth is more equal than pre-tax growth across the full distribution\nBut even post-tax, income growth is heavily concentrated at the very top"
+  },
+  {
+    "objectID": "10_slides.html#bottom-50-pre-tax-vs.-post-tax",
+    "href": "10_slides.html#bottom-50-pre-tax-vs.-post-tax",
+    "title": "Measuring Inequality",
+    "section": "Bottom 50%: Pre-tax vs. Post-tax",
+    "text": "Bottom 50%: Pre-tax vs. Post-tax\n\n\nPost-tax income for the bottom 50% has grown\nPre-tax income has grown substantially less"
+  },
+  {
+    "objectID": "10_slides.html#the-allocation-problem",
+    "href": "10_slides.html#the-allocation-problem",
+    "title": "Measuring Inequality",
+    "section": "The Allocation Problem",
+    "text": "The Allocation Problem\n\nNational income \\(\\neq\\) sum of all tax returns and individual income \\(\\neq\\) earnings.\nPSZ must make judgments about three main categories of “missing” income:\n\nTax incidence: who really bears the burden of taxes?\nGovernment spending: whose income is public expenditure?\nCapital income: imputed values that don’t show up as cash flows\n\nEvery choice here is contested and affects where in the distribution income ends up"
+  },
+  {
+    "objectID": "10_slides.html#tax-incidence",
+    "href": "10_slides.html#tax-incidence",
+    "title": "Measuring Inequality",
+    "section": "Tax Incidence",
+    "text": "Tax Incidence\n\n\nWho really pays a tax depends on market structure, not who writes the cheque\nE.g. Payroll tax: PSZ assume borne by employees (reduces wages), not employers\nCorporate income tax: contested — borne by shareholders? All capital owners? Workers through lower wages?\nTariffs on inputs: borne by importers, or passed on to consumers as higher prices?\nThese are genuine empirical questions without consensus answers — economists work on estimating tax incidence"
+  },
+  {
+    "objectID": "10_slides.html#government-spending-easy-to-hard",
+    "href": "10_slides.html#government-spending-easy-to-hard",
+    "title": "Measuring Inequality",
+    "section": "Government Spending: Easy to Hard",
+    "text": "Government Spending: Easy to Hard\n\n\n\n\n\n\n\n\nCategory\nExample\nHow PSZ Allocate\n\n\n\n\nMoney transfers\nEITC, social security\nDirectly to recipients\n\n\nIn-kind transfers\nMedicare, Medicaid\nTo programme beneficiaries (usually at cost)\n\n\nPublic goods\nDefence, roads, justice\nProportional to post-tax income\n\n\nDeficit spending\n—\n50% ↑ taxes / 50% ↓ transfers\n\n\n\n\nThe public goods row is where the biggest judgments sit: “Given that we know relatively little about who benefits from spending on defense, police, the justice system, infrastructure, and the like, this seems like the most reasonable benchmark.” (Piketty, Saez, and Zucman 2018)\nAS allocate public goods half per-capita, half proportional to after-tax income"
+  },
+  {
+    "objectID": "10_slides.html#capital-income-imputed-values",
+    "href": "10_slides.html#capital-income-imputed-values",
+    "title": "Measuring Inequality",
+    "section": "Capital Income: Imputed Values",
+    "text": "Capital Income: Imputed Values\n\n\nSome capital income does not appear on tax returns as a cash flow:\n\nOwner-occupied housing: you implicitly earn rent by living in your own home (imputed rent)\nRetained corporate earnings: profits kept inside a firm — shareholders benefit but receive no cash distribution\nPension funds: investment returns accumulate tax-deferred and appear only at withdrawal\n\nPSZ impute these values and allocate them to individuals\nEach imputation requires assumptions about who owns what\nSmall changes in ownership assumptions at the top can substantially shift top income shares"
+  },
+  {
+    "objectID": "10_slides.html#the-debate-where-does-unallocated-income-go",
+    "href": "10_slides.html#the-debate-where-does-unallocated-income-go",
+    "title": "Measuring Inequality",
+    "section": "The Debate: Where Does Unallocated Income Go?",
+    "text": "The Debate: Where Does Unallocated Income Go?\n\n\nStart with the national accounts: all income in the economy\nAllocate national income to individuals using tax returns\nA large residual remains — income that does not appear on any return:\n\nTax evasion\nImputed capital income\nGovernment spending not allocated to individuals\n\nMake a series of judgments about how to distribute the residual\nThe key disagreement: Piketty, Saez, and Zucman (2018) allocate more of the residual to the top of the distribution; Auten and Splinter (2024) allocate more to the middle and bottom"
+  },
+  {
+    "objectID": "10_slides.html#psz-vs.-as-how-different",
+    "href": "10_slides.html#psz-vs.-as-how-different",
+    "title": "Measuring Inequality",
+    "section": "PSZ vs. AS: How Different?",
+    "text": "PSZ vs. AS: How Different?\n\nAuten and Splinter (2024), Figure 6\n\nThe gap is large: AS find the top 1% share roughly half what PSZ report for posttax\nThe single biggest driver is how each study allocates income not appearing on tax returns — above all, tax evasion"
+  },
+  {
+    "objectID": "10_slides.html#tax-evasion-a-measurement-problem",
+    "href": "10_slides.html#tax-evasion-a-measurement-problem",
+    "title": "Measuring Inequality",
+    "section": "Tax Evasion: A Measurement Problem",
+    "text": "Tax Evasion: A Measurement Problem\n\nPSZ and AS disagree most on how much tax evasion occurs, and where in the distribution\nPSZ draw on work by Guyton et al. (n.d.), who compare random audits to targeted enforcement operations and tax amnesty programmes to estimate true evasion\nTheir finding: substantial evasion concentrated at the top of the distribution\nAS dispute the magnitude of these estimates\nBut the deeper problem is structural: tax evasion is partially observed data"
+  },
+  {
+    "objectID": "10_slides.html#partially-observed-data",
+    "href": "10_slides.html#partially-observed-data",
+    "title": "Measuring Inequality",
+    "section": "Partially Observed Data",
+    "text": "Partially Observed Data\nWe never observe whether someone evaded — only whether they were caught:\n\n\n\nPerson\nTrue Fraud\nDetected\nObserved Fraud\n\n\n\n\n1\n1\n0\n0\n\n\n2\n0\n1\n0\n\n\n3\n1\n1\n1\n\n\n…\n…\n…\n…\n\n\nN\n1\n0\n0\n\n\nAverage\n50%\n50%\n25%\n\n\n\n\\[P(\\text{Observed Fraud}) = P(\\text{True Fraud}) \\times P(\\text{Detected})\\]\nSeeing no recorded fraud tells us only that a person was never caught — not that they never evaded."
+  },
+  {
+    "objectID": "10_slides.html#detection-controlled-estimation",
+    "href": "10_slides.html#detection-controlled-estimation",
+    "title": "Measuring Inequality",
+    "section": "Detection Controlled Estimation",
+    "text": "Detection Controlled Estimation\n\nEconometricians model both components simultaneously Feinstein (1990) building on ideas from Poirier (1980):\n\n\\[P(\\text{Observed}) = P(\\text{Fraud}) \\times P(\\text{Detect | Fraud})\\]\n\nEstimate the model using observable characteristics to separately identify the fraud rate and the detection rate\nClever but fragile: identification rests on functional form assumptions that cannot easily be tested\nIn computer science / machine learning the same problem is called positive and unlabelled learning — a large literature on handling it has grown up independently"
+  },
+  {
+    "objectID": "10_slides.html#discussion-healthcare-and-inequality",
+    "href": "10_slides.html#discussion-healthcare-and-inequality",
+    "title": "Measuring Inequality",
+    "section": "Discussion: Healthcare and Inequality",
+    "text": "Discussion: Healthcare and Inequality\n\nThe US government succeeds in negotiating down the prices of medical services provided to Medicare and Medicaid. What happens to measured inequality under the distributional national accounts framework?\n\nConsider:\n\nHow does PSZ treat in-kind health transfers?\nIf the price of the same service falls, does anyone receive less healthcare?\nDoes a reduction in the imputed value of health transfers affect the rich and poor symmetrically?\nIs this a “real” change in inequality or a measurement artefact?"
+  },
+  {
+    "objectID": "10_slides.html#discussion-war-taxes-and-inequality",
+    "href": "10_slides.html#discussion-war-taxes-and-inequality",
+    "title": "Measuring Inequality",
+    "section": "Discussion: War, Taxes, and Inequality",
+    "text": "Discussion: War, Taxes, and Inequality\n\nThe US raises taxes substantially to fund increased military expenditure. Would this affect measured inequality? Would the effect differ between the PSZ and AS approaches? Which approach would you favour, and why?\n\nConsider:\n\nHow does each approach allocate defence spending across the income distribution?\nHow does each approach handle the increased tax burden — who bears it?\nWould the answer differ if spending was financed by a wealth tax vs. a consumption tax?\nIs there a “right answer” or is this inherently a normative choice?"
+  },
+  {
+    "objectID": "10_slides.html#works-cited",
+    "href": "10_slides.html#works-cited",
+    "title": "Measuring Inequality",
+    "section": "Works Cited",
+    "text": "Works Cited\n\n\n\n\n\n\n\n\nAlvaredo, Facundo, Anthony B Atkinson, Thomas Piketty, and Emmanuel Saez. 2013. “The Top 1 Percent in International and Historical Perspective.” Journal of Economic Perspectives 27 (3): 3–20. https://doi.org/10.1257/jep.27.3.3.\n\n\nAuten, Gerald, and David Splinter. 2024. “Income Inequality in the United States: Using Tax Data to Measure Long-Term Trends.” Journal of Political Economy 132 (7): 2179–2227. https://doi.org/10.1086/728741.\n\n\nFeinstein, Jonathan S. 1990. “Detection Controlled Estimation.” Journal of Law and Economics XXXIII (April).\n\n\nGuyton, John, Patrick Langetieg, Daniel Reck, Max Risch, and Gabriel Zucman. n.d. “Tax Evasion at the Tope of the Income Distribution: Theory and Evidence.”\n\n\nPiketty, Thomas, Emmanuel Saez, and Gabriel Zucman. 2018. “Distributional National Accounts: Methods and Estimates for the United States*.” The Quarterly Journal of Economics 133 (2): 553–609. https://doi.org/10.1093/qje/qjx043.\n\n\nPoirier, Dale J. 1980. “Partial Observability in Bivariate Probit Models.” Journal of Econometrics."
   }
 ]
