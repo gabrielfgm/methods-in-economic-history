@@ -354,25 +354,11 @@ $$P(\text{Observed}) = P(\text{Fraud}) \times P(\text{Detect | Fraud})$$
 > The US government succeeds in negotiating down the prices of medical services provided to Medicare and Medicaid.
 > What happens to measured inequality under the distributional national accounts framework?
 
-**Consider:**
-
--   How does PSZ treat in-kind health transfers?
--   If the price of the same service falls, does anyone receive less healthcare?
--   Does a reduction in the imputed value of health transfers affect the rich and poor symmetrically?
--   Is this a "real" change in inequality or a measurement artefact?
-
 ## Discussion: War, Taxes, and Inequality {.smaller}
 
 > The US raises taxes substantially to fund increased military expenditure.
 > Would this affect measured inequality?
 > Would the effect differ between the PSZ and AS approaches?
 > Which approach would you favour, and why?
-
-**Consider:**
-
--   How does each approach allocate defence spending across the income distribution?
--   How does each approach handle the increased tax burden — who bears it?
--   Would the answer differ if spending was financed by a wealth tax vs. a consumption tax?
--   Is there a "right answer" or is this inherently a normative choice?
 
 ## Works Cited
