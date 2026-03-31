@@ -349,13 +349,11 @@ $$P(\text{Observed}) = P(\text{Fraud}) \times P(\text{Detect | Fraud})$$
 
 # Discussion Questions
 
-## Discussion: Healthcare and Inequality {.smaller}
-
 > The US government succeeds in negotiating down the prices of medical services provided to Medicare and Medicaid.
 > What happens to measured inequality under the distributional national accounts framework?
 
-## Discussion: War, Taxes, and Inequality {.smaller}
-
+> ##  {.smaller}
+>
 > The US raises taxes substantially to fund increased military expenditure.
 > Would this affect measured inequality?
 > Would the effect differ between the PSZ and AS approaches?
